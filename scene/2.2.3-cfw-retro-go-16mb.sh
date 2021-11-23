@@ -156,8 +156,8 @@ case $menuitem in
                 read -n 1 -s -r -p ""
                 cd /home/$usuario/gameandwatch/game-and-watch-retro-go
                 make clean
-                make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=16 INTFLASH_BANK=2 flash
-                #make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=15 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 flash
+                #make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=16 INTFLASH_BANK=2 flash
+                make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=15 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 flash
                 cd -
                 echo " "
                 echo " "
