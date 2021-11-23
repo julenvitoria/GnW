@@ -47,8 +47,8 @@ case $menuitem in
                 cd /home/$usuario/gameandwatch/game-and-watch-patch
                 make clean
                 #make PATCH_PARAMS="--internal-only" flash_patched_int
-                make PATCH_PARAMS="--device=$consola --internal-only" flash_patched
-                #make PATCH_PARAMS="--device=$consola" flash_patched
+                #make PATCH_PARAMS="--device=$consola --internal-only" flash_patched
+                make PATCH_PARAMS="--device=$consola" flash_patched
                 cd -
                 echo " "
                 echo " "
@@ -138,8 +138,8 @@ case $menuitem in
                 make clean
                 #make flash_patched_ext
                 #make flash_patched_int
-                #make PATCH_PARAMS="--device=$consola --internal-only" flash_patched
-                make PATCH_PARAMS="--device=$consola" flash_patched
+                make PATCH_PARAMS="--device=$consola --internal-only" flash_patched
+                #make PATCH_PARAMS="--device=$consola" flash_patched
                 cd -
                 echo " "
                 echo " "
@@ -156,8 +156,8 @@ case $menuitem in
                 read -n 1 -s -r -p ""
                 cd /home/$usuario/gameandwatch/game-and-watch-retro-go
                 make clean
-                #make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=16 INTFLASH_BANK=2 flash
-                make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=15 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 flash
+                make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=16 INTFLASH_BANK=2 flash
+                #make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=15 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 flash
                 cd -
                 echo " "
                 echo " "
