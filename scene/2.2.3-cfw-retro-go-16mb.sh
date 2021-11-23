@@ -138,8 +138,8 @@ case $menuitem in
                 make clean
                 #make flash_patched_ext
                 #make flash_patched_int
-                make PATCH_PARAMS="--device=$consola --internal-only" flash_patched
-                #make PATCH_PARAMS="--device=$consola" flash_patched
+                #make PATCH_PARAMS="--device=$consola --internal-only" flash_patched
+                make PATCH_PARAMS="--device=$consola" flash_patched
                 cd -
                 echo " "
                 echo " "
