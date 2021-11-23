@@ -36,6 +36,7 @@ case $menuitem in
     ./menu.sh
     clear;;
   3)clear
+    git reset --hard
     git pull --recurse-submodules
     read -n 1 -s -r -p "Proceso realizado. Presiona cualquier tecla para continuar"
     ./menu.sh
