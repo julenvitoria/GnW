@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 
 dialog --backtitle "G&W - Utilidades de flasheo" \
---title "G&W menu de flasheo" \
+--title "G&W menu de cambio de consola" \
 --ok-label Apply \
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 12 120 15 \

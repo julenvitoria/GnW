@@ -5,7 +5,7 @@ INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="mario"
 
-dialog --backtitle "Game&Watch - Utilidades de flasheo" \
+dialog --backtitle "G&W $consola - Utilidades de flasheo" \
 --title "Game&Watch menu de flasheo" \
 --ok-label Apply \
 --cancel-label Exit \
@@ -29,7 +29,7 @@ case $menuitem in
     ./2-menu-scene.sh
     clear;;
   3)clear
-    dialog --backtitle "Game&Watch - Utilidades de flasheo" \
+    dialog --backtitle "G&W $consola - Utilidades de flasheo" \
     --title "Generación roms Game&Watch" \
     --yesno "Coloca tus roms y artworks de Game&Watch que desees transformar\nIMPORTANTE: Para que el script funcione deberas tener en cuenta lo siguiente:\n-Las roms deben ser del romset 0.229 de Mame, en formato No-merged y deben ser colocadas en el directorio\n/home/$usuario/gameandwatch/LCD-Game-Shrinker/input/rom\n-Los artworks deben copiarse al directorio /home/$usuario/gameandwatch/LCD-Game-Shrinker/input/artwork\n-Ambos archivos (rom y artwork) deben estar en formato zip y deben tener el mismo nombre.\n\nRecuerda: las roms convertidas las encontraras en home/$usuario/gameandwatch/LCD-Game-Shrinker/output" 0 0
     ans=$?

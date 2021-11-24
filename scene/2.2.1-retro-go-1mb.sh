@@ -5,7 +5,7 @@ usuario="kde"
 proc="6"
 
 clear
-dialog --backtitle "G&W menu $consola Retro-Go + custom firmware" \
+dialog --backtitle "G&W - Utilidades de flasheo" \
 --title "Instalar solo Retro-Go en consola 1MB" \
 --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Se flasheara solamente el emulador Retro-Go por lo que no tendremos el menu original. Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola." 0 0
 ans=$?
@@ -25,11 +25,11 @@ if [ $ans -eq 0 ]; then
     make clean
     make -j$proc COMPRESS=lzma flash
     read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
-    dialog --backtitle "G&W $consola menu Retro-Go + custom firmware" \
+    dialog --backtitle "G&W - Utilidades de flasheo" \
     --title "Instalar solo Retro-Go" \
     --msgbox "Proceso realizado." 0 0
 else
-    dialog --backtitle "G&W $consola menu Retro-Go + custom firmware" \
+    dialog --backtitle "G&W - Utilidades de flasheo" \
     --title "Instalar solo Retro-Go" \
     --msgbox "Proceso cancelado." 0 0
 fi

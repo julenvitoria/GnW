@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 
-dialog --backtitle "G&W - Herramientas de backup y restauracion" \
+dialog --backtitle "G&W - Utilidades de flasheo" \
 --title "G&W menu herramientas backup y restauracion" \
 --ok-label Apply \
 --cancel-label Exit \

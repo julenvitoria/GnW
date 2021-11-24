@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 
-dialog --backtitle "G&W - Flashloader" \
+dialog --backtitle "G&W - Utilidades de flasheo" \
 --title "G&W menu flashloader" \
 --ok-label Apply \
 --cancel-label Exit \

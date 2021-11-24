@@ -5,7 +5,7 @@ INPUT=/tmp/$MENU.sh.$$
 consola="mario"
 
 clear
-dialog --backtitle "Game & Watch Super Mario 30º aniversario - Utilidades de flasheo" \
+dialog --backtitle "G&W $consola - Utilidades de flasheo" \
 --title "Game & Watch - Menu de utilidades de flasheo" \
 --ok-label Apply \
 --cancel-label Exit \
