@@ -2,8 +2,8 @@
 #By julenvitoria
 
 INPUT=/tmp/$MENU.sh.$$
-usuario=kde
-consola=mario
+usuario="kde"
+consola="mario"
 
 clear
 which dialog > dialog.txt
@@ -40,7 +40,6 @@ case $menuitem in
   3)clear
     git reset --hard
     git pull --recurse-submodules
-    read -n 1 -s -r -p "Proceso realizado. Presiona cualquier tecla para continuar"
     sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./instalacion/1.3-preparacion-sistema.sh
     sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./instalacion/1.4-openocd.sh
     sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./instalacion/1.5-menu-backup-restore-tools.sh
@@ -55,15 +54,15 @@ case $menuitem in
     sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.2-cfw-retro-go-1mb.sh
     sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb.sh
     sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb.sh
-    sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.5-cfw.sh
-    sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.6-actualizacion-retro-go.sh
-    sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.7-actualizacion-parche.sh
+    sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.5-actualizacion-retro-go.sh
+    sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.6-actualizacion-parche.sh
     sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./menu.sh
     sed -i 's/^consola=.*$/'consola=\""$consola"\"'/g' ./1-menu-instalacion.sh
     sed -i 's/^consola=.*$/'consola=\""$consola"\"'/g' ./2-menu-scene.sh
     sed -i 's/^consola=.*$/'consola=\""$consola"\"'/g' ./scene/2.1-backup-restauracion.sh
     sed -i 's/^consola=.*$/'consola=\""$consola"\"'/g' ./scene/2.2-retro-go.sh
     sed -i 's/^consola=.*$/'consola=\""$consola"\"'/g' ./menu.sh
+    read -n 1 -s -r -p "Proceso realizado. Presiona cualquier tecla para continuar"
     ./menu.sh
     clear;;
 esac
