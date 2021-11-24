@@ -48,8 +48,9 @@ case $menuitem in
                 make clean
                 #make PATCH_PARAMS="--internal-only" flash_patched_int
                 #make PATCH_PARAMS="--device=$consola --internal-only" flash_patched
-                make PATCH_PARAMS="--device=$consola" flash_patched
-                cd -
+                #make PATCH_PARAMS="--device=$consola" flash_patched
+                make PATCH_PARAMS="--device=$consola" LARGE_FLASH=1 flash_patched
+				cd -
                 echo " "
                 echo " "
                 echo "Proceso 2/2 concluido."
@@ -139,8 +140,9 @@ case $menuitem in
                 #make flash_patched_ext
                 #make flash_patched_int
                 #make PATCH_PARAMS="--device=$consola --internal-only" flash_patched
-                make PATCH_PARAMS="--device=$consola" flash_patched
-                cd -
+                #make PATCH_PARAMS="--device=$consola" flash_patched
+                make PATCH_PARAMS="--device=$consola" LARGE_FLASH=1 flash_patched
+				cd -
                 echo " "
                 echo " "
                 echo "Proceso 2/3 concluido."
