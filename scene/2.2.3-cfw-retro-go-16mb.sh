@@ -17,8 +17,8 @@ dialog --backtitle "G&W - Utilidades de flasheo" \
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
-    dialog --backtitle "G&W menu $consola Retro-Go + custom firmware" \
-    --title "Instalar Retro-Go en consola G&W $consola con 1MB" \
+    dialog --backtitle "G&W - Utilidades de flasheo" \
+    --title "Instalar CFW en G&W $consola con 16MB" \
     --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Este proceso es solamente para una consola con el chip de 1MB instalado (chip original).\n\n¡¡¡ATENCION!!!\nSI SE TIENE DIFERENTE CANTIDAD DE MEMORIA CANCELAR EL PROCESO y una vez vuelto al menu seleccionar el correcto.\n\nSe flasheara un custom firmware que consta del menu original de la consola ademas del emulador Retro-Go. El emulador aparecera al realizar el combo de botones \"LEFT\" + \"GAME\". Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola ¿Deseas continuar?" 0 0
     ans=$?
     if [ $ans -eq 0 ]; then
@@ -63,11 +63,11 @@ case $menuitem in
             echo "No se ha encontrado flash_backup_$consola.bin, cancelando..."
             sleep 2
         fi
-        dialog --backtitle "G&W menu $consola Retro-Go + custom firmware" \
-        --title "Instalar firmware original + Retro-Go  en consola con 1MB" \
+        dialog --backtitle "G&W - Utilidades de flasheo" \
+        --title "Instalar CFW en G&W $consola con 16MB" \
         --msgbox "Proceso realizado." 0 0
     else
-            dialog --backtitle "G&W menu $consola Retro-Go + custom firmware" \
+            dialog --backtitle "G&W - Utilidades de flasheo" \
             --title "Instalar firmware original + Retro-Go  en consola con 1MB" \
             --msgbox "Proceso cancelado." 0 0
     fi
@@ -93,7 +93,8 @@ case $menuitem in
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         make clean
         #make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=16 INTFLASH_BANK=2 flash
-        make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=15 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 flash
+        #make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=15 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 flash
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE_MB=16 flash
         cd -
         echo " "
         echo " "
