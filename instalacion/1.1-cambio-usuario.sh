@@ -29,6 +29,7 @@ if [ "$confirm" = "s" ]; then
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.5-cfw.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.6-actualizacion-retro-go.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.7-actualizacion-parche.sh
+    sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./menu.sh
 #sleep 3
 else
     if [ "$confirm" = "S" ]
@@ -51,6 +52,7 @@ else
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.5-cfw.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.6-actualizacion-retro-go.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.7-actualizacion-parche.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./menu.sh
         #sleep 3
     fi
 fi
