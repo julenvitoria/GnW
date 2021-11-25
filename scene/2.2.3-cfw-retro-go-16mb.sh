@@ -10,7 +10,7 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo" \
 --title "G&W menu de flasheo $consola 16MB" \
 --ok-label Apply \
 --cancel-label Exit \
---menu "Selecciona con las flechas la opcion deseada:" 12 120 15 \
+--menu "Selecciona con las flechas la opcion deseada:" 15 120 15 \
    1 "CFW \"slim\" con los parametros para 16MB" \
    2 "Retro-Go para CFW \"slim\" con los parametros para 16MB" \
    3 "CFW \"slim\" + Retro-Go (solo un paso pero menos seguro): roms en /home/$usuario/game-and-watch-retro-go/roms/" \
