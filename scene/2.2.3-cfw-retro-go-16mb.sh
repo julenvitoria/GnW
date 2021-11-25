@@ -152,6 +152,7 @@ case $menuitem in
         #make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=16 INTFLASH_BANK=2 flash
         #make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=15 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 flash
         make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE_MB=16 flash
+        #make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=15 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 flash
         cd -
         echo " "
         echo " "
