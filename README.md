@@ -1,5 +1,5 @@
 # GnW por julenvitoria
-Game &amp; Watch Super Mario 35th aniversary menus utilidades para flasheo.
+Game & Watch Super Mario 35th aniversary menus utilidades para backup, restauracion y flasheo de CFW y Retro-Go.
 
 ATENCION: ESTOS MENUS ESTAN AUN SIN TERMINAR AUNQUE LO QUE TIENEN HASTA EL MOMENTO ES FUNCIONAL
 
