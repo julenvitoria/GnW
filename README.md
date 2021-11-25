@@ -34,9 +34,17 @@ Por ejemplo, si el usuario que introducimos es pepito el directorio de instalaci
 
 Principales fuentes para Backup (y desbloqueo), retro-go
 
-    Backup: https://github.com/ghidraninja/game-and-watch-backup
-    Retro-Go: https://github.com/kbeckmann/game-and-watch-retro-go
-    Patch (CFW): https://github.com/BrianPugh/game-and-watch-patch
-    Canal Discord (mensaje fijado): https://docs.google.com/document/d/1-x6tibLxtOPf6ZbQL0ZM48XGe1-LLEfl8HpBg8gBu_M/edit
-    Hardware: https://github.com/Upcycle-Electronics/game-and-watch-hardware
+[Repo de ghidraninja: Backup, restauracion y flasheo](https://github.com/ghidraninja/game-and-watch-backup)
+    
+[Repo de kbeckmann: emulador Retro-Go](https://github.com/kbeckmann/game-and-watch-retro-go)
+    
+[Repo de Brian Pugh: Parche para tener custom firmware](https://github.com/BrianPugh/game-and-watch-patch)
+
+[Canal Discord en ingles](https://discord.gg/vVcwrrHTNJ)
+
+[Canal Discord en español](https://discord.gg/Ewn8CdYJ)
+
+[Guia para novatos en ingles (mensaje fijado de Discord)](https://docs.google.com/document/d/1-x6tibLxtOPf6ZbQL0ZM48XGe1-LLEfl8HpBg8gBu_M/edit)
+    
+[Hardware](https://github.com/Upcycle-Electronics/game-and-watch-hardware)
     
