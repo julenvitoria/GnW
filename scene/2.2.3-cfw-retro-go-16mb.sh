@@ -4,8 +4,11 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="mario"
-proc="6"
+proc="2"
 
+dialog --backtitle "G&W $consola - Utilidades de flasheo" \
+--title "G&W menu de flasheo $consola 16MB" \
+--msgbox "ATENCION:\n\n\nCFW \"slim\" significa que no habra cancion de mario, no habra imagenes a la hora de dormir, se comprimira el resto del firm y se usara un flash interno indocumentado que requiere el openocd modificado. Esto permite que todo el firmware funcione sin utilizar ningún flash externo.\n\nCFW \"NO slim\" significa que se flasheara todo el firmware completo por lo que se usará parte de la flash externa con lo cual que se podran meter menos roms.\nPor contra se obtienen ciertos beneficios que son: tener la cancion de mario, las imagenes de dormir y se gestionarán mejor la configuracion y los highscores porque con CFW \"slim\" se pierden cuando la bateria esta baja o desenchufada" 0 0
 dialog --backtitle "G&W $consola - Utilidades de flasheo" \
 --title "G&W menu de flasheo $consola 16MB" \
 --ok-label Apply \

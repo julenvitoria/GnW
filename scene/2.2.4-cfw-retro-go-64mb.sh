@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="mario"
-proc="6"
+proc="2"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo" \
 --title "G&W menu de flasheo $consola 64MB" \

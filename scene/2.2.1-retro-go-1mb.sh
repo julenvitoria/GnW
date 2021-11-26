@@ -2,7 +2,7 @@
 #By julenvitoria
 
 usuario="kde"
-proc="6"
+proc="2"
 
 clear
 dialog --backtitle "G&W - Utilidades de flasheo" \
