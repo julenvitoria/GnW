@@ -100,7 +100,7 @@ case $menuitem in
         --title "Compilar Retro-Go" \
         --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.4-cfw-retro-go-64mb.sh
+    ./scene/2.2.3-cfw-retro-go-16mb.sh
     clear;;
   3)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
@@ -214,7 +214,7 @@ case $menuitem in
         --title "Compilar Retro-Go" \
         --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.4-cfw-retro-go-64mb.sh
+    ./scene/2.2.3-cfw-retro-go-16mb.sh
     clear;;
   6)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
