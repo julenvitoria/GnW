@@ -83,7 +83,7 @@ case $menuitem in
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         make clean
         make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=63 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2
-		cd -
+        cd -
         echo " "
         echo " "
         read -n 1 -s -r -p "Proceso concluido. Presiona cualquier tecla para continuar."
@@ -119,7 +119,7 @@ case $menuitem in
         #make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=64 INTFLASH_BANK=2 flash
         #make PATCH_PARAMS="--device=zelda" LARGE_FLASH=1 flash_patched
         make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=63 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 flash
-		cd -
+        cd -
         echo " "
         echo " "
         read -n 1 -s -r -p "Proceso concluido. Presiona cualquier tecla para continuar."
@@ -162,14 +162,17 @@ case $menuitem in
                 clear
                 cd /home/$usuario/gameandwatch/game-and-watch-patch
                 make clean
-                #make flash_patched_ext
-                #make flash_patched_int
-                #make PATCH_PARAMS="--device=$consola --internal-only" flash_patched
                 make PATCH_PARAMS="--device=$consola" LARGE_FLASH=1 flash_patched
                 cd -
                 echo " "
                 echo " "
-                echo "Proceso 2/3 concluido."
+                echo "Proceso 2/3 concluido. Presiona cualquier tecla para continuar."
+                read -n 1 -s -r -p ""
+                cd /home/$usuario/gameandwatch/game-and-watch-retro-go
+                make clean
+                make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=63 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2
+                echo " "
+                echo " "
                 echo " "
                 echo -e "\e[1;34mSi ya has ejecutado esta opcion anteriormente y algo ha salido mal desmonta la consola y vuelve a ejecutar esta\e[0m"
                 echo -e "\e[1;34mopcion y, al llegar a este punto, desconecta la bateria y vuelve a conectarla antes de realizar lo siguiente.\e[0m"
@@ -180,9 +183,6 @@ case $menuitem in
                 echo -e "\e[0;32mmantendremos pulsado unos segundos, le diremos que si con \"y\" (yes), entonces el proceso continuara.\e[0m"
                 echo -e "\e[1;31mPulsa y manten pulsado el boton de encendido y justo despues pulsa cualquier tecla para continuar...\nATENCION: No sueltes el boton al menos hasta que empiece a borrar la memoria externa (cuando pone \"Erasing xxxx bytes...\" en la pantalla)\e[0m"
                 read -n 1 -s -r -p ""
-                cd /home/$usuario/gameandwatch/game-and-watch-retro-go
-                make clean
-                #make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=64 INTFLASH_BANK=2 flash
                 make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=63 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 flash
                 cd -
                 echo " "
