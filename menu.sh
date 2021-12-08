@@ -64,7 +64,7 @@ case $menuitem in
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.5-actualizacion-retro-go.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.6-actualizacion-parche.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./menu.sh
-	if $consola=mario then
+	if $consola=mario; then
 		sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./1-menu-instalacion.sh
 		sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./2-menu-scene-mario.sh
 		sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.1-backup-restauracion.sh
@@ -76,7 +76,7 @@ case $menuitem in
 		sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./menu.sh
 		read -n 1 -s -r -p "Proceso realizado. Presiona cualquier tecla para continuar"
     fi
-	if $consola=zelda then
+	if $consola=zelda; then
 	    sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./1-menu-instalacion.sh
 		sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./2-menu-scene-zelda.sh
 		sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.1-backup-restauracion.sh
@@ -86,6 +86,7 @@ case $menuitem in
 		sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb-zelda.sh
 		sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-zelda.sh
 		sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./menu.sh
+	fi
 	./menu.sh
     clear;;
 esac
