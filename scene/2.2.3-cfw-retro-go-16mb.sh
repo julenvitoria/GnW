@@ -13,19 +13,20 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo" \
 --title "G&W menu de flasheo $consola 16MB" \
 --ok-label Apply \
 --cancel-label Exit \
---menu "Selecciona con las flechas la opcion deseada:" 14 120 15 \
+--menu "Selecciona con las flechas la opcion deseada:" 15 120 15 \
    1 "CFW \"slim\" con los parametros para 16MB" \
-   2 "Retro-Go para CFW \"slim\" con los parametros para 16MB" \
-   3 "CFW \"NO slim\" con los parametros para 16MB" \
-   4 "Retro-Go para CFW \"NO slim\" con los parametros para 16MB""CFW \"NO slim\" con los parametros para 16MB" \
-   5 "Hacer un \"clean\" del directorio de Retro-Go (se comprimiran de nuevo las roms cuando lances las opciones 2 o 5)""Retro-Go para CFW \"NO slim\" con los parametros para 16MB" \
-   6 "CFW \"slim\" + Retro-Go (solo un paso pero menos seguro): roms en /home/$usuario/game-and-watch-retro-go/roms/" \
-   7 "CFW \"NO slim\"+ Retro-Go (solo un paso pero menos seguro): roms en /home/$usuario/game-and-watch-retro-go/roms/" 2>"${INPUT}"
+   2 "Compilar Retro-Go para CFW \"slim\" y parametros 16MB: roms en /home/$usuario/game-and-watch-retro-go" \
+   3 "Flashear Retro-Go para CFW \"slim\" y parametros 16MB: roms en /home/$usuario/game-and-watch-retro-go" \
+   4 "CFW \"NO slim\" con los parametros para 16MB" \
+   5 "Compilar Retro-Go para CFW \"NO slim\" y parametros 16MB: roms en /home/$usuario/game-and-watch-retro-go" \
+   6 "Flashear Retro-Go para CFW \"NO slim\" y parametros 16MB: roms en /home/$usuario/game-and-watch-retro-go" \
+   7 "CFW \"slim\" + Retro-Go (solo un paso pero menos seguro): roms en /home/$usuario/game-and-watch-retro-go/roms/" \
+   8 "CFW \"NO slim\"+ Retro-Go (solo un paso pero menos seguro): roms en /home/$usuario/game-and-watch-retro-go/roms/" 2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-    --title "Instalar CFW en G&W $consola con 16MB" \
+    --title "Instalar CFW slim en G&W $consola con 16MB" \
     --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Este proceso es solamente para una consola con el chip de 1MB instalado (chip original).\n\n¡¡¡ATENCION!!!\nSI SE TIENE DIFERENTE CANTIDAD DE MEMORIA CANCELAR EL PROCESO y una vez vuelto al menu seleccionar el correcto.\n\nSe flasheara un custom firmware que consta del menu original de la consola ademas del emulador Retro-Go. El emulador aparecera al realizar el combo de botones \"LEFT\" + \"GAME\". Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola ¿Deseas continuar?" 0 0
     ans=$?
     if [ $ans -eq 0 ]; then
@@ -79,7 +80,31 @@ case $menuitem in
     clear;;
   2)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-    --title "Instalar solo Retro-Go" \
+    --title "Compilar Retro-Go" \
+    --yesno "Se procedera a compilar RetroGo con los parametros de memoria de 16mb pata CFW slim y se incluiran las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/. ¿Deseas continuar?" 0 0
+    ans=$?
+    if [ $ans -eq 0 ]; then
+        clear
+        cd /home/$usuario/gameandwatch/game-and-watch-retro-go
+        make clean
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE_MB=16
+		cd -
+        echo " "
+        echo " "
+        read -n 1 -s -r -p "Proceso concluido. Presiona cualquier tecla para continuar."
+        dialog --backtitle "G&W $consola - Utilidades de flasheo" \
+        --title "Compilar Retro-Go" \
+        --msgbox "Proceso realizado." 0 0
+    else
+        dialog --backtitle "G&W $consola - Utilidades de flasheo" \
+        --title "Compilar Retro-Go" \
+        --msgbox "Proceso cancelado." 0 0
+    fi
+    ./scene/2.2.3-cfw-retro-go-16mb.sh
+    clear;;
+  3)clear
+    dialog --backtitle "G&W $consola - Utilidades de flasheo" \
+    --title "Instalar Retro-Go" \
     --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Se flasheara solamente el emulador Retro-Go por lo que no tendremos el menu original. Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola." 0 0
     ans=$?
     if [ $ans -eq 0 ]; then
@@ -111,10 +136,10 @@ case $menuitem in
     fi
     ./scene/2.2.3-cfw-retro-go-16mb.sh
     clear;;
-  3)clear
+  4)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
     --title "Instalar CFW en G&W $consola con 16MB" \
-    --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Este proceso es solamente para una consola con el chip de 1MB instalado (chip original).\n\n¡¡¡ATENCION!!!\nSI SE TIENE DIFERENTE CANTIDAD DE MEMORIA CANCELAR EL PROCESO y una vez vuelto al menu seleccionar el correcto.\n\nSe flasheara un custom firmware que consta del menu original de la consola ademas del emulador Retro-Go. El emulador aparecera al realizar el combo de botones \"LEFT\" + \"GAME\". Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola ¿Deseas continuar?" 0 0
+    --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Este proceso es solamente para una consola con el chip de 1MB instalado (chip original).\n\n¡¡¡ATENCION!!!\nSI SE TIENE DIFERENTE CANTIDAD DE MEMORIA CANCELAR EL PROCESO y una vez vuelto al menu seleccionar el correcto.\n\nSe flasheara un custom firmware que consta del menu original de la consola ademas del acceso al emulador Retro-Go. El emulador aparecera al realizar el combo de botones \"LEFT\" + \"GAME\". ¿Deseas continuar?" 0 0
     ans=$?
     if [ $ans -eq 0 ]; then
         clear
@@ -167,7 +192,31 @@ case $menuitem in
     fi
     ./scene/2.2.3-cfw-retro-go-16mb.sh
     clear;;
-  4)clear
+  5)clear
+    dialog --backtitle "G&W $consola - Utilidades de flasheo" \
+    --title "Compilar Retro-Go" \
+    --yesno "Se procedera a compilar RetroGo con los parametros de memoria de 16mb para CFW NO slim y se incluiran las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/. ¿Deseas continuar?" 0 0
+    ans=$?
+    if [ $ans -eq 0 ]; then
+        clear
+        cd /home/$usuario/gameandwatch/game-and-watch-retro-go
+        make clean
+        make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=15 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2
+		cd -
+        echo " "
+        echo " "
+        read -n 1 -s -r -p "Proceso concluido. Presiona cualquier tecla para continuar."
+        dialog --backtitle "G&W $consola - Utilidades de flasheo" \
+        --title "Compilar Retro-Go" \
+        --msgbox "Proceso realizado." 0 0
+    else
+        dialog --backtitle "G&W $consola - Utilidades de flasheo" \
+        --title "Compilar Retro-Go" \
+        --msgbox "Proceso cancelado." 0 0
+    fi
+    ./scene/2.2.3-cfw-retro-go-16mb.sh
+    clear;;
+  6)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
     --title "Instalar solo Retro-Go" \
     --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Se flasheara solamente el emulador Retro-Go por lo que no tendremos el menu original. Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola." 0 0
@@ -201,30 +250,7 @@ case $menuitem in
     fi
     ./scene/2.2.3-cfw-retro-go-16mb.sh
     clear;;
-  5)clear
-    dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-    --title "Realizar make clean en directorio Retro-Go" \
-    --yesno "Si se realiza este proceso la proxima vez que se flashee Retro-Go se volvera a realizar el proceso de compresion de las roms por lo que tardara mas dependiendo del numero de roms." 0 0
-    ans=$?
-    if [ $ans -eq 0 ]; then
-        clear
-        cd /home/$usuario/gameandwatch/game-and-watch-retro-go
-        make clean
-        cd -
-        echo " "
-        echo " "
-        read -n 1 -s -r -p "Proceso concluido. Presiona cualquier tecla para continuar."
-        dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-        --title "Realizar make clean en directorio Retro-Go" \
-        --msgbox "Proceso realizado." 0 0
-    else
-        dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-        --title "Instalar solo Retro-Go" \
-        --msgbox "Proceso cancelado." 0 0
-    fi
-    ./scene/2.2.3-cfw-retro-go-16mb.sh
-    clear;;
-  6)clear
+  7)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
     --title "Instalar firmware original + Retro-Go  en consola con 16MB" \
     --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Este proceso es solamente para una consola con el chip de 16MB instalado.\n\n¡¡¡ATENCION!!!\nSI SE TIENE DIFERENTE CANTIDAD DE MEMORIA CANCELAR EL PROCESO y una vez vuelto al menu seleccionar el correcto.\n\nSe flasheara un custom firmware que consta del menu original de la consola ademas del emulador Retro-Go. El emulador aparecera al realizar el combo de botones \"LEFT\" + \"GAME\". Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola ¿Deseas continuar?" 0 0
@@ -293,7 +319,7 @@ case $menuitem in
     fi
     ./scene/2.2.3-cfw-retro-go-16mb.sh
     clear;;
-  7)clear
+  8)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
     --title "Instalar firmware original + Retro-Go  en consola con 16MB" \
     --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Este proceso es solamente para una consola con el chip de 16MB instalado.\n\n¡¡¡ATENCION!!!\nSI SE TIENE DIFERENTE CANTIDAD DE MEMORIA CANCELAR EL PROCESO y una vez vuelto al menu seleccionar el correcto.\n\nSe flasheara un custom firmware que consta del menu original de la consola ademas del emulador Retro-Go. El emulador aparecera al realizar el combo de botones \"LEFT\" + \"GAME\". Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola ¿Deseas continuar?" 0 0
