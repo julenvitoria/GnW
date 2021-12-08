@@ -69,10 +69,10 @@ case $menuitem in
 		sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./2-menu-scene-mario.sh
 		sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.1-backup-restauracion.sh
 		sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2-retro-go-mario.sh
-		sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.1-retro-go-1mb-mario.sh
-		sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.2-cfw-retro-go-1mb-mario.sh
-		sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb-mario.sh
-		sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-mario.sh
+		sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.1-retro-go-1mb-mario.sh
+		sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.2-cfw-retro-go-1mb-mario.sh
+		sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb-mario.sh
+		sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-mario.sh
 		sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./menu.sh
     fi
 	if [ $consola = zelda ]; then
