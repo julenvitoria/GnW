@@ -87,6 +87,7 @@ case $menuitem in
 		sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-zelda.sh
 		sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./menu.sh
 	fi
+	read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
 	./menu.sh
     clear;;
 esac
