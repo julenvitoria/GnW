@@ -34,7 +34,7 @@ case $menuitem in
     ./menu.sh
     clear;;
   2)clear
-    ./2-menu-scene.sh
+    ./2-menu-scene-$consola.sh
     ./menu.sh
     clear;;
   3)clear

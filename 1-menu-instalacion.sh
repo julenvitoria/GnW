@@ -9,7 +9,7 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo" \
 --title "Game & Watch - Menu de utilidades de flasheo" \
 --ok-label Apply \
 --cancel-label Exit \
---menu "Selecciona con las flechas la opcion deseada:" 18 120 15 \
+--menu "Selecciona con las flechas la opcion deseada:" 18 125 15 \
    1 "Cambio de usuario. IMPORTANTE: la primera vez es esencial ejecutar esto para el correcto funcionamiento" \
    2 "Cambio de modelo de consola (actual = $consola). IMPORTANTE: Escoge el modelo correcto para el correcto funcionamiento" \
    3 "Preparacion del sistema: update+upgrade+instalacion de paquetes (requerido si no se ha hecho antes)" \
