@@ -40,6 +40,7 @@ case $menuitem in
   3)clear
     git reset --hard
     git pull --recurse-submodules
+	sleep 1
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.3-preparacion-sistema.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.4-openocd.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.5-menu-backup-restore-tools.sh
