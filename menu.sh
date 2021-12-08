@@ -65,6 +65,8 @@ case $menuitem in
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.5-actualizacion-retro-go.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.6-actualizacion-parche.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./menu.sh
+	read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
+
 	if [ $consola = mario ]; then
 		sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./1-menu-instalacion.sh
 		sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./2-menu-scene-mario.sh
