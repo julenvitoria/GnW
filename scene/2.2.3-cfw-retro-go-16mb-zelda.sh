@@ -13,7 +13,7 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo" \
 --title "G&W CFW + Retro-Go 16MB /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
 --ok-label Apply \
 --cancel-label Exit \
---menu "Selecciona con las flechas la opcion deseada:" 15 120 15 \
+--menu "Selecciona con las flechas la opcion deseada:" 15 140 15 \
    1 "CFW con los parametros para 16MB" \
    2 "Compilar Retro-Go para CFW y parametros 16MB" \
    3 "Flashear Retro-Go para CFW y parametros 16MB" \

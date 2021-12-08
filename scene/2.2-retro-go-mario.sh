@@ -13,7 +13,7 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --title "G&W $consola CFW + Retro-Go /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
 --ok-label Apply \
 --cancel-label Exit \
---menu "Selecciona con las flechas la opcion deseada:" 14 150 15 \
+--menu "Selecciona con las flechas la opcion deseada:" 14 140 15 \
    1 "Subir solo Retro-Go en consola de 1MB sin CFW" \
    2 "Menu CFW + Retro-Go en consola G&W $consola original 1MB" \
    3 "Menu CFW + Retro-Go en consola G&W $consola con 16MB" \
