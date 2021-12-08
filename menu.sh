@@ -23,7 +23,7 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --title "Game&Watch - Menu ayuda para el flasheo" \
 --ok-label Apply \
 --cancel-label Exit \
---menu "Selecciona con las flechas la opcion deseada:" 10 120 15 \
+--menu "Selecciona con las flechas la opcion deseada:" 12 125 15 \
    1 "Cambio de usuario. IMPORTANTE: la primera vez es esencial ejecutar esto para el correcto funcionamiento" \
    2 "Cambio de modelo de consola (actual = $consola). IMPORTANTE: Escoge el modelo correcto para el correcto funcionamiento" \
    3 "Menu instalacion paquetes y programas necesarios y actualizacion del firm del STLINK" \
@@ -33,11 +33,11 @@ menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
     ./instalacion/1.1-cambio-usuario.sh
-    ./1-menu-instalacion.sh
+    ./menu.sh
     clear;;
   2)clear
     ./instalacion/1.2-cambio-consola.sh
-    ./1-menu-instalacion.sh
+    ./menu.sh
     clear;;
   3)clear
     ./1-menu-instalacion.sh
