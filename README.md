@@ -1,7 +1,7 @@
 # GnW por julenvitoria
-Game & Watch Super Mario 35th aniversary menus utilidades para backup, restauracion y flasheo de CFW y Retro-Go.
+Game & Watch Super Mario 35th aniversary y Zelda - menus utilidades para backup, restauracion y flasheo de CFW y Retro-Go.
 
-ATENCION: ESTOS MENUS ESTAN AUN SIN TERMINAR AUNQUE LO QUE TIENEN HASTA EL MOMENTO ES FUNCIONAL
+ATENCION: ESTOS MENUS ESTAN AUN SIN TERMINAR.SI SE ELIGE COMO CONSOLA MARIO TODOS LOS MENUS SON FUNCIONALES. SI SE ELIGE COMO CONSOLA ZELDA HAY QUE TENER EN CUENTA QUE ESTÁ BAJO PRUEBAS
 
 Necesitaras introducir el siguiente comando en una ventana de terminal:
 
@@ -20,6 +20,7 @@ y ejecutar el menu con:
 
     ./menu.sh
 
+Una vez lanzado el menu es TOTALMENTE NECESARIO ejecutar las opciones 1 y 2 (cambio usuario y cambio de modelo de consola) del menu "instalacion" (opcion 1 del menu principal) para que TODO funcione de manera correcta
 
 Cabe destacar que los menus instalan todo el software en:
 
