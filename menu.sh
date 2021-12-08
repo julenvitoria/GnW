@@ -24,20 +24,30 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --ok-label Apply \
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 10 120 15 \
-   1 "Menu instalacion paquetes y programas necesarios y actualizacion del firm del STLINK" \
-   2 "Menu scene: backup/restauracion/liberacion y flasheo custom firm con Retro-Go" \
-   3 "Actualizar el repo local de estos scripts" 2>"${INPUT}"
+   1 "Cambio de usuario. IMPORTANTE: la primera vez es esencial ejecutar esto para el correcto funcionamiento" \
+   2 "Cambio de modelo de consola (actual = $consola). IMPORTANTE: Escoge el modelo correcto para el correcto funcionamiento" \
+   3 "Menu instalacion paquetes y programas necesarios y actualizacion del firm del STLINK" \
+   4 "Menu scene: backup/restauracion/liberacion y flasheo custom firm con Retro-Go" \
+   5 "Actualizar el repo local de estos scripts" 2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
+    ./instalacion/1.1-cambio-usuario.sh
+    ./1-menu-instalacion.sh
+    clear;;
+  2)clear
+    ./instalacion/1.2-cambio-consola.sh
+    ./1-menu-instalacion.sh
+    clear;;
+  3)clear
     ./1-menu-instalacion.sh
     ./menu.sh
     clear;;
-  2)clear
+  4)clear
     ./2-menu-scene-$consola.sh
     ./menu.sh
     clear;;
-  3)clear
+  5)clear
     git reset --hard
     git pull --recurse-submodules
 	sleep 1
