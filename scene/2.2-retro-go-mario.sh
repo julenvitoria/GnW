@@ -10,7 +10,7 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --title "G&W $consola menu Retro-Go + custom firmware" \
 --msgbox "El proceso de flasheo se puede realizar de diferentes maneras, elige la mas conveniente a tu hardware. Si se ha cambiado el chip de memoria deberas haber restaurado el firmware original en la opcion 5 del menu \"scene>backup, restauracion y liberacion de la consola\". NOTA: Se recomienda realizar el proceso con la batería cargada al 100% para evitar sustos." 0 0
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2-retro-go-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
---title "G&W $consola CFW + Retro-Go /// INFO: Usuario = $usuario - Consola seleccionada = $consola - Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
+--title "G&W $consola CFW + Retro-Go /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
 --ok-label Apply \
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 14 150 15 \

@@ -7,7 +7,7 @@ consola="mario"
 proc="2"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-cfw-retro-go-1mb-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
---title "G&W CFW + Retro-Go 1MB /// INFO: Usuario = $usuario - Consola seleccionada = $consola - Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
+--title "G&W CFW + Retro-Go 1MB /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
 --ok-label Apply \
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 12 120 15 \
