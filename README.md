@@ -33,7 +33,7 @@ Por ejemplo, si el usuario que introducimos es pepito el directorio de instalaci
 
 ;)
 
-Principales fuentes para Backup (y desbloqueo), retro-go
+Principales fuentes para backup, desbloqueo, patch (CFW) y emulador (Retro-Go):
 
 [Repo de ghidraninja: Backup, restauracion y flasheo](https://github.com/ghidraninja/game-and-watch-backup)
     
