@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 
-dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: Usuario = $usuario ------------------" \
+dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 1.6-menu-flashloader.sh Usuario = $usuario ------------------" \
 --title "G&W menu flashloader" \
 --ok-label Apply \
 --cancel-label Exit \

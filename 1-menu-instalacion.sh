@@ -5,7 +5,7 @@ INPUT=/tmp/$MENU.sh.$$
 consola="mario"
 
 clear
-dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: Consola seleccionada = $consola ------------------" \
+dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 1-menu-instalacion.sh Consola seleccionada = $consola ------------------" \
 --title "Game & Watch - Menu de utilidades de flasheo" \
 --ok-label Apply \
 --cancel-label Exit \

@@ -6,7 +6,7 @@ usuario="kde"
 consola="mario"
 proc="2"
 
-dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
+dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.4-cfw-retro-go-64mb-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 --title "G&W menu de flasheo $consola 64MB" \
 --ok-label Apply \
 --cancel-label Exit \

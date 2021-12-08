@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 
-dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: Usuario = $usuario ------------------" \
+dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 1.9-menu-LCD-Game-Shrinker.sh Usuario = $usuario ------------------" \
 --title "G&W menu reductor para juegos LCD de Mame (LCD-Game-Shrinker)" \
 --ok-label Apply \
 --cancel-label Exit \

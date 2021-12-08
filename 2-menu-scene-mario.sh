@@ -5,7 +5,7 @@ INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="mario"
 
-dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
+dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2-menu-scene-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 --title "Game&Watch $consola - menu de flasheo" \
 --ok-label Apply \
 --cancel-label Exit \

@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 
-dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: Usuario = $usuario ------------------" \
+dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 1.8-menu-patch.sh Usuario = $usuario ------------------" \
 --title "G&W menu parche custom firmware para G&W" \
 --ok-label Apply \
 --cancel-label Exit \
