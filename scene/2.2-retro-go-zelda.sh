@@ -23,7 +23,7 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
-    ./scene/2.2.1-retro-go-1mb-$consola.sh
+    ./scene/2.2.1-retro-go-4mb-$consola.sh
     ./scene/2.2-retro-go-$consola.sh
     clear;;
   2)clear
