@@ -113,9 +113,6 @@ case $menuitem in
         echo -e "\e[1;31mPulsa y manten pulsado el boton de encendido y justo despues pulsa cualquier tecla para continuar...\nATENCION: No sueltes el boton al menos hasta que empiece a borrar la memoria externa (cuando pone \"Erasing xxxx bytes...\" en la pantalla)\e[0m"
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
-        #make clean
-        #make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=64 INTFLASH_BANK=2 flash
-        #make PATCH_PARAMS="--device=zelda" LARGE_FLASH=1 flash_patched
         make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=60 EXTFLASH_OFFSET=4194304 INTFLASH_BANK=2 GNW_TARGET=zelda flash
         cd -
         echo " "
@@ -160,9 +157,6 @@ case $menuitem in
                 clear
                 cd /home/$usuario/gameandwatch/game-and-watch-patch
                 make clean
-                #make flash_patched_ext
-                #make flash_patched_int
-                #make PATCH_PARAMS="--device=$consola --internal-only" flash_patched
                 make PATCH_PARAMS="--device=$consola" LARGE_FLASH=1 flash_patched
                 cd -
                 echo " "
@@ -183,7 +177,8 @@ case $menuitem in
                 echo -e "\e[0;32mvamos a hacer un power cycle (quitar bateria, reconectar y encender) pulsaremos el boton de encendido y lo \e[0m"
                 echo -e "\e[0;32mmantendremos pulsado unos segundos, le diremos que si con \"y\" (yes), entonces el proceso continuara.\e[0m"
                 echo -e "\e[1;31mPulsa y manten pulsado el boton de encendido y justo despues pulsa cualquier tecla para continuar...\nATENCION: No sueltes el boton al menos hasta que empiece a borrar la memoria externa (cuando pone \"Erasing xxxx bytes...\" en la pantalla)\e[0m"
-                read -n 1 -s -r -p ""
+                echo " "
+                read -n 1 -s -r -p "Pulsa cualquier tecla para continuar cuando lo tengas listo..."
                 make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=60 EXTFLASH_OFFSET=4194304 INTFLASH_BANK=2 GNW_TARGET=zelda flash
                 cd -
                 echo " "
