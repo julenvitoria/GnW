@@ -40,11 +40,11 @@ case $menuitem in
     clear;;
   5)clear
     ./scene/2.2.5-actualizacion-retro-go.sh
-    ./scene/2.2-retro-go.sh
+    ./scene/2.2-retro-go-$consola.sh
     clear;;
   6)clear
     ./scene/2.2.6-actualizacion-parche.sh
-    ./scene/2.2-retro-go.sh
+    ./scene/2.2-retro-go-$consola.sh
     clear;;
 esac
 clear
