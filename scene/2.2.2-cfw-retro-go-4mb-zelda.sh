@@ -70,7 +70,7 @@ case $menuitem in
             --title "Instalar firmware original + Retro-Go  en consola con 1MB" \
             --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.2-cfw-retro-go-1mb-$consola.sh
+    ./scene/2.2.2-cfw-retro-go-4mb-$consola.sh
     clear;;
   2)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
@@ -94,7 +94,7 @@ case $menuitem in
         --title "Compilar Retro-Go" \
         --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.2-cfw-retro-go-1mb-$consola.sh
+    ./scene/2.2.2-cfw-retro-go-4mb-$consola.sh
     clear;;
   3)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
@@ -126,7 +126,7 @@ case $menuitem in
         --title "Instalar solo Retro-Go" \
         --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.2-cfw-retro-go-1mb-$consola.sh
+    ./scene/2.2.2-cfw-retro-go-4mb-$consola.sh
     clear;;
   4)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
@@ -196,7 +196,7 @@ case $menuitem in
             --title "Instalar firmware original + Retro-Go  en consola con 1MB" \
             --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.2-cfw-retro-go-1mb-$consola.sh
+    ./scene/2.2.2-cfw-retro-go-4mb-$consola.sh
     clear;;
 esac
 clear
