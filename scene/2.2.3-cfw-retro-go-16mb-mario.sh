@@ -18,8 +18,8 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo" \
    2 "Compilar Retro-Go para CFW \"slim\" y parametros 16MB" \
    3 "Flashear Retro-Go para CFW \"slim\" y parametros 16MB" \
    4 "CFW \"full\" con los parametros para 16MB" \
-   5 "Compilar Retro-Go para CFW \"NO slim\" y parametros 16MB" \
-   6 "Flashear Retro-Go para CFW \"NO slim\" y parametros 16MB" \
+   5 "Compilar Retro-Go para CFW \"full\" y parametros 16MB" \
+   6 "Flashear Retro-Go para CFW \"full\" y parametros 16MB" \
    7 "CFW \"slim\" + Retro-Go (solo un paso pero menos seguro)" \
    8 "CFW \"full\"+ Retro-Go (solo un paso pero menos seguro)" 2>"${INPUT}"
 menuitem=$(<"${INPUT}")
