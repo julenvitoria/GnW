@@ -70,7 +70,7 @@ case $menuitem in
             --title "Instalar firmware original + Retro-Go  en consola con 1MB" \
             --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.2-cfw-retro-go-1mb.sh
+    ./scene/2.2.2-cfw-retro-go-1mb-$consola.sh
     clear;;
   2)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
@@ -81,8 +81,8 @@ case $menuitem in
         clear
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         make clean
-        make -j$proc COMPRESS=lzma INTFLASH_BANK=2
-		cd -
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 GNW_TARGET=zelda
+        cd -
         echo " "
         echo " "
         read -n 1 -s -r -p "Proceso concluido. Presiona cualquier tecla para continuar."
@@ -94,7 +94,7 @@ case $menuitem in
         --title "Compilar Retro-Go" \
         --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.2-cfw-retro-go-1mb.sh
+    ./scene/2.2.2-cfw-retro-go-1mb-$consola.sh
     clear;;
   3)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
@@ -115,7 +115,7 @@ case $menuitem in
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         #make clean
-        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 flash
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 GNW_TARGET=zelda flash
         cd -
         read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
         dialog --backtitle "G&W $consola - Utilidades de flasheo" \
@@ -126,7 +126,7 @@ case $menuitem in
         --title "Instalar solo Retro-Go" \
         --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.2-cfw-retro-go-1mb.sh
+    ./scene/2.2.2-cfw-retro-go-1mb-$consola.sh
     clear;;
   4)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
@@ -158,7 +158,6 @@ case $menuitem in
                 clear
                 cd /home/$usuario/gameandwatch/game-and-watch-patch
                 make clean
-                #make PATCH_PARAMS="--internal-only" flash_patched_int
                 make PATCH_PARAMS="--device=$consola --internal-only" flash_patched
                 cd -
                 echo " "
@@ -176,7 +175,7 @@ case $menuitem in
                 read -n 1 -s -r -p ""
                 cd /home/$usuario/gameandwatch/game-and-watch-retro-go
                 make clean
-                make -j$proc COMPRESS=lzma INTFLASH_BANK=2 flash
+                make -j$proc COMPRESS=lzma INTFLASH_BANK=2 GNW_TARGET=zelda flash
                 cd -
                 echo " "
                 echo " "
@@ -197,7 +196,7 @@ case $menuitem in
             --title "Instalar firmware original + Retro-Go  en consola con 1MB" \
             --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.2-cfw-retro-go-1mb.sh
+    ./scene/2.2.2-cfw-retro-go-1mb-$consola.sh
     clear;;
 esac
 clear
