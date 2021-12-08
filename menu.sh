@@ -74,7 +74,6 @@ case $menuitem in
 		sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb-mario.sh
 		sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-mario.sh
 		sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./menu.sh
-		read -n 1 -s -r -p "Proceso realizado. Presiona cualquier tecla para continuar"
     fi
 	if [ $consola = zelda ]; then
 	    sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./1-menu-instalacion.sh
