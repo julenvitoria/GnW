@@ -6,7 +6,7 @@ usuario="kde"
 consola="mario"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo" \
---title "Game&Watch menu de flasheo" \
+--title "Game&Watch $consola - menu de flasheo" \
 --ok-label Apply \
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 10 120 15 \
