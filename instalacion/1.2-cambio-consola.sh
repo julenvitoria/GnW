@@ -3,7 +3,7 @@
 
 INPUT=/tmp/$MENU.sh.$$
 
-dialog --backtitle "G&W - Utilidades de flasheo" \
+dialog --backtitle "G&W $consola - Utilidades de flasheo" \
 --title "G&W menu de cambio de consola" \
 --ok-label Apply \
 --cancel-label Exit \

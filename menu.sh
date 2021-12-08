@@ -19,7 +19,7 @@ else
         sleep 0.5
 fi
 clear
-dialog --backtitle "Game&Watch  - Menu ayuda para el flasheo" \
+dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 --title "Game&Watch - Menu ayuda para el flasheo" \
 --ok-label Apply \
 --cancel-label Exit \

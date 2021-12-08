@@ -5,7 +5,7 @@ INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="zelda"
 
-dialog --backtitle "G&W $consola - Utilidades de flasheo" \
+dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 --title "Game&Watch $consola - menu de flasheo" \
 --ok-label Apply \
 --cancel-label Exit \

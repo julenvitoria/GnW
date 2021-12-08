@@ -5,7 +5,7 @@ INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="mario"
 
-dialog --backtitle "G&W $consola - Utilidades de flasheo" \
+dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 --title "G&W menu backup/restauracion/liberacion" \
 --msgbox "POR FAVOR LEER / MUY IMPORTANTE:\n\nDos normas son obligatorias:\n1ª - NUNCA desconectes el stlink del usb\n2ª - NUNCA BAJO NINGUN CONCEPTO sigas con el paso siguiente si el actual te dió error.\n\nEl proceso de liberación consta de 5 pasos. Cada uno se encarga de un proceso vital en la liberación y no se debe saltar al paso siguiente hasta haber completado el actual. En algunos pasos el ordenador nos dará instrucciones sobre como proceder. Es importante seguirlas tal y como se exponen. Ademas, en algunos momentos puede parecer que el proceso se ha parado pero no es así; algunos pasos pueden tardar hasta 5 minutos en completarse. NOTA: Se recomienda realizar el proceso con la batería cargada al 100% para evitar sustos." 0 0
 dialog --backtitle "G&W $consola - Utilidades de flasheo" \

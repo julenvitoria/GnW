@@ -6,7 +6,7 @@ usuario="kde"
 consola="mario"
 proc="2"
 
-dialog --backtitle "G&W $consola - Utilidades de flasheo" \
+dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 --title "G&W menu de flasheo $consola original 1MB" \
 --ok-label Apply \
 --cancel-label Exit \

@@ -6,7 +6,7 @@ usuario="kde"
 consola="mario"
 proc="2"
 
-dialog --backtitle "G&W $consola - Utilidades de flasheo" \
+dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 --title "G&W $consola menu Retro-Go + custom firmware" \
 --msgbox "El proceso de flasheo se puede realizar de diferentes maneras, elige la mas conveniente a tu hardware. Si se ha cambiado el chip de memoria deberas haber restaurado el firmware original en la opcion 5 del menu \"scene>backup, restauracion y liberacion de la consola\". NOTA: Se recomienda realizar el proceso con la batería cargada al 100% para evitar sustos." 0 0
 dialog --backtitle "G&W $consola - Utilidades de flasheo" \
