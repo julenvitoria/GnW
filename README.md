@@ -20,7 +20,7 @@ y ejecutar el menu con:
 
     ./menu.sh
 
-Una vez lanzado el menu es TOTALMENTE NECESARIO ejecutar las opciones 1 y 2 (cambio usuario y cambio de modelo de consola) del menu "instalacion" (opcion 1 del menu principal) para que TODO funcione de manera correcta
+Una vez lanzado el menu es TOTALMENTE NECESARIO ejecutar las opciones 1 y 2 (cambio usuario y cambio de modelo de consola) del menu principal.
 
 Cabe destacar que los menus instalan todo el software en:
 
