@@ -56,5 +56,6 @@ case $menuitem in
   9)clear
     ./instalacion/1.11-actualizador-firmware.sh
     ./1-menu-instalacion.sh
-    clear;;esac
+    clear;;
+esac
 clear
