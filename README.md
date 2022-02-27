@@ -3,10 +3,12 @@ Game & Watch Super Mario 35th aniversary y Zelda - menus utilidades para backup,
 
 ATENCION: ESTOS MENUS ESTAN AUN SIN TERMINAR.SI SE ELIGE COMO CONSOLA MARIO TODOS LOS MENUS SON FUNCIONALES. SI SE ELIGE COMO CONSOLA ZELDA HAY QUE TENER EN CUENTA QUE ESTÁ BAJO PRUEBAS
 
-Necesitaras introducir el siguiente comando en una ventana de terminal:
+Necesitaras introducir los siguientes comandos en una ventana de terminal:
 
 
-    wget -O- https://raw.githubusercontent.com/julenvitoria/GnW/main/gnw.sh | bash
+    cd ~
+    
+    git clone https://github.com/julenvitoria/GnW
 
 
 Una vez realizado sono tendras que acceder al directorio con:
