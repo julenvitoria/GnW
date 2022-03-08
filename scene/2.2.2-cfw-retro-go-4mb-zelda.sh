@@ -20,7 +20,7 @@ case $menuitem in
   1)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
     --title "Instalar Retro-Go en consola G&W $consola con 4MB" \
-    --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Este proceso es solamente para una consola con el chip de 1MB instalado (chip original).\n\n¡¡¡ATENCION!!!\nSI SE TIENE DIFERENTE CANTIDAD DE MEMORIA CANCELAR EL PROCESO y una vez vuelto al menu seleccionar el correcto.\n\nSe flasheara un custom firmware que consta del menu original de la consola ademas del emulador Retro-Go. El emulador aparecera al realizar el combo de botones \"LEFT\" + \"GAME\". Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola ¿Deseas continuar?" 0 0
+    --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Este proceso es solamente para una consola con el chip de 4MB instalado (chip original).\n\n¡¡¡ATENCION!!!\nSI SE TIENE DIFERENTE CANTIDAD DE MEMORIA CANCELAR EL PROCESO y una vez vuelto al menu seleccionar el correcto.\n\nSe flasheara un custom firmware que consta del menu original de la consola ademas del emulador Retro-Go. El emulador aparecera al realizar el combo de botones \"LEFT\" + \"GAME\". Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola ¿Deseas continuar?" 0 0
     ans=$?
     if [ $ans -eq 0 ]; then
         clear
@@ -48,7 +48,7 @@ case $menuitem in
                 cd /home/$usuario/gameandwatch/game-and-watch-patch
                 make clean
                 #make PATCH_PARAMS="--internal-only" flash_patched_int
-                make PATCH_PARAMS="--device=$consola" flash_patched
+                make PATCH_PARAMS="--device=$consola --extended --no-la --no-sleep-images --extended" flash
                 cd -
                 echo " "
                 echo " "
@@ -63,11 +63,11 @@ case $menuitem in
             sleep 2
         fi
         dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-        --title "Instalar firmware original + Retro-Go  en consola con 1MB" \
+        --title "Instalar firmware original + Retro-Go  en consola con 4MB" \
         --msgbox "Proceso realizado." 0 0
     else
             dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-            --title "Instalar firmware original + Retro-Go  en consola con 1MB" \
+            --title "Instalar firmware original + Retro-Go  en consola con 4MB" \
             --msgbox "Proceso cancelado." 0 0
     fi
     ./scene/2.2.2-cfw-retro-go-4mb-$consola.sh
@@ -81,7 +81,7 @@ case $menuitem in
         clear
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         make clean
-        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 GNW_TARGET=zelda
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE=1802240 EXTFLASH_OFFSET=851968 GNW_TARGET=zelda EXTENDED=1
         cd -
         echo " "
         echo " "
@@ -115,7 +115,7 @@ case $menuitem in
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         #make clean
-        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 GNW_TARGET=zelda flash
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE=1802240 EXTFLASH_OFFSET=851968 GNW_TARGET=zelda EXTENDED=1 flash
         cd -
         read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
         dialog --backtitle "G&W $consola - Utilidades de flasheo" \
@@ -158,7 +158,7 @@ case $menuitem in
                 clear
                 cd /home/$usuario/gameandwatch/game-and-watch-patch
                 make clean
-                make PATCH_PARAMS="--device=$consola --internal-only" flash_patched
+                make PATCH_PARAMS="--device=$consola --extended --no-la --no-sleep-images --extended" flash
                 cd -
                 echo " "
                 echo " "
@@ -175,7 +175,7 @@ case $menuitem in
                 read -n 1 -s -r -p ""
                 cd /home/$usuario/gameandwatch/game-and-watch-retro-go
                 make clean
-                make -j$proc COMPRESS=lzma INTFLASH_BANK=2 GNW_TARGET=zelda flash
+                make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE=1802240 EXTFLASH_OFFSET=851968 GNW_TARGET=zelda EXTENDED=1 flash
                 cd -
                 echo " "
                 echo " "
