@@ -119,12 +119,12 @@ case $menuitem in
                         rsync -ab /home/kde/gameandwatch/game-and-watch-backup/backups/*_mario.bin /home/kde/gameandwatch/firms/mario/$(date +%d-%m-%Y_%H:%M:%S)
                     else
                         mkdir /home/$usuario/gameandwatch/firms/$consola
-                        rsync -ab /home/kde/gameandwatch/game-and-watch-backup/backups/*_mario.bin /home/kde/gameandwatch/firms/mario/$(date +%d-%m-%Y_%H:%M:%S)
+                        rsync -ab /home/kde/gameandwatch/game-and-watch-backup/backups/*_$consola.bin /home/$usuario/gameandwatch/firms/$consola/$(date +%d-%m-%Y_%H:%M:%S)
                     fi
                 else
                     mkdir /home/$usuario/gameandwatch/firms
                     mkdir /home/$usuario/gameandwatch/firms/$consola
-                    rsync -ab /home/kde/gameandwatch/game-and-watch-backup/backups/*_mario.bin /home/kde/gameandwatch/firms/mario/$(date +%d-%m-%Y_%H:%M:%S)
+                    rsync -ab /home/kde/gameandwatch/game-and-watch-backup/backups/*_$consola.bin /home/$usuario/gameandwatch/firms/$consola/$(date +%d-%m-%Y_%H:%M:%S)
                  fi
                 echo " "
                 echo "Se han copiado los archivos de la flash interna y externa"
