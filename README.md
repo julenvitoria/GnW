@@ -1,7 +1,8 @@
 # GnW por julenvitoria
 Game & Watch Super Mario 35th aniversary y Zelda - menus utilidades para backup, restauracion y flasheo de CFW y Retro-Go.
 
-ATENCION: ESTOS MENUS ESTAN AUN SIN TERMINAR.SI SE ELIGE COMO CONSOLA MARIO TODOS LOS MENUS SON FUNCIONALES. SI SE ELIGE COMO CONSOLA ZELDA HAY QUE TENER EN CUENTA QUE ESTÁ BAJO PRUEBAS
+ATENCION: ESTOS MENUS ESTAN AUN SIN TERMINAR.
+ACTUALIZACIÓN: MENÚS ZELDA COMPLETAMENTE FUNCIONALES :P
 
 Necesitaras introducir los siguientes comandos en una ventana de terminal:
 
@@ -34,6 +35,15 @@ Por ejemplo, si el usuario que introducimos es pepito el directorio de instalaci
 /home/pepito/gameandwatch
 
 ;)
+
+Pequeños ejemplos orientativos:
+
+Ejemplo de chip mal soldado: esto sale al ir a flashear retrogo, al intentar entrar a través del cfw también
+
+Materiales necesarios: (si no funcionará el link buscar por el nombre a través de la descripción o por foto
+1-[ST link V2](https://a.aliexpress.com/_u7VS8M)
+
+2-Chips y sus tipos
 
 Principales fuentes para backup, desbloqueo, patch (CFW) y emulador (Retro-Go):
 
