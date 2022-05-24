@@ -119,24 +119,17 @@ case $menuitem in
                         rsync -ab /home/kde/gameandwatch/game-and-watch-backup/backups/*_mario.bin /home/kde/gameandwatch/firms/mario/$(date +%d-%m-%Y_%H:%M:%S)
                     else
                         mkdir /home/$usuario/gameandwatch/firms/$consola
-                        rsync -ab /home/kde/gameandwatch/game-and-watch-backup/backups/*_$consola.bin /home/$usuario/gameandwatch/firms/$consola/$(date +%d-%m-%Y_%H:%M:%S)
+                        rsync -ab /home/$usuario/gameandwatch/game-and-watch-backup/backups/*_$consola.bin /home/$usuario/gameandwatch/firms/$consola/$(date +%d-%m-%Y_%H:%M:%S)
                     fi
                 else
                     mkdir /home/$usuario/gameandwatch/firms
                     mkdir /home/$usuario/gameandwatch/firms/$consola
-                    rsync -ab /home/kde/gameandwatch/game-and-watch-backup/backups/*_$consola.bin /home/$usuario/gameandwatch/firms/$consola/$(date +%d-%m-%Y_%H:%M:%S)
+                    rsync -ab /home/$usuario/gameandwatch/game-and-watch-backup/backups/*_$consola.bin /home/$usuario/gameandwatch/firms/$consola/$(date +%d-%m-%Y_%H:%M:%S)
                  fi
                 echo " "
                 echo "Se han copiado los archivos de la flash interna y externa"
                 echo " "
                 sleep 2
-        #if [ -f /home/$usuario/gameandwatch/game-and-watch-backup/backups/*.bin ]; then
-            #mkdir /home/$usuario/gameandwatch/firms/$(date +%d-%m-%Y_%H:%M:%S) | cp /home/$usuario/gameandwatch/game-and-watch-backup/backups/*.bin /home/$usuario/gameandwatch/firms/$(date +%d-%m-%Y_%H:%M:%S)
-            #else
-            #dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-            #--title "Realizar copia de seguridad del firmware descargado" \
-            #--msgbox "No se han encontrado archivos .bin" 0 0
-        #fi
             else
                 echo "No se ha encontrado internal_flash_backup_$consola.bin, cancelando..."
                 sleep 2
