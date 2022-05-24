@@ -116,7 +116,7 @@ case $menuitem in
                 sleep 1
                 if [ -d /home/$usuario/gameandwatch/firms/ ]; then
                     if [ -d /home/$usuario/gameandwatch/firms/$consola ]; then
-                        rsync -ab /home/kde/gameandwatch/game-and-watch-backup/backups/*_mario.bin /home/kde/gameandwatch/firms/mario/$(date +%d-%m-%Y_%H:%M:%S)
+                        rsync -ab /home/$usuario/gameandwatch/game-and-watch-backup/backups/*_mario.bin /home/$usuario/gameandwatch/firms/mario/$(date +%d-%m-%Y_%H:%M:%S)
                     else
                         mkdir /home/$usuario/gameandwatch/firms/$consola
                         rsync -ab /home/$usuario/gameandwatch/game-and-watch-backup/backups/*_$consola.bin /home/$usuario/gameandwatch/firms/$consola/$(date +%d-%m-%Y_%H:%M:%S)
