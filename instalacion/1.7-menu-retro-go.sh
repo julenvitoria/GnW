@@ -20,7 +20,7 @@ case $menuitem in
         sudo rm -R /home/$usuario/gameandwatch/game-and-watch-retro-go
     fi
     #sleep 5
-    git clone --recurse-submodules https://github.com/kbeckmann/game-and-watch-retro-go
+    git clone --recurse-submodules https://github.com/olderzeus/game-and-watch-retro-go
     cd game-and-watch-retro-go
     pip3 install -r requirements.txt
     clear;;
