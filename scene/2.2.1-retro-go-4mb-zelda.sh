@@ -6,7 +6,7 @@ proc="2"
 
 clear
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-retro-go-4mb-zelda.sh Usuario = $usuario ------------------" \
---title "Instalar solo Retro-Go en consola 1MB" \
+--title "Instalar solo Retro-Go en consola 4MB" \
 --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Se flasheara solamente el emulador Retro-Go por lo que no tendremos el menu original. Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola." 0 0
 ans=$?
 if [ $ans -eq 0 ]; then

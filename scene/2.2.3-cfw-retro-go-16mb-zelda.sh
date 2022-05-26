@@ -23,7 +23,7 @@ case $menuitem in
   1)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
     --title "Instalar CFW slim en G&W $consola con 16MB" \
-    --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Este proceso es solamente para una consola con el chip de 1MB instalado (chip original).\n\n¡¡¡ATENCION!!!\nSI SE TIENE DIFERENTE CANTIDAD DE MEMORIA CANCELAR EL PROCESO y una vez vuelto al menu seleccionar el correcto.\n\nSe flasheara un custom firmware que consta del menu original de la consola ademas del emulador Retro-Go. El emulador aparecera al realizar el combo de botones \"LEFT\" + \"GAME\". Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola ¿Deseas continuar?" 0 0
+    --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Este proceso es solamente para una consola con el chip de 16MB instalado.\n\n¡¡¡ATENCION!!!\nSI SE TIENE DIFERENTE CANTIDAD DE MEMORIA CANCELAR EL PROCESO y una vez vuelto al menu seleccionar el correcto.\n\nSe flasheara un custom firmware que consta del menu original de la consola ademas del emulador Retro-Go. El emulador aparecera al realizar el combo de botones \"LEFT\" + \"GAME\". Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola ¿Deseas continuar?" 0 0
     ans=$?
     if [ $ans -eq 0 ]; then
         clear
@@ -71,7 +71,7 @@ case $menuitem in
         --msgbox "Proceso realizado." 0 0
     else
             dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-            --title "Instalar firmware original + Retro-Go  en consola con 1MB" \
+            --title "Instalar firmware original + Retro-Go  en consola con 16MB" \
             --msgbox "Proceso cancelado." 0 0
     fi
     ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh
