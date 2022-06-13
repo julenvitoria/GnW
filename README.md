@@ -36,9 +36,19 @@ Por ejemplo, si el usuario que introducimos es pepito el directorio de instalaci
 
 ;)
 
+*****************************
 
+Conexiones de las placas de Mario 35 aniversario y Zelda:
 
-Pequeños ejemplos orientativos:
+MARIO 35th ANIVERSARY
+![5C31E0BB-8494-49D9-A9AF-945A3DA73A72](https://user-images.githubusercontent.com/36037023/173341010-8073b4a8-d50a-42ad-a823-e50416db6ccb.jpeg)
+
+ZELDA
+![D9157435-C2FA-4AD2-B7B0-4BEC4ACFF332](https://user-images.githubusercontent.com/36037023/173341112-570a597f-d710-46e1-8262-b1b939d9caf8.jpeg)
+
+*****************************
+
+Pequeños ejemplos orientativos de errores y situaciones que se pueden dar durante el proceso:
 
 Ejemplo de chip recien soldado y funcionando correctamente. Esto sale porque aun no hemos flasheado nada en el y su contenido esta en raw (sin formato) por lo que es logico que salga una imagen corrupta, pero repito, si sale esto es que esta funcionando correctamente:
 ![0A7A7CE2-4AC0-4E3D-90C6-FC481F899658](https://user-images.githubusercontent.com/36037023/168867528-cf122aef-fff6-4f58-8379-62b71c8d2a22.jpeg)
@@ -49,8 +59,7 @@ Ejemplo de chip mal soldado: esto sale al ir a flashear retrogo, al intentar ent
 Ejemplo de chip abombado causado por haber venido mal o por haberle dado mucho calor con el soldador durante tiempo excesivo. Cuando  ocurre eso también suele salir la imagen de chip mal soldado.
 ![9ABD9809-48DB-4AF2-8708-69B69FB41B7F](https://user-images.githubusercontent.com/36037023/168869468-7d28cb5f-89c4-41b4-844c-4b18e9b6e523.jpeg)
 
-
-
+*****************************
 
 Materiales necesarios: (si no funcionará el link buscar por el nombre a través de la descripción o por foto
 1-[ST link V2](https://a.aliexpress.com/_u7VS8M)
@@ -63,8 +72,7 @@ Materiales necesarios: (si no funcionará el link buscar por el nombre a través
 [Chip de 64MB MX25U51245GZ4I00] (https://a.aliexpress.com/_vEvapZ)
 ![13DFCC5B-DB22-4210-8C69-BE9A819BE259](https://user-images.githubusercontent.com/36037023/168864375-0fe08d17-7bf0-4f68-b122-3f673a20441c.jpeg)
 
-
-
+*****************************
 
 Principales fuentes para backup, desbloqueo, patch (CFW) y emulador (Retro-Go):
 
