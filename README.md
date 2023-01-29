@@ -79,6 +79,8 @@ Principales fuentes para backup, desbloqueo, patch (CFW) y emulador (Retro-Go):
 [Repo de ghidraninja: Backup, restauracion y flasheo](https://github.com/ghidraninja/game-and-watch-backup)
     
 [Repo de kbeckmann: emulador Retro-Go](https://github.com/kbeckmann/game-and-watch-retro-go)
+
+[Repo de sylverb: emulador retro-go modificado para emular MSX, MegaDrive, etc, con mejoras de código](https://github.com/sylverb/game-and-watch-retro-go)
     
 [Repo de Brian Pugh: Parche para tener custom firmware](https://github.com/BrianPugh/game-and-watch-patch)
 
