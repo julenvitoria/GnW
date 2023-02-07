@@ -2,6 +2,7 @@
 #By julenvitoria
 
 usuario="kde"
+consola="zelda"
 proc="2"
 
 clear
@@ -27,7 +28,7 @@ if [ $ans -eq 0 ]; then
     echo -e "\e[1;31mPulsa y manten pulsado el boton de encendido y justo despues pulsa cualquier tecla para continuar...\nATENCION: No sueltes el boton al menos hasta que empiece a borrar la memoria externa (cuando pone \"Erasing xxxx bytes...\" en la pantalla\e[0m"
     echo " "
     read -n 1 -s -r -p "Pulsa cualquier tecla para continuar cuando lo tengas listo..."
-	make -j$proc COMPRESS=lzma GNW_TARGET=zelda flash
+	make -j$proc COMPRESS=lzma GNW_TARGET=$consola flash
     echo " "
     echo " "
     echo " "

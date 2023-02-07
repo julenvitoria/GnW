@@ -2,6 +2,7 @@
 #By julenvitoria
 
 usuario="kde"
+consola="mario"
 proc="2"
 
 clear
@@ -23,7 +24,7 @@ if [ $ans -eq 0 ]; then
     read -n 1 -s -r -p ""
     cd /home/$usuario/gameandwatch/game-and-watch-retro-go
     make clean
-    make -j$proc COMPRESS=lzma flash
+    make -j$proc COMPRESS=lzma GNW_TARGET=$consola flash
     read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
     dialog --backtitle "G&W - Utilidades de flasheo" \
     --title "Instalar solo Retro-Go" \
