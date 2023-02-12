@@ -76,7 +76,7 @@ case $menuitem in
             --title "Instalar firmware original + Retro-Go  en consola con 16MB" \
             --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh
+    ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh/media/kde/WD-4tb/git/GnW/
     clear;;
   2)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
@@ -88,7 +88,7 @@ case $menuitem in
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         make clean
         make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE_MB=16 GNW_TARGET=$consola
-		cd -
+        cd -
         echo " "
         echo " "
         read -n 1 -s -r -p "Proceso concluido. Presiona cualquier tecla para continuar."
@@ -138,7 +138,7 @@ case $menuitem in
     clear;;
   4)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-    --title "Instalar CFW en G&W $consola con 16MB" \
+    --title "Instalar CFW en G&W $consola con 16/media/kde/WD-4tb/git/GnW/MB" \
     --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Este proceso es solamente para una consola con el chip de 16MB.\n\n¡¡¡ATENCION!!!\nSI SE TIENE DIFERENTE CANTIDAD DE MEMORIA CANCELAR EL PROCESO y una vez vuelto al menu seleccionar el correcto.\n\nSe flasheara un custom firmware que consta del menu original de la consola ademas del acceso al emulador Retro-Go. El emulador aparecera al realizar el combo de botones \"LEFT\" + \"GAME\". ¿Deseas continuar?" 0 0
     ans=$?
     if [ $ans -eq 0 ]; then
