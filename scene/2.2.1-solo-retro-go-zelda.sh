@@ -14,7 +14,7 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --ok-label Apply \
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 14 140 15 \
-   1 "Subir solo Retro-Go sin CFW en consola con 1MB" \
+   1 "Subir solo Retro-Go sin CFW en consola con 4MB" \
    2 "Subir solo Retro-Go sin CFW en consola con 16MB" \
    3 "Subir solo Retro-Go sin CFW en consola con 64MB"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
