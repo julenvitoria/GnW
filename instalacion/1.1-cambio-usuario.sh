@@ -26,7 +26,7 @@ if [ "$confirm" = "s" ]; then
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2-retro-go-mario.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2-retro-go-zelda.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.1-solo-retro-go-mario.sh
-    sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.1-retro-go-4mb-zelda.sh
+    sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.1-solo-retro-go-zelda.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.2-cfw-retro-go-1mb-mario.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.2-cfw-retro-go-4mb-zelda.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb-mario.sh
@@ -40,13 +40,13 @@ if [ "$confirm" = "s" ]; then
 else
     if [ "$confirm" = "S" ]
     then
-        confirm="S"2.2.1-solo-retro-go-mario.sh
+        confirm="S"
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.3-preparacion-sistema.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.4-openocd.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.5-menu-backup-restore-tools.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.6-menu-flashloader.sh2.2.1-solo-retro-go-mario.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.6-menu-flashloader.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.7-menu-retro-go.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.8-menu-patch.sh2.2.1-solo-retro-go-mario.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.8-menu-patch.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.9-menu-LCD-Game-Shrinker.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.10-instalacion-completa.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./2-menu-scene-mario.sh
@@ -55,7 +55,7 @@ else
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2-retro-go-mario.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2-retro-go-zelda.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.1-solo-retro-go-mario.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.1-retro-go-4mb-zelda.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.1-solo-retro-go-zelda.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.2-cfw-retro-go-1mb-mario.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.2-cfw-retro-go-4mb-zelda.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb-mario.sh
