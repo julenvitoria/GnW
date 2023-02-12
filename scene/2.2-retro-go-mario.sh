@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="mario"
-proc="2"
+proc="6"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2-retro-go-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 --title "G&W $consola menu Retro-Go + custom firmware" \
@@ -14,7 +14,7 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --ok-label Apply \
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 14 140 15 \
-   1 "Subir solo Retro-Go en consola de 1MB sin CFW" \
+   1 "Subir solo Retro-Go en consola G&W $consola sin CFW" \
    2 "Menu CFW + Retro-Go en consola G&W $consola original 1MB" \
    3 "Menu CFW + Retro-Go en consola G&W $consola con 16MB" \
    4 "Menu CFW + Retro-Go en consola G&W $consola con 64MB" \
@@ -23,7 +23,8 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
-    ./scene/2.2.1-retro-go-1mb-$consola.sh
+    #./scene/2.2.1-retro-go-1mb-$consola.sh
+    ./scene/2.2.1-solo-retro-go-$consola.sh
     ./scene/2.2-retro-go-$consola.sh
     clear;;
   2)clear

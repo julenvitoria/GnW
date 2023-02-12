@@ -21,7 +21,7 @@ case $menuitem in
     clear;;
   2)clear
     sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2-retro-go-$consola.sh
-    sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.1-retro-go-1mb-$consola.sh
+    sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.1-solo-retro-go-$consola.sh
     sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.2-cfw-retro-go-1mb-$consola.sh
     sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh
     sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-$consola.sh
