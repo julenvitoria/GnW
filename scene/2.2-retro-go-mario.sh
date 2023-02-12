@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="mario"
-proc="2"
+proc="6"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2-retro-go-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 --title "G&W $consola menu Retro-Go + custom firmware" \
@@ -24,7 +24,7 @@ menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
     #./scene/2.2.1-retro-go-1mb-$consola.sh
-    ./scene/2.2.1-solo-retro-go-mario
+    ./scene/2.2.1-solo-retro-go-$consola.sh
     ./scene/2.2-retro-go-$consola.sh
     clear;;
   2)clear
