@@ -4,16 +4,18 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="mario"
-proc="6"
+proc="4"
+caratula="0"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2-retro-go-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 --title "G&W $consola menu Retro-Go + custom firmware" \
 --msgbox "El proceso de flasheo se puede realizar de diferentes maneras, elige la mas conveniente a tu hardware. Si se ha cambiado el chip de memoria deberas haber restaurado el firmware original en la opcion 5 del menu \"scene>backup, restauracion y liberacion de la consola\". NOTA: Se recomienda realizar el proceso con la batería cargada al 100% para evitar sustos." 0 0
-dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2-retro-go-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
+dialog --backtitle "G&W $consola - Utilidades de flasheo ------- INFO: 2.2-retro-go-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola    ////    Opcion caratula=$caratula (0=NO y 1=SI) -------" \
 --title "G&W $consola CFW + Retro-Go /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
 --ok-label Apply \
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 14 140 15 \
+   C "Opcion flasheo con caratula. Actualmente:$caratula (0=NO y 1=SI)" \
    1 "Subir solo Retro-Go en consola G&W $consola sin CFW" \
    2 "Menu CFW + Retro-Go en consola G&W $consola original 1MB" \
    3 "Menu CFW + Retro-Go en consola G&W $consola con 16MB" \
@@ -22,8 +24,11 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
    6 "Actualizacion del directorio del parche para el CFW"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
+  C)clear
+    ./scene/2.2.C-opcion-caratula.sh
+    ./scene/2.2-retro-go-$consola.sh
+    clear;;
   1)clear
-    #./scene/2.2.1-retro-go-1mb-$consola.sh
     ./scene/2.2.1-solo-retro-go-$consola.sh
     ./scene/2.2-retro-go-$consola.sh
     clear;;

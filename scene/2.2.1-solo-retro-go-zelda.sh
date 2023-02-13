@@ -5,6 +5,7 @@ INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="mario"
 proc="6"
+caratula="0"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-solo-retro-go-zelda.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 --title "G&W $consola menu Retro-Go + custom firmware" \
@@ -38,7 +39,7 @@ case $menuitem in
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         make clean
-        make -j$proc COMPRESS=lzma GNW_TARGET=$consola flash
+        make -j$proc COMPRESS=lzma COVERFLOW=$caratula GNW_TARGET=$consola flash
         read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
         dialog --backtitle "G&W - Utilidades de flasheo" \
         --title "Instalar solo Retro-Go" \
@@ -70,7 +71,7 @@ case $menuitem in
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         make clean
-        make -j$proc EXTFLASH_SIZE_MB=16 GNW_TARGET=$consola flash
+        make -j$proc EXTFLASH_SIZE_MB=16 COVERFLOW=$caratula GNW_TARGET=$consola flash
         read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
         dialog --backtitle "G&W - Utilidades de flasheo" \
         --title "Instalar solo Retro-Go" \
@@ -102,7 +103,7 @@ case $menuitem in
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         make clean
-        make -j$proc EXTFLASH_SIZE_MB=64 GNW_TARGET=$consola flash
+        make -j$proc EXTFLASH_SIZE_MB=64 COVERFLOW=$caratula GNW_TARGET=$consola flash
         read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
         dialog --backtitle "G&W - Utilidades de flasheo" \
         --title "Instalar solo Retro-Go" \
