@@ -4,7 +4,8 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="mario"
-proc="6"
+proc="4"
+caratula="0"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.4-cfw-retro-go-64mb-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 --title "G&W CFW + Retro-Go 64MB /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
@@ -82,7 +83,7 @@ case $menuitem in
         clear
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         make clean
-        make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=63 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 GNW_TARGET=$consola
+        make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=63 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula
         cd -
         echo " "
         echo " "
@@ -115,7 +116,7 @@ case $menuitem in
         echo -e "\e[1;31mPulsa y manten pulsado el boton de encendido y justo despues pulsa cualquier tecla para continuar...\nATENCION: No sueltes el boton al menos hasta que empiece a borrar la memoria externa (cuando pone \"Erasing xxxx bytes...\" en la pantalla)\e[0m"
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
-        make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=63 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 GNW_TARGET=$consola flash
+        make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=63 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula flash
         cd -
         echo " "
         echo " "
@@ -167,7 +168,7 @@ case $menuitem in
                 read -n 1 -s -r -p ""
                 cd /home/$usuario/gameandwatch/game-and-watch-retro-go
                 make clean
-                make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=63 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 GNW_TARGET=$consola
+                make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=63 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula
                 echo " "
                 echo " "
                 echo " "
@@ -181,7 +182,7 @@ case $menuitem in
                 echo -e "\e[1;31mPulsa y manten pulsado el boton de encendido y justo despues pulsa cualquier tecla para continuar...\nATENCION: No sueltes el boton al menos hasta que empiece a borrar la memoria externa (cuando pone \"Erasing xxxx bytes...\" en la pantalla)\e[0m"
                 echo " "
                 read -n 1 -s -r -p "Pulsa cualquier tecla para continuar cuando lo tengas listo..."
-                make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=63 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 GNW_TARGET=$consola flash
+                make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=63 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula flash
                 cd -
                 echo " "
                 echo " "

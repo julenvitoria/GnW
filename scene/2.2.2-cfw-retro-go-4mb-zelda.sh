@@ -5,6 +5,7 @@ INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="mario"
 proc="2"
+caratula="0"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-cfw-retro-go-4mb-zelda.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 --title "G&W CFW + Retro-Go 4MB /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
@@ -81,7 +82,7 @@ case $menuitem in
         clear
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         make clean
-        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE=1802240 EXTFLASH_OFFSET=851968 GNW_TARGET=zelda EXTENDED=1
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE=1802240 EXTFLASH_OFFSET=851968 GNW_TARGET=zelda EXTENDED=1 COVERFLOW=$caratula
         cd -
         echo " "
         echo " "
@@ -115,7 +116,7 @@ case $menuitem in
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         #make clean
-        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE=1802240 EXTFLASH_OFFSET=851968 GNW_TARGET=zelda EXTENDED=1 flash
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE=1802240 EXTFLASH_OFFSET=851968 GNW_TARGET=zelda EXTENDED=1 COVERFLOW=$caratula flash
         cd -
         read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
         dialog --backtitle "G&W $consola - Utilidades de flasheo" \
