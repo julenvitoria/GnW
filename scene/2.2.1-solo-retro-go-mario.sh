@@ -15,12 +15,22 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --ok-label Apply \
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 14 140 15 \
-   1 "Subir solo Retro-Go sin CFW en consola con 1MB" \
-   2 "Subir solo Retro-Go sin CFW en consola con 16MB" \
-   3 "Subir solo Retro-Go sin CFW en consola con 64MB"   2>"${INPUT}"
+   1 "Compilar Retro-Go para consola sin CFW con 1MB" \
+   2 "Subir solo Retro-Go sin CFW en consola con 1MB" \
+   3 "Compilar Retro-Go para consola sin CFW con 16MB" \
+   4 "Subir solo Retro-Go sin CFW en consola con 16MB" \
+   5 "Compilar Retro-Go para consola sin CFW con 64MB" \
+   6 "Subir solo Retro-Go sin CFW en consola con 64MB"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
-  1)clear
+  1)cd /home/$usuario/gameandwatch/game-and-watch-retro-go
+    make clean
+    make -j$proc COMPRESS=lzma COVERFLOW=$caratula GNW_TARGET=$consola
+    read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
+    cd -
+    ./scene/2.2.1-solo-retro-go-$consola.sh
+    clear;;
+  2)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-solo-retro-go-mario.sh Usuario = $usuario ------------------" \
     --title "Instalar solo Retro-Go en consola G&W $consola 1MB sin CFW" \
     --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Se flasheara solamente el emulador Retro-Go por lo que no tendremos el menu original. Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola." 0 0
@@ -50,9 +60,16 @@ case $menuitem in
         --msgbox "Proceso cancelado." 0 0
     fi
     cd -
-    ./scene/2.2.1-solo-retro-go-mario.sh
+    ./scene/2.2.1-solo-retro-go-$consola.sh
     clear;;
-  2)clear
+  3)cd /home/$usuario/gameandwatch/game-and-watch-retro-go
+    make clean
+    make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=16 COVERFLOW=$caratula GNW_TARGET=$consola
+    read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
+    cd -
+    ./scene/2.2.1-solo-retro-go-$consola.sh
+    clear;;
+  4)clear
     #./scene/2.2.1-retro-go-16mb-$consola.sh
     clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-solo-retro-go-mario.sh Usuario = $usuario ------------------" \
@@ -84,9 +101,16 @@ case $menuitem in
         --msgbox "Proceso cancelado." 0 0
     fi
     cd -
-    ./scene/2.2.1-solo-retro-go-mario.sh
+    ./scene/2.2.1-solo-retro-go-$consola.sh
     clear;;
-  3)clear
+  5)cd /home/$usuario/gameandwatch/game-and-watch-retro-go
+    make clean
+    make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=64 COVERFLOW=$caratula GNW_TARGET=$consola
+    read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
+    cd -
+    ./scene/2.2.1-solo-retro-go-$consola.sh
+    clear;;
+  6)clear
     #./scene/2.2.1-retro-go-64mb-$consola.sh
     clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-solo-retro-go-mario.sh Usuario = $usuario ------------------" \
@@ -118,7 +142,7 @@ case $menuitem in
         --msgbox "Proceso cancelado." 0 0
     fi
     cd -
-    ./scene/2.2.1-solo-retro-go-mario.sh
+    ./scene/2.2.1-solo-retro-go-$consola.sh
     clear;;
 esac
 clear
