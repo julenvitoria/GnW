@@ -3,8 +3,8 @@
 
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
-consola="mario"
-proc="6"
+consola="zelda"
+proc="4"
 caratula="0"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-solo-retro-go-zelda.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
@@ -15,12 +15,23 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --ok-label Apply \
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 14 140 15 \
-   1 "Subir solo Retro-Go sin CFW en consola con 4MB" \
-   2 "Subir solo Retro-Go sin CFW en consola con 16MB" \
-   3 "Subir solo Retro-Go sin CFW en consola con 64MB"   2>"${INPUT}"
+   1 "Compilar Retro-Go para consola original sin CFW con 4MB" \
+   2 "Subir solo Retro-Go sin CFW en consola original con 4MB" \
+   3 "Compilar Retro-Go para consola sin CFW con chip de 16MB" \
+   4 "Subir solo Retro-Go sin CFW en consola con chip de 16MB" \
+   5 "Compilar Retro-Go para consola sin CFW con chip de 64MB" \
+   6 "Subir solo Retro-Go sin CFW en consola con chip de 64MB"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
+    cd /home/$usuario/gameandwatch/game-and-watch-retro-go
+    make clean
+    make -j$proc COMPRESS=lzma COVERFLOW=$caratula GNW_TARGET=$consola
+    read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
+    cd -
+    ./scene/2.2.1-solo-retro-go-$consola.sh
+    clear;;
+  2)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-solo-retro-go-zelda.sh Usuario = $usuario ------------------" \
     --title "Instalar solo Retro-Go en consola G&W $consola 4MB sin CFW" \
     --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Se flasheara solamente el emulador Retro-Go por lo que no tendremos el menu original. Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola." 0 0
@@ -38,7 +49,6 @@ case $menuitem in
         echo -e "\e[1;31mPulsa y manten pulsado el boton de encendido y justo despues pulsa cualquier tecla para continuar...\nATENCION: No sueltes el boton al menos hasta que empiece a borrar la memoria externa (cuando pone \"Erasing xxxx bytes...\" en la pantalla\e[0m"
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
-        make clean
         make -j$proc COMPRESS=lzma COVERFLOW=$caratula GNW_TARGET=$consola flash
         read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
         dialog --backtitle "G&W - Utilidades de flasheo" \
@@ -52,7 +62,15 @@ case $menuitem in
     cd -
     ./scene/2.2.1-solo-retro-go-zelda.sh
     clear;;
-  2)clear
+  3)clear
+    cd /home/$usuario/gameandwatch/game-and-watch-retro-go
+    make clean
+    make -j$proc EXTFLASH_SIZE_MB=16 COVERFLOW=$caratula GNW_TARGET=$consola
+    read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
+    cd -
+    ./scene/2.2.1-solo-retro-go-$consola.sh
+    clear;;
+  4)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-solo-retro-go-zelda.sh Usuario = $usuario ------------------" \
     --title "Instalar solo Retro-Go en consola G&W $consola 16MB sin CFW" \
     --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Se flasheara solamente el emulador Retro-Go por lo que no tendremos el menu original. Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola." 0 0
@@ -70,7 +88,6 @@ case $menuitem in
         echo -e "\e[1;31mPulsa y manten pulsado el boton de encendido y justo despues pulsa cualquier tecla para continuar...\nATENCION: No sueltes el boton al menos hasta que empiece a borrar la memoria externa (cuando pone \"Erasing xxxx bytes...\" en la pantalla\e[0m"
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
-        make clean
         make -j$proc EXTFLASH_SIZE_MB=16 COVERFLOW=$caratula GNW_TARGET=$consola flash
         read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
         dialog --backtitle "G&W - Utilidades de flasheo" \
@@ -84,7 +101,15 @@ case $menuitem in
     cd -
     ./scene/2.2.1-solo-retro-go-zelda.sh
     clear;;
-  3)clear
+  5)clear
+    cd /home/$usuario/gameandwatch/game-and-watch-retro-go
+    make clean
+    make -j$proc EXTFLASH_SIZE_MB=64 COVERFLOW=$caratula GNW_TARGET=$consola
+    read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
+    cd -
+    ./scene/2.2.1-solo-retro-go-$consola.sh
+    clear;;
+  6)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-solo-retro-go-zelda.sh Usuario = $usuario ------------------" \
     --title "Instalar solo Retro-Go en consola G&W $consola 64MB sin CFW" \
     --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Se flasheara solamente el emulador Retro-Go por lo que no tendremos el menu original. Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola." 0 0
@@ -102,7 +127,6 @@ case $menuitem in
         echo -e "\e[1;31mPulsa y manten pulsado el boton de encendido y justo despues pulsa cualquier tecla para continuar...\nATENCION: No sueltes el boton al menos hasta que empiece a borrar la memoria externa (cuando pone \"Erasing xxxx bytes...\" en la pantalla\e[0m"
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
-        make clean
         make -j$proc EXTFLASH_SIZE_MB=64 COVERFLOW=$caratula GNW_TARGET=$consola flash
         read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
         dialog --backtitle "G&W - Utilidades de flasheo" \
