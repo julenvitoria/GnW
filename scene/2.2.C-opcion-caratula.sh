@@ -34,7 +34,6 @@ case $menuitem in
     dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.C-opcion-caratula.sh Usuario = $usuario ------------------" \
     --title "G&W $consola menu caratulas" \
     --msgbox "Opcion caratulas ACTIVADA. NOTA:Para flashear caratulas de roms en el menú hará falta colocar en el mismo directorio de la rom un archivo jpg, bmp o png con el mismo nombre de la rom y el propio programa se encargara de comprimirla y subirla a la G&W." 0 0
-    ./scene/2.2.C-opcion-caratula.sh
     clear;;
   D)clear
     sed -i 's/^caratula=.*$/'caratula=\""0"\"'/g' ./scene/2.2-retro-go-mario.sh
@@ -51,7 +50,6 @@ case $menuitem in
     dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.C-opcion-caratula.sh Usuario = $usuario ------------------" \
     --title "G&W $consola menu caratulas" \
     --msgbox "Opcion caratulas DESACTIVADA. NOTA:Para flashear caratulas de roms en el menú hará falta colocar en el mismo directorio de la rom un archivo jpg, bmp o png con el mismo nombre de la rom y el propio programa se encargara de comprimirla y subirla a la G&W." 0 0
-    ./scene/2.2.C-opcion-caratula.sh
     clear;;
 esac
 clear

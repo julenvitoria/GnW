@@ -15,15 +15,16 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --ok-label Apply \
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 14 140 15 \
-   1 "Compilar Retro-Go para consola sin CFW con 1MB" \
-   2 "Subir solo Retro-Go sin CFW en consola con 1MB" \
-   3 "Compilar Retro-Go para consola sin CFW con 16MB" \
-   4 "Subir solo Retro-Go sin CFW en consola con 16MB" \
-   5 "Compilar Retro-Go para consola sin CFW con 64MB" \
-   6 "Subir solo Retro-Go sin CFW en consola con 64MB"   2>"${INPUT}"
+   1 "Compilar Retro-Go para consola original sin CFW con 1MB" \
+   2 "Subir solo Retro-Go sin CFW en consola original con 1MB" \
+   3 "Compilar Retro-Go para consola sin CFW con chip de 16MB" \
+   4 "Subir solo Retro-Go sin CFW en consola con chip de 16MB" \
+   5 "Compilar Retro-Go para consola sin CFW con chip de 64MB" \
+   6 "Subir solo Retro-Go sin CFW en consola con chip de 64MB"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
-  1)cd /home/$usuario/gameandwatch/game-and-watch-retro-go
+  1)clear
+    cd /home/$usuario/gameandwatch/game-and-watch-retro-go
     make clean
     make -j$proc COMPRESS=lzma COVERFLOW=$caratula GNW_TARGET=$consola
     read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
@@ -48,7 +49,6 @@ case $menuitem in
         echo -e "\e[1;31mPulsa y manten pulsado el boton de encendido y justo despues pulsa cualquier tecla para continuar...\nATENCION: No sueltes el boton al menos hasta que empiece a borrar la memoria externa (cuando pone \"Erasing xxxx bytes...\" en la pantalla\e[0m"
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
-        make clean
         make -j$proc COMPRESS=lzma COVERFLOW=$caratula GNW_TARGET=$consola flash
         read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
         dialog --backtitle "G&W - Utilidades de flasheo" \
@@ -62,7 +62,8 @@ case $menuitem in
     cd -
     ./scene/2.2.1-solo-retro-go-$consola.sh
     clear;;
-  3)cd /home/$usuario/gameandwatch/game-and-watch-retro-go
+  3)clear
+    cd /home/$usuario/gameandwatch/game-and-watch-retro-go
     make clean
     make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=16 COVERFLOW=$caratula GNW_TARGET=$consola
     read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
@@ -89,7 +90,6 @@ case $menuitem in
         echo -e "\e[1;31mPulsa y manten pulsado el boton de encendido y justo despues pulsa cualquier tecla para continuar...\nATENCION: No sueltes el boton al menos hasta que empiece a borrar la memoria externa (cuando pone \"Erasing xxxx bytes...\" en la pantalla\e[0m"
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
-        make clean
         make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=16 COVERFLOW=$caratula GNW_TARGET=$consola flash
         read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
         dialog --backtitle "G&W - Utilidades de flasheo" \
@@ -103,7 +103,8 @@ case $menuitem in
     cd -
     ./scene/2.2.1-solo-retro-go-$consola.sh
     clear;;
-  5)cd /home/$usuario/gameandwatch/game-and-watch-retro-go
+  5)clear
+    cd /home/$usuario/gameandwatch/game-and-watch-retro-go
     make clean
     make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=64 COVERFLOW=$caratula GNW_TARGET=$consola
     read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
@@ -130,7 +131,6 @@ case $menuitem in
         echo -e "\e[1;31mPulsa y manten pulsado el boton de encendido y justo despues pulsa cualquier tecla para continuar...\nATENCION: No sueltes el boton al menos hasta que empiece a borrar la memoria externa (cuando pone \"Erasing xxxx bytes...\" en la pantalla\e[0m"
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
-        make clean
         make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=64 COVERFLOW=$caratula GNW_TARGET=$consola flash
         read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
         dialog --backtitle "G&W - Utilidades de flasheo" \
