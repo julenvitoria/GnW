@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="zelda"
-proc="2"
+proc="4"
 caratula="0"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-cfw-retro-go-4mb-zelda.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
@@ -12,7 +12,7 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --ok-label Apply \
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 12 140 15 \
-   1 "CFW con los parametros para 4MB" \
+   1 "prueba" \
    2 "Compilar Retro-Go con los parametros para 4MB" \
    3 "Flashear Retro-Go con los parametros para 4MB" 2>"${INPUT}"
 menuitem=$(<"${INPUT}")

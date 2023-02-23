@@ -15,7 +15,7 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --ok-label Apply \
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 14 140 15 \
-   1 "Compilar Retro-Go para consola original sin CFW con 1MB" \
+   1 "prueba" \
    2 "Subir solo Retro-Go sin CFW en consola original con 1MB" \
    3 "Compilar Retro-Go para consola sin CFW con chip de 16MB" \
    4 "Subir solo Retro-Go sin CFW en consola con chip de 16MB" \

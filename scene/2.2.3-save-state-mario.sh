@@ -15,12 +15,13 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo" \
 --ok-label Apply \
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 15 140 15 \
-   1 "CFW \"slim\" con los parametros para 16MB" \
+   1 "prueba" \
    2 "Compilar Retro-Go para CFW \"slim\" y parametros 16MB" \
    3 "Flashear Retro-Go para CFW \"slim\" y parametros 16MB" \
    4 "CFW \"full\" con los parametros para 16MB" \
    5 "Compilar Retro-Go para CFW \"full\" y parametros 16MB" \
-   6 "Flashear Retro-Go para CFW \"full\" y parametros 16MB" 2>"${INPUT}"
+   6 "Flashear Retro-Go para CFW \"full\" y parametros 16MB" \
+   7 "Descarga y restauracion de saves-states con parametros 16MB"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
@@ -249,5 +250,8 @@ case $menuitem in
     fi
     ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh
     clear;;
+  7)clear
+    ./scene/2.2.3-save-state-$consola.sh
+	clear
 esac
 clear

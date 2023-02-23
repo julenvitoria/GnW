@@ -14,7 +14,8 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --menu "Selecciona con las flechas la opcion deseada:" 12 140 15 \
    1 "CFW con los parametros para 1MB" \
    2 "Compilar Retro-Go con los parametros para 1MB" \
-   3 "Flashear Retro-Go con los parametros para 1MB" 2>"${INPUT}"
+   3 "Flashear Retro-Go con los parametros para 1MB" \
+   4 "Descarga y restauracion de saves-states con parametros 1MB"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
@@ -128,5 +129,8 @@ case $menuitem in
     fi
     ./scene/2.2.2-cfw-retro-go-1mb-$consola.sh
     clear;;
+    4)clear
+    ./scene/2.2.2-save-state-$consola.sh
+	clear;;
 esac
 clear

@@ -12,7 +12,7 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --ok-label Apply \
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 12 140 15 \
-   1 "CFW con los parametros para 1MB" \
+   1 "prueba" \
    2 "Compilar Retro-Go con los parametros para 1MB" \
    3 "Flashear Retro-Go con los parametros para 1MB" 2>"${INPUT}"
 menuitem=$(<"${INPUT}")

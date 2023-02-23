@@ -15,12 +15,13 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --ok-label Apply \
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 14 140 15 \
-   1 "Compilar Retro-Go para consola original sin CFW con 4MB" \
+   1 "prueba" \
    2 "Subir solo Retro-Go sin CFW en consola original con 4MB" \
    3 "Compilar Retro-Go para consola sin CFW con chip de 16MB" \
    4 "Subir solo Retro-Go sin CFW en consola con chip de 16MB" \
    5 "Compilar Retro-Go para consola sin CFW con chip de 64MB" \
-   6 "Subir solo Retro-Go sin CFW en consola con chip de 64MB"   2>"${INPUT}"
+   6 "Subir solo Retro-Go sin CFW en consola con chip de 64MB"
+   7 "Descarga y restauracion de saves-states con parametros \"solo retro-go\""   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
@@ -139,6 +140,9 @@ case $menuitem in
     fi
     cd -
     ./scene/2.2.1-solo-retro-go-zelda.sh
+    clear;;
+  7)clear
+    ./scene/2.2.1-save-state-$consola.sh
     clear;;
 esac
 clear
