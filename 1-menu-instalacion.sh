@@ -17,8 +17,7 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
    5 "Instalacion/Actualizacion del repo del emulador Retro-Go" \
    6 "Instalacion/Actualizacion del repo del parche custom firmware para G&W Super Mario" \
    7 "Instalacion/Actualizacion del repo del reductor para juegos LCD de Mame (LCD-Game-Shrinker)" \
-   8 "Instalacion de todo el software en un paso (ATENCION: es mas rapido pero puedes no ver algun error)" \
-   9 "Actualizador del firmware del STLINK v2" 2>"${INPUT}"
+   8 "Actualizador del firmware del STLINK v2" 2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
@@ -50,10 +49,6 @@ case $menuitem in
     ./1-menu-instalacion.sh
     clear;;
   8)clear
-    ./instalacion/1.10-instalacion-completa.sh
-    ./1-menu-instalacion.sh
-    clear;;
-  9)clear
     ./instalacion/1.11-actualizador-firmware.sh
     ./1-menu-instalacion.sh
     clear;;
