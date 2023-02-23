@@ -18,9 +18,13 @@ case $menuitem in
     sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.1-backup-restauracion.sh
     sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2-retro-go-mario.sh
     sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.1-solo-retro-go-mario.sh
+	sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.1-save-state-mario.sh
     sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.2-cfw-retro-go-1mb-mario.sh
+	sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.2-save-state-mario.sh
     sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb-mario.sh
+	sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.3-save-state-mario.sh
     sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-mario.sh
+	sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.4-save-state-mario.sh
 	sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./menu.sh
     echo "Opcion mario aplicada"
     sleep 2
@@ -31,9 +35,13 @@ case $menuitem in
     sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.1-backup-restauracion.sh
     sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2-retro-go-zelda.sh
     sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.1-solo-retro-go-zelda.sh
+	sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.1-save-state-zelda.sh
     sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.2-cfw-retro-go-4mb-zelda.sh
+	sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.2-save-state-zelda.sh
     sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb-zelda.sh
+	sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.3-save-state-zelda.sh
     sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-zelda.sh
+	sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.4-save-state-zelda.sh
     sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./menu.sh
     echo "Opcion zelda aplicada"
     sleep 2
