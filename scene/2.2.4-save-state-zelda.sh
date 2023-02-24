@@ -5,10 +5,10 @@ INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="zelda"
 proc="4"
-caratula="0"
+caratula="1"
 
-dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.4-cfw-retro-go-64mb-zelda.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
---title "G&W CFW + Retro-Go 64MB /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
+dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.4-save-state-zelda.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
+--title "G&W Utilidad para backup, resturacion y borrado de save states /// INFO: Usuario=$usuario --- Consola seleccionada=$consola " \
 --ok-label Apply \
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 12 140 15 \
@@ -70,7 +70,7 @@ case $menuitem in
             --title "Instalar firmware original + Retro-Go  en consola con 64MB" \
             --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.4-cfw-retro-go-64mb-$consola.sh
+    ./scene/2.2.4-save-state-$consola.sh
     clear;;
   2)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
@@ -94,7 +94,7 @@ case $menuitem in
         --title "Compilar Retro-Go" \
         --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.4-cfw-retro-go-64mb-$consola.sh
+    ./scene/2.2.4-save-state-$consola.sh
     clear;;
   3)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \

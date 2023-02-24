@@ -5,12 +5,9 @@ INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="mario"
 proc="4"
-caratula="0"
+caratula="1"
 
-dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-solo-retro-go-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
---title "G&W $consola menu Retro-Go + custom firmware" \
---msgbox "El flasheo se puede realizar para diferentes memorias, elige la mas conveniente a tu hardware. NOTA: Se recomienda realizar el proceso con la batería cargada al 100% para evitar sustos." 0 0
-dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-solo-retro-go-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
+dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 --title "G&W $consola CFW + Retro-Go /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
 --ok-label Apply \
 --cancel-label Exit \

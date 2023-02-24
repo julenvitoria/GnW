@@ -5,7 +5,7 @@ INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="zelda"
 proc="4"
-caratula="0"
+caratula="1"
 
 #dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.3-cfw-retro-go-16mb-zelda.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 #--title "G&W menu de flasheo $consola 16MB" \
@@ -137,6 +137,6 @@ case $menuitem in
     clear;;
   4)clear
     ./scene/2.2.3-save-state-$consola.sh
-	clear
+	clear;;
 esac
 clear
