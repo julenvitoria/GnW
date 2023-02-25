@@ -25,10 +25,10 @@ case $menuitem in
     sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.2-cfw-retro-go-1mb-$consola.sh
     sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh
     sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-$consola.sh
-    sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./2.2.1-save-state-$consola.sh
-    sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./2.2.2-save-state-$consola.sh
-    sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./2.2.3-save-state-$consola.sh
-    sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./2.2.4-save-state-$consola.sh
+    sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.1-save-state-$consola.sh
+    sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.2-save-state-$consola.sh
+    sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.3-save-state-$consola.sh
+    sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.4-save-state-$consola.sh
     ./scene/2.2-retro-go-$consola.sh
     ./2-menu-scene-$consola.sh
     clear;;
