@@ -16,10 +16,10 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------- INFO: 2.2-retro
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 14 140 15 \
    C "Opcion flasheo con caratula. Actualmente:$caratula (0=NO y 1=SI)" \
-   1 "Subir solo Retro-Go en consola G&W $consola sin CFW" \
-   2 "Menu CFW + Retro-Go en consola G&W $consola original 4MB" \
-   3 "Menu CFW + Retro-Go en consola G&W $consola con 16MB" \
-   4 "Menu CFW + Retro-Go en consola G&W $consola con 64MB" \
+   1 "Subir solo Retro-Go + backup/restauracion save states en consola G&W $consola sin CFW " \
+   2 "Menu CFW + Retro-Go + backup/restauracion save states en consola G&W $consola original 4MB " \
+   3 "Menu CFW + Retro-Go + backup/restauracion save states en consola G&W $consola con 16MB " \
+   4 "Menu CFW + Retro-Go + backup/restauracion save states en consola G&W $consola con 64MB " \
    5 "Actualizacion del directorio del repo local de Retro-Go" \
    6 "Actualizacion del directorio del parche para el CFW"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")

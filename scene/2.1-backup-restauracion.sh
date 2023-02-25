@@ -3,7 +3,7 @@
 
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
-consola="zelda"
+consola="mario"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.1-backup-restauracion.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 --title "G&W menu backup/restauracion/liberacion" \

@@ -27,7 +27,7 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
    1 "Cambio de usuario. IMPORTANTE: la primera vez es esencial ejecutar esto para el correcto funcionamiento" \
    2 "Cambio de modelo de consola (actual = $consola). IMPORTANTE: Escoge el modelo correcto para el correcto funcionamiento" \
    3 "Menu instalacion paquetes y programas necesarios y actualizacion del firm del STLINK" \
-   4 "Menu scene: backup/restauracion/liberacion y flasheo custom firm con Retro-Go" \
+   4 "Menu scene: backup/restauracion/liberacion,flasheo custom firm con Retro-Go y backup/restauracion save states" \
    5 "Actualizar el repo local de estos scripts" 2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
