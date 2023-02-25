@@ -7,126 +7,106 @@ consola="mario"
 proc="4"
 caratula="1"
 
+clear
+dpkg -s libncurses5 > libncurses5.txt
+if grep "install ok installed" ./libncurses5.txt ; then
+        echo "Encontrado paquete libncurses5, se prosigue..."
+        sleep 0.5
+else
+        echo "No encontrado paquete dialog necesario, instalando..."
+        echo " "
+        sudo apt install -y libncurses5
+        echo " "
+        echo "Instalado!!"
+        sleep 0.5
+fi
+
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
---title "G&W CFW + Retro-Go 1MB /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
---ok-label Apply \
---cancel-label Exit \
---menu "Selecciona con las flechas la opcion deseada:" 12 140 15 \
-   1 "prueba" \
-   2 "Compilar Retro-Go con los parametros para 1MB" \
-   3 "Flashear Retro-Go con los parametros para 1MB" 2>"${INPUT}"
+       --msgbox "G&W Utilidad para backup, resturacion y borrado de save states. Una vez descargados los save states estan ubicados en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" 0 0
+dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
+       --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
+       --ok-label Apply \
+       --cancel-label Exit \
+       --menu "Selecciona con las flechas la opcion deseada:" 12 140 15 \
+          1 "Hacer backup de los save states existentes que hay en la G&W con chip original de 1MB" \
+          2 "Restaurar los save states desde el pc a la G&W con chip original de 1MB" \
+          3 "Borrar los saves states existentes en la G&W con chip de original 1MB para dejarla limpia"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
-    dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-    --title "Instalar Retro-Go en consola G&W $consola con 1MB" \
-    --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Este proceso es solamente para una consola con el chip de 1MB instalado (chip original).\n\n¡¡¡ATENCION!!!\nSI SE TIENE DIFERENTE CANTIDAD DE MEMORIA CANCELAR EL PROCESO y una vez vuelto al menu seleccionar el correcto.\n\nSe flasheara un custom firmware que consta del menu original de la consola ademas del emulador Retro-Go. El emulador aparecera al realizar el combo de botones \"LEFT\" + \"GAME\". Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola ¿Deseas continuar?" 0 0
+    dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
+           --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
+           --yesno "¡¡¡ATENCION!!! El proceso de BACKUP de los save states puede llegar a tardar varios minutos dependiendo de la cantidad de roms que haya en la G&W y pararlo puede ocasionar errores. ¿Deseas continuar?" 0 0
     ans=$?
     if [ $ans -eq 0 ]; then
         clear
-        if [ -f /home/$usuario/gameandwatch/game-and-watch-backup/backups/flash_backup_$consola.bin ]; then
-            echo "flash_backup_$consola.bin encontrado"
-            sleep 0.5
-            if [ -f /home/$usuario/gameandwatch/game-and-watch-backup/backups/internal_flash_backup_$consola.bin ]; then
-                echo "internal_flash_backup_$consola.bin encontrado"
-                sleep 0.5
-                cp /home/$usuario/gameandwatch/game-and-watch-backup/backups/flash_backup_$consola.bin /home/$usuario/gameandwatch/game-and-watch-patch
-                cp /home/$usuario/gameandwatch/game-and-watch-backup/backups/internal_flash_backup_$consola.bin /home/$usuario/gameandwatch/game-and-watch-patch
-                echo " "
-                echo "Se han copiado los archivos de la flash interna y externa"
-                echo " "
-                echo " "
-                echo "Proceso 1/2 concluido."
-                echo " "
-                echo -e "\e[1;34mSi ya has ejecutado esta opcion anteriormente y algo ha salido mal desmonta la consola y vuelve a ejecutar esta\e[0m"
-                echo -e "\e[1;34mopcion y, al llegar a este punto, desconecta la bateria y vuelve a conectarla antes de realizar lo siguiente.\e[0m"
-                echo " "
-                echo " "
-                echo -e "\e[1;31mPulsa y manten pulsado el boton de encendido y justo despues pulsa cualquier tecla para continuar...\e[0m"
-                read -n 1 -s -r -p ""
-                clear
-                cd /home/$usuario/gameandwatch/game-and-watch-patch
-                make clean
-                #make PATCH_PARAMS="--internal-only" flash_patched_int
-                make PATCH_PARAMS="--device=$consola --internal-only" flash_patched
-                cd -
-                echo " "
-                echo " "
-                echo "Proceso 2/2 concluido."
-                read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
-            else
-                echo "No se ha encontrado internal_flash_backup_$consola.bin, cancelando..."
-                sleep 2
-            fi
-        else
-            echo "No se ha encontrado flash_backup_$consola.bin, cancelando..."
-            sleep 2
-        fi
-        dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-        --title "Instalar firmware original + Retro-Go  en consola con 1MB" \
-        --msgbox "Proceso realizado." 0 0
+        echo -e "\e[1;31mEnciende la consola y entra al menu Retro-Go con los botones LEFT+GAME y dejala esperando en el listado de las roms.\e[0m"
+        echo ""
+        echo -e "\e[1;31mPara continuar con el proceso pulsa cualquier tecla...\e[0m"
+        read -n 1 -s -r -p ""
+        cd /home/$usuario/gameandwatch/game-and-watch-retro-go/
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 COVERFLOW=$caratula flash_saves_backup
+        cd -
+        #sleep 5
+        dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
+               --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
+               --msgbox "Proceso realizado. Save states descargados en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" 0 0
     else
-            dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-            --title "Instalar firmware original + Retro-Go  en consola con 1MB" \
-            --msgbox "Proceso cancelado." 0 0
+        dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
+               --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
+               --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.2-cfw-retro-go-1mb-$consola.sh
+    ./scene/2.2.2-save-state-$consola.sh
     clear;;
   2)clear
-    dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-    --title "Compilar Retro-Go" \
-    --yesno "Se procedera a compilar RetroGo y se incluiran las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/. ¿Deseas continuar?" 0 0
+    dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
+           --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
+           --yesno "¡¡¡ATENCION!!! El proceso RESTAURACION de los save states puede llegar a tardar varios minutos dependiendo de la cantidad de roms que haya en la G&W y pararlo puede ocasionar errores. ¿Deseas continuar?" 0 0
     ans=$?
     if [ $ans -eq 0 ]; then
         clear
-        cd /home/$usuario/gameandwatch/game-and-watch-retro-go
-        make clean
-        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 COVERFLOW=$caratula
-		cd -
-        echo " "
-        echo " "
-        read -n 1 -s -r -p "Proceso concluido. Presiona cualquier tecla para continuar."
-        dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-        --title "Compilar Retro-Go" \
-        --msgbox "Proceso realizado." 0 0
+        echo -e "\e[1;31mEnciende la consola y entra al menu Retro-Go con los botones LEFT+GAME y dejala esperando en el listado de las roms.\e[0m"
+        echo ""
+        echo -e "\e[1;31mPara continuar con el proceso pulsa cualquier tecla...\e[0m"
+        read -n 1 -s -r -p ""
+        cd /home/$usuario/gameandwatch/game-and-watch-retro-go/
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 COVERFLOW=$caratula flash_saves_restore
+        cd -
+        #sleep 5
+        dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
+               --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
+               --msgbox "Proceso realizado." 0 0
     else
-        dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-        --title "Compilar Retro-Go" \
-        --msgbox "Proceso cancelado." 0 0
+        dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
+               --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
+               --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.2-cfw-retro-go-1mb-$consola.sh
+    ./scene/2.2.2-save-state-$consola.sh
     clear;;
   3)clear
-    dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-    --title "Compilar Retro-Go" \
-    --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Se flasheara solamente el emulador Retro-Go por lo que no tendremos el menu original. Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola." 0 0
+    dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
+           --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
+           --yesno "¡¡¡ATENCION!!! El proceso BORRAR los save states puede llegar a tardar varios minutos dependiendo de la cantidad de roms que haya en la G&W y pararlo puede ocasionar errores. ¿Deseas continuar?" 0 0
     ans=$?
     if [ $ans -eq 0 ]; then
         clear
-        echo " "
-        echo -e "\e[1;34mSi ya has ejecutado esta opcion anteriormente y algo ha salido mal desmonta la consola y vuelve a ejecutar esta\e[0m"
-        echo -e "\e[1;34mopcion y, al llegar a este punto, desconecta la bateria y vuelve a conectarla antes de realizar lo siguiente.\e[0m"
-        echo " "
-        echo " "
-        echo -e "\e[0;32mSi durante el siguiente proceso nos dice que ha fallado el flasheo, que no puede conectar y nos pregunta si\e[0m"
-        echo -e "\e[0;32mvamos a hacer un power cycle (quitar bateria, reconectar y encender) pulsaremos el boton de encendido y lo \e[0m"
-        echo -e "\e[0;32mmantendremos pulsado unos segundos, le diremos que si con \"y\" (yes), entonces el proceso continuara.\e[0m"
-        echo -e "\e[1;31mPulsa y manten pulsado el boton de encendido y justo despues pulsa cualquier tecla para continuar...\nATENCION: No sueltes el boton al menos hasta que empiece a borrar la memoria externa (cuando pone \"Erasing xxxx bytes...\" en la pantalla)\e[0m"
+        echo -e "\e[1;31mEnciende la consola y entra al menu Retro-Go con los botones LEFT+GAME y dejala esperando en el listado de las roms.\e[0m"
+        echo ""
+        echo -e "\e[1;31mPara continuar con el proceso pulsa cualquier tecla...\e[0m"
         read -n 1 -s -r -p ""
-        cd /home/$usuario/gameandwatch/game-and-watch-retro-go
-        #make clean
-        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 COVERFLOW=$caratula flash
+        cd /home/$usuario/gameandwatch/game-and-watch-retro-go/
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 COVERFLOW=$caratula flash_saves_erase
         cd -
-        read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
-        dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-        --title "Instalar solo Retro-Go" \
-        --msgbox "Proceso realizado." 0 0
+        #sleep 5
+        dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
+               --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
+               --msgbox "Proceso realizado." 0 0
     else
-        dialog --backtitle "G&W $consola - Utilidades de flasheo" \
-        --title "Instalar solo Retro-Go" \
-        --msgbox "Proceso cancelado." 0 0
+        dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
+               --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
+               --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.2-cfw-retro-go-1mb-$consola.sh
+    ./scene/2.2.2-save-state-$consola.sh
     clear;;
 esac
 clear

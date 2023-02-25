@@ -28,9 +28,9 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
        --ok-label Apply \
        --cancel-label Exit \
        --menu "Selecciona con las flechas la opcion deseada:" 12 140 15 \
-          1 "Hacer backup de los save states existentes en la G&W" \
-          2 "Restaurar los save states desde el pc a la G&W " \
-          3 "Borrar los saves states existentes en la G&W para dejarla limpia"   2>"${INPUT}"
+          1 "Hacer backup de los save states existentes que hay en la G&W con chip de 64MB" \
+          2 "Restaurar los save states desde el pc a la G&W con chip de 64MB" \
+          3 "Borrar los saves states existentes en la G&W con chip de 64MB para dejarla limpia"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
