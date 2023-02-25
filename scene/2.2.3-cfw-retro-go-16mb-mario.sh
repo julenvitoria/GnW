@@ -76,7 +76,7 @@ case $menuitem in
             --title "Instalar firmware original + Retro-Go  en consola con 16MB" \
             --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh/media/kde/WD-4tb/git/GnW/
+    ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh
     clear;;
   2)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
@@ -166,7 +166,7 @@ case $menuitem in
                 clear
                 cd /home/$usuario/gameandwatch/game-and-watch-patch
                 make clean
-                make PATCH_PARAMS="--device=$consola" flash_patched
+                make PATCH_PARAMS="--device=$consola" LARGE_FLASH=1 flash_patched
                 sleep 0.5
                 make reset
                 cd -
@@ -252,6 +252,7 @@ case $menuitem in
     clear;;
   7)clear
     ./scene/2.2.3-save-state-$consola.sh
+    ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh
 	clear;;
 esac
 clear

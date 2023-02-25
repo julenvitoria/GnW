@@ -45,7 +45,7 @@ case $menuitem in
         echo -e "\e[1;31mPara continuar con el proceso pulsa cualquier tecla...\e[0m"
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go/
-        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 COVERFLOW=$caratula flash_saves_backup
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula flash_saves_backup
         cd -
         #sleep 5
         dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
@@ -70,7 +70,7 @@ case $menuitem in
         echo -e "\e[1;31mPara continuar con el proceso pulsa cualquier tecla...\e[0m"
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go/
-        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 COVERFLOW=$caratula flash_saves_restore
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula flash_saves_restore
         cd -
         #sleep 5
         dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
@@ -95,7 +95,7 @@ case $menuitem in
         echo -e "\e[1;31mPara continuar con el proceso pulsa cualquier tecla...\e[0m"
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go/
-        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 COVERFLOW=$caratula flash_saves_erase
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula flash_saves_erase
         cd -
         #sleep 5
         dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \

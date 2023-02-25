@@ -27,7 +27,7 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
        --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
        --ok-label Apply \
        --cancel-label Exit \
-       --menu "Selecciona con las flechas la opcion deseada:" 12 140 15 \
+       --menu "Selecciona con las flechas la opcion deseada:" 14 140 15 \
           1 "Hacer backup de los save states existentes que hay en la G&W con chip de 16MB y CFW slim" \
           2 "Restaurar los save states desde el pc a la G&W con chip de 16MB y CFW slim" \
           3 "Borrar los saves states existentes en la G&W con chip de 16MB y CFW slim para dejarla limpia" \

@@ -137,6 +137,7 @@ case $menuitem in
     clear;;
   4)clear
     ./scene/2.2.3-save-state-$consola.sh
+    ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh
 	clear;;
 esac
 clear

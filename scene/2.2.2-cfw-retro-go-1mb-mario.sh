@@ -82,7 +82,7 @@ case $menuitem in
         clear
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         make clean
-        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 COVERFLOW=$caratula
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula
 		cd -
         echo " "
         echo " "
@@ -116,7 +116,7 @@ case $menuitem in
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         #make clean
-        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 COVERFLOW=$caratula flash
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula flash
         cd -
         read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
         dialog --backtitle "G&W $consola - Utilidades de flasheo" \
@@ -131,6 +131,7 @@ case $menuitem in
     clear;;
     4)clear
     ./scene/2.2.2-save-state-$consola.sh
+    ./scene/2.2.2-cfw-retro-go-1mb-$consola.sh
 	clear;;
 esac
 clear

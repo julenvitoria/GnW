@@ -61,7 +61,7 @@ case $menuitem in
         --msgbox "Proceso cancelado." 0 0
     fi
     cd -
-    ./scene/2.2.1-solo-retro-go-zelda.sh
+    ./scene/2.2.1-solo-retro-go-$consola.sh
     clear;;
   3)clear
     cd /home/$usuario/gameandwatch/game-and-watch-retro-go
@@ -100,7 +100,7 @@ case $menuitem in
         --msgbox "Proceso cancelado." 0 0
     fi
     cd -
-    ./scene/2.2.1-solo-retro-go-zelda.sh
+    ./scene/2.2.1-solo-retro-go-$consola.sh
     clear;;
   5)clear
     cd /home/$usuario/gameandwatch/game-and-watch-retro-go
@@ -139,10 +139,11 @@ case $menuitem in
         --msgbox "Proceso cancelado." 0 0
     fi
     cd -
-    ./scene/2.2.1-solo-retro-go-zelda.sh
+    ./scene/2.2.1-solo-retro-go-$consola.sh
     clear;;
   7)clear
     ./scene/2.2.1-save-state-$consola.sh
+    ./scene/2.2.1-solo-retro-go-$consola.sh
     clear;;
 esac
 clear
