@@ -28,12 +28,12 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
        --ok-label Apply \
        --cancel-label Exit \
        --menu "Selecciona con las flechas la opcion deseada:" 14 140 15 \
-          1 "Hacer backup de los save states existentes que hay en la G&W con chip de 16MB y CFW slim" \
-          2 "Restaurar los save states desde el pc a la G&W con chip de 16MB y CFW slim" \
-          3 "Borrar los saves states existentes en la G&W con chip de 16MB y CFW slim para dejarla limpia" \
-          4 "Hacer backup de los save states existentes que hay en la G&W con chip de 16MB y CFW full" \
-          5 "Restaurar los save states desde el pc a la G&W con chip de 16MB y CFW full" \
-          6 "Borrar los saves states existentes en la G&W con chip de 16MB y CFW full para dejarla limpia"   2>"${INPUT}"
+          1 "16MB - CFW slim: Hacer backup de los save states existentes que hay en la G&W" \
+          2 "16MB - CFW slim: Restaurar los save states desde el pc a la G&W" \
+          3 "16MB - CFW slim: Borrar los saves states existentes en la G&W para dejarla limpia" \
+          4 "16MB - CFW full: Hacer backup de los save states existentes que hay en la G&W" \
+          5 "16MB - CFW full: Restaurar los save states desde el pc a la G&W" \
+          6 "16MB - CFW full: Borrar los saves states existentes en la G&W para dejarla limpia"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
