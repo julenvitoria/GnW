@@ -3,7 +3,7 @@
 
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
-consola="zelda"
+consola="mario"
 
 clear
 which dialog > dialog.txt

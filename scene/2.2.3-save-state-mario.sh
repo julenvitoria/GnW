@@ -5,7 +5,7 @@ INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="mario"
 proc="4"
-caratula="1"
+caratula="0"
 
 clear
 dpkg -s libncurses5 > libncurses5.txt
@@ -50,7 +50,8 @@ case $menuitem in
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go/
         make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE_MB=16 GNW_TARGET=$consola COVERFLOW=$caratula flash_saves_backup
         cd -
-        #sleep 5
+        echo -e "\e[1;31mPulsa cualquier tecla para continuar...\e[0m"
+        read -n 1 -s -r -p ""
         dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.3-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
                --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
                --msgbox "Proceso realizado. Save states descargados en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" 0 0
@@ -75,7 +76,8 @@ case $menuitem in
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go/
         make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE_MB=16 GNW_TARGET=$consola COVERFLOW=$caratula flash_saves_restore
         cd -
-        #sleep 5
+        echo -e "\e[1;31mPulsa cualquier tecla para continuar...\e[0m"
+        read -n 1 -s -r -p ""
         dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.3-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
                --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
                --msgbox "Proceso realizado." 0 0
@@ -100,7 +102,8 @@ case $menuitem in
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go/
         make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE_MB=16 GNW_TARGET=$consola COVERFLOW=$caratula flash_saves_erase
         cd -
-        #sleep 5
+        echo -e "\e[1;31mPulsa cualquier tecla para continuar...\e[0m"
+        read -n 1 -s -r -p ""
         dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.3-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
                --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
                --msgbox "Proceso realizado." 0 0
@@ -125,7 +128,8 @@ case $menuitem in
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go/
         make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=15 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula flash_saves_backup
         cd -
-        #sleep 5
+        echo -e "\e[1;31mPulsa cualquier tecla para continuar...\e[0m"
+        read -n 1 -s -r -p ""
         dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.3-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
                --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
                --msgbox "Proceso realizado. Save states descargados en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" 0 0
@@ -150,7 +154,8 @@ case $menuitem in
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go/
         make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=15 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula flash_saves_restore
         cd -
-        #sleep 5
+        echo -e "\e[1;31mPulsa cualquier tecla para continuar...\e[0m"
+        read -n 1 -s -r -p ""
         dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.3-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
                --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
                --msgbox "Proceso realizado." 0 0
@@ -175,7 +180,8 @@ case $menuitem in
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go/
         make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=15 EXTFLASH_OFFSET=1048576 INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula flash_saves_erase
         cd -
-        #sleep 5
+        echo -e "\e[1;31mPulsa cualquier tecla para continuar...\e[0m"
+        read -n 1 -s -r -p ""
         dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.3-save-state-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
                --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
                --msgbox "Proceso realizado." 0 0

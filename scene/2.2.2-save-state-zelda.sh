@@ -5,7 +5,7 @@ INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="zelda"
 proc="4"
-caratula="1"
+caratula="0"
 
 clear
 dpkg -s libncurses5 > libncurses5.txt
@@ -28,9 +28,9 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
        --ok-label Apply \
        --cancel-label Exit \
        --menu "Selecciona con las flechas la opcion deseada:" 12 140 15 \
-          1 "Hacer backup de los save states existentes que hay en la G&W con chip original de 1MB" \
-          2 "Restaurar los save states desde el pc a la G&W con chip original de 1MB" \
-          3 "Borrar los saves states existentes en la G&W con chip de original 1MB para dejarla limpia"   2>"${INPUT}"
+          1 "Hacer backup de los save states existentes que hay en la G&W con chip original de 4MB" \
+          2 "Restaurar los save states desde el pc a la G&W con chip original de 4MB" \
+          3 "Borrar los saves states existentes en la G&W con chip de original 4MB para dejarla limpia"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
@@ -47,7 +47,8 @@ case $menuitem in
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go/
         make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE=1802240 EXTFLASH_OFFSET=851968 GNW_TARGET=zelda EXTENDED=1 COVERFLOW=$caratula flash_saves_backup
         cd -
-        #sleep 5
+        echo -e "\e[1;31mPulsa cualquier tecla para continuar...\e[0m"
+        read -n 1 -s -r -p ""
         dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-save-state-zelda.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
                --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
                --msgbox "Proceso realizado. Save states descargados en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" 0 0
@@ -72,7 +73,8 @@ case $menuitem in
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go/
         make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE=1802240 EXTFLASH_OFFSET=851968 GNW_TARGET=zelda EXTENDED=1 COVERFLOW=$caratula flash_saves_restore
         cd -
-        #sleep 5
+        echo -e "\e[1;31mPulsa cualquier tecla para continuar...\e[0m"
+        read -n 1 -s -r -p ""
         dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-save-state-zelda.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
                --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
                --msgbox "Proceso realizado." 0 0
@@ -97,7 +99,8 @@ case $menuitem in
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go/
         make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE=1802240 EXTFLASH_OFFSET=851968 GNW_TARGET=zelda EXTENDED=1 COVERFLOW=$caratula flash_saves_erase
         cd -
-        #sleep 5
+        echo -e "\e[1;31mPulsa cualquier tecla para continuar...\e[0m"
+        read -n 1 -s -r -p ""
         dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-save-state-zelda.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
                --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
                --msgbox "Proceso realizado." 0 0
