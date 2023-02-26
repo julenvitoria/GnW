@@ -86,7 +86,7 @@ case $menuitem in
         clear
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         make clean
-        make -j$proc EXTFLASH_SIZE_MB=12 EXTFLASH_OFFSET=4194304 INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula
+        make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=12 EXTFLASH_OFFSET=4194304 INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula
         cd -
         echo " "
         echo " "
@@ -120,7 +120,7 @@ case $menuitem in
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         #make clean
-        make -j$proc EXTFLASH_SIZE_MB=12 EXTFLASH_OFFSET=4194304 INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula flash
+        make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=12 EXTFLASH_OFFSET=4194304 INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula flash
         cd -
         echo " "
         echo " "
