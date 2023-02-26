@@ -15,12 +15,12 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --ok-label Apply \
 --cancel-label Exit \
 --menu "Selecciona con las flechas la opcion deseada:" 14 140 15 \
-   1 "4MB: Compilar Retro-Go para consola original sin CFW" \
-   2 "4MB: Subir solo Retro-Go en consola original sin CFW" \
-   3 "416B: Compilar Retro-Go para consola sin CFW" \
-   4 "16MB: Subir solo Retro-Go en consola sin CFW" \
-   5 "64MB: Compilar Retro-Go para consola sin CFW" \
-   6 "64MB: Subir solo Retro-Go en consola sin CFW" \
+   1 "4MB: Compilar solo Retro-Go sin CFW para consola $consola original sin CFW" \
+   2 "4MB: Flashear solo Retro-Go sin CFW en consola $consola original" \
+   3 "16MB: Compilar solo Retro-Go sin CFW para consola $consola" \
+   4 "16MB: Flashear solo Retro-Go sin CFW en consola $consola" \
+   5 "64MB: Compilar solo Retro-Go sin CFW para consola $consola" \
+   6 "64MB: Flashear solo Retro-Go sin CFW en consola $consola" \
    7 "Descarga y restauracion de saves-states con parametros \"solo retro-go\""   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
