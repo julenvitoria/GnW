@@ -3,7 +3,7 @@
 
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
-consola="mario"
+consola="zelda"
 
 clear
 which dialog > dialog.txt
@@ -23,9 +23,11 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --title "Game&Watch - Menu ayuda para el flasheo" \
 --ok-label Apply \
 --cancel-label Exit \
---menu "Selecciona con las flechas la opcion deseada:
+--menu "
 Usuario actual: $usuario
-Consola seleccionada: $consola" 0 0 0 \
+Consola seleccionada: $consola
+
+Selecciona con las flechas la opcion deseada:" 0 0 0 \
    1 "Cambio de usuario. IMPORTANTE: la primera vez es esencial ejecutar esto para el correcto funcionamiento" \
    2 "Cambio de modelo de consola (actual = $consola). IMPORTANTE: Escoge el modelo correcto para el correcto funcionamiento" \
    3 "Menu instalacion paquetes y programas necesarios y actualizacion del firm del STLINK" \

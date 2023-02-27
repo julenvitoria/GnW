@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="zelda"
-proc="4"
+proc="6"
 caratula="0"
 
 clear
@@ -27,7 +27,13 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
        --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
        --ok-label Apply \
        --cancel-label Exit \
-       --menu "Selecciona con las flechas la opcion deseada:" 12 140 15 \
+       --menu "
+Usuario actual: $usuario
+Consola seleccionada: $consola
+Opcion caratulas: $caratula (0=NO y 1=SI)
+Save states: /home/$usuario/game-and-watch-retro-go/save_states/
+
+Selecciona con las flechas la opcion deseada:" 0 0 0 \
           1 "Hacer backup de los save states existentes que hay en la G&W con chip de 16MB" \
           2 "Restaurar los save states desde el pc a la G&W con chip de 16MB" \
           3 "Borrar los saves states existentes en la G&W con chip de 16MB para dejarla limpia"   2>"${INPUT}"

@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="zelda"
-proc="4"
+proc="6"
 caratula="0"
 
 #dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.3-cfw-retro-go-16mb-zelda.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
@@ -14,7 +14,13 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo" \
 --title "G&W CFW + Retro-Go 16MB /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
 --ok-label Apply \
 --cancel-label Exit \
---menu "Selecciona con las flechas la opcion deseada:" 15 140 15 \
+--menu "
+Usuario actual: $usuario
+Consola seleccionada: $consola
+Opcion caratulas: $caratula (0=NO y 1=SI)
+Roms: /home/$usuario/game-and-watch-retro-go/roms/
+
+Selecciona con las flechas la opcion deseada:" 0 0 0 \
    1 "CFW con los parametros para 16MB" \
    2 "Compilar Retro-Go para CFW y parametros 16MB" \
    3 "Flashear Retro-Go para CFW y parametros 16MB" \

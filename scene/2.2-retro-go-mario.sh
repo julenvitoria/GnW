@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="mario"
-proc="4"
+proc="6"
 caratula="0"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2-retro-go-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
@@ -14,12 +14,16 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------- INFO: 2.2-retro
 --title "G&W $consola CFW + Retro-Go /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
 --ok-label Apply \
 --cancel-label Exit \
---menu "Selecciona con las flechas la opcion deseada:" 14 140 15 \
-   C "Opcion flasheo con caratula. Actualmente:$caratula (0=NO y 1=SI)" \
-   1 "Subir solo Retro-Go + backup/restauracion save states en consola G&W $consola sin CFW " \
-   2 "Menu CFW + Retro-Go + backup/restauracion save states en consola G&W $consola original 1MB " \
-   3 "Menu CFW + Retro-Go + backup/restauracion save states en consola G&W $consola con 16MB " \
-   4 "Menu CFW + Retro-Go + backup/restauracion save states en consola G&W $consola con 64MB " \
+--menu "
+Usuario actual: $usuario
+Consola seleccionada: $consola
+Opcion caratulas: $caratula (0=NO y 1=SI)
+
+Selecciona con las flechas la opcion deseada:" 0 0 0 \
+   1 "1MB, 16MB y 64MB sin CFW: Menu flasheo solo Retro-Go + backup/restauracion save states en consola G&W $consola" \
+   2 "1MB: Menu CFW + Retro-Go + backup/restauracion save states en consola G&W $consola original" \
+   3 "16MB: Menu CFW + Retro-Go + backup/restauracion save states en consola G&W $consola" \
+   4 "64MB: Menu CFW + Retro-Go + backup/restauracion save states en consola G&W $consola" \
    5 "Actualizacion del directorio del repo local de Retro-Go" \
    6 "Actualizacion del directorio del parche para el CFW"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")

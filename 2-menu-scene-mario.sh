@@ -9,7 +9,11 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --title "Game&Watch $consola - menu de flasheo" \
 --ok-label Apply \
 --cancel-label Exit \
---menu "Selecciona con las flechas la opcion deseada:" 10 120 15 \
+--menu "
+Usuario actual: $usuario
+Consola seleccionada: $consola
+
+Selecciona con las flechas la opcion deseada:" 0 0 0 \
    1 "Backup, restauracion y liberacion de la G&W $consola" \
    2 "Instalacion Custom FirmWare (CFW) y RetroGo y backup/restauracion de save states en G&W $consola" \
    3 "Generación roms Game&Watch" 2>"${INPUT}"

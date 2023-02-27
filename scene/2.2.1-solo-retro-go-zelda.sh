@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="zelda"
-proc="4"
+proc="6"
 caratula="0"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-solo-retro-go-zelda.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
@@ -14,13 +14,19 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --title "G&W $consola CFW + Retro-Go /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
 --ok-label Apply \
 --cancel-label Exit \
---menu "Selecciona con las flechas la opcion deseada:" 14 140 15 \
+--menu "
+Usuario actual: $usuario
+Consola seleccionada: $consola
+Opcion caratulas: $caratula (0=NO y 1=SI)
+Roms: /home/$usuario/game-and-watch-retro-go/roms/
+
+Selecciona con las flechas la opcion deseada:" 0 0 0 \
    1 "4MB: Compilar solo Retro-Go sin CFW para consola $consola original sin CFW" \
-   2 "4MB: Flashear solo Retro-Go sin CFW en consola $consola original" \
-   3 "16MB: Compilar solo Retro-Go sin CFW para consola $consola" \
-   4 "16MB: Flashear solo Retro-Go sin CFW en consola $consola" \
-   5 "64MB: Compilar solo Retro-Go sin CFW para consola $consola" \
-   6 "64MB: Flashear solo Retro-Go sin CFW en consola $consola" \
+   2 "4MB: Flashear solo Retro-Go sin CFW en consola $consola original sin CFW" \
+   3 "16MB: Compilar solo Retro-Go sin CFW para consola $consola sin CFW" \
+   4 "16MB: Flashear solo Retro-Go sin CFW en consola $consola sin CFW" \
+   5 "64MB: Compilar solo Retro-Go sin CFW para consola $consola sin CFW" \
+   6 "64MB: Flashear solo Retro-Go sin CFW en consola $consola sin CFW" \
    7 "Descarga y restauracion de saves-states con parametros \"solo retro-go\""   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
