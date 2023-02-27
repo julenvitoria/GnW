@@ -20,6 +20,7 @@ Consola seleccionada: $consola
 Opcion caratulas: $caratula (0=NO y 1=SI)
 
 Selecciona con las flechas la opcion deseada:" 0 0 0 \
+   C "Opcion flasheo con caratula. Actualmente:$caratula (0=NO y 1=SI)" \
    1 "1MB, 16MB y 64MB sin CFW: Menu flasheo solo Retro-Go + backup/restauracion save states en consola G&W $consola" \
    2 "1MB: Menu CFW + Retro-Go + backup/restauracion save states en consola G&W $consola original" \
    3 "16MB: Menu CFW + Retro-Go + backup/restauracion save states en consola G&W $consola" \
