@@ -55,7 +55,7 @@ case $menuitem in
                 cd /home/$usuario/gameandwatch/game-and-watch-patch
                 make clean
                 #make PATCH_PARAMS="--internal-only" flash_patched_int
-                make PATCH_PARAMS="--device=zelda" flash_patched_int
+                make PATCH_PARAMS="--device=$consola" flash_patched_int
                 cd -
                 echo " "
                 echo " "
@@ -88,7 +88,7 @@ case $menuitem in
         clear
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         make clean
-        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE=1802240 EXTFLASH_OFFSET=851968 GNW_TARGET=zelda EXTENDED=1 COVERFLOW=$caratula
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE=1802240 EXTFLASH_OFFSET=851968 GNW_TARGET=$consola EXTENDED=1 COVERFLOW=$caratula
         cd -
         echo " "
         echo " "
@@ -122,7 +122,7 @@ case $menuitem in
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         #make clean
-        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE=1802240 EXTFLASH_OFFSET=851968 GNW_TARGET=zelda EXTENDED=1 COVERFLOW=$caratula flash
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE=1802240 EXTFLASH_OFFSET=851968 GNW_TARGET=$consola EXTENDED=1 COVERFLOW=$caratula flash
         cd -
         read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
         dialog --backtitle "G&W $consola - Utilidades de flasheo" \
