@@ -55,7 +55,7 @@ case $menuitem in
                 cd /home/$usuario/gameandwatch/game-and-watch-patch
                 make clean
                 #make PATCH_PARAMS="--internal-only" flash_patched_int
-                make PATCH_PARAMS="--device=$consola" flash_patched_int
+                make PATCH_PARAMS="--device=$consola --extended --no-la --no-sleep-images --extended" flash
                 cd -
                 echo " "
                 echo " "

@@ -57,7 +57,7 @@ case $menuitem in
                 clear
                 cd /home/$usuario/gameandwatch/game-and-watch-patch
                 make clean
-                make PATCH_PARAMS="--device=$consola" LARGE_FLASH=1 flash_patched
+                make PATCH_PARAMS="--device=$consola" flash_patched
                 sleep 0.5
                 make reset
                 cd -
