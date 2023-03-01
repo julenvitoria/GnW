@@ -20,20 +20,26 @@ Consola seleccionada: $consola
 Opcion caratulas: $caratula (0=NO y 1=SI)
 
 Selecciona con las flechas la opcion deseada:" 0 0 0 \
+   H "Herramientas y utilidades" \
    C "Opcion flasheo con caratula. Actualmente:$caratula (0=NO y 1=SI)" \
    1 "4MB, 16MB y 64MB sin CFW: Menu flasheo solo Retro-Go + backup/restauracion save states en consola G&W $consola" \
    2 "4MB: Menu CFW + Retro-Go + backup/restauracion save states en consola G&W $consola original" \
    3 "16MB: Menu CFW + Retro-Go + backup/restauracion save states en consola G&W $consola" \
    4 "64MB: Menu CFW + Retro-Go + backup/restauracion save states en consola G&W $consola" \
    5 "Actualizacion del directorio del repo local de Retro-Go" \
-   6 "Actualizacion del directorio del parche para el CFW"   2>"${INPUT}"
+   6 "Actualizacion del directorio del parche para el CFW" \
+   H "Herramientas y utilidades"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
-   C)clear
+  C)clear
     ./scene/2.2.C-opcion-caratula.sh
     ./scene/2.2-retro-go-$consola.sh
     clear;;
- 1)clear
+  H)clear
+    ./scene/2.2.H-opcion-herramientas.sh
+    ./scene/2.2-retro-go-$consola.sh
+    clear;;
+  1)clear
     ./scene/2.2.1-solo-retro-go-$consola.sh
     ./scene/2.2-retro-go-$consola.sh
     clear;;

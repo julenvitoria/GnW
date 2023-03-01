@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="mario"
-proc="6"
+proc="4"
 caratula="0"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2-retro-go-mario.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
@@ -20,6 +20,7 @@ Consola seleccionada: $consola
 Opcion caratulas: $caratula (0=NO y 1=SI)
 
 Selecciona con las flechas la opcion deseada:" 0 0 0 \
+   H "Herramientas y utilidades" \
    C "Opcion flasheo con caratula. Actualmente:$caratula (0=NO y 1=SI)" \
    1 "1MB, 16MB y 64MB sin CFW: Menu flasheo solo Retro-Go + backup/restauracion save states en consola G&W $consola" \
    2 "1MB: Menu CFW + Retro-Go + backup/restauracion save states en consola G&W $consola original" \
@@ -31,6 +32,10 @@ menuitem=$(<"${INPUT}")
 case $menuitem in
   C)clear
     ./scene/2.2.C-opcion-caratula.sh
+    ./scene/2.2-retro-go-$consola.sh
+    clear;;
+  H)clear
+    ./scene/2.2.H-opcion-herramientas.sh
     ./scene/2.2-retro-go-$consola.sh
     clear;;
   1)clear

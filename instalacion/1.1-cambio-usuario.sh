@@ -35,6 +35,8 @@ if [ "$confirm" = "s" ]; then
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-zelda.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.5-actualizacion-retro-go.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.6-actualizacion-parche.sh
+    sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.C-opcion-caratula.sh
+    sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.H-opcion-herramientas.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./menu.sh
     #sleep 3
 else
@@ -64,6 +66,8 @@ else
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-zelda.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.5-actualizacion-retro-go.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.6-actualizacion-parche.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.C-opcion-caratula.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.H-opcion-herramientas.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./menu.sh
         #sleep 3
     fi
