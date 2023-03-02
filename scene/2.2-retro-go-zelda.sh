@@ -26,8 +26,7 @@ Selecciona con las flechas la opcion deseada:" 0 0 0 \
    3 "16MB: Menu CFW + Retro-Go + backup/restauracion save states en consola G&W $consola" \
    4 "64MB: Menu CFW + Retro-Go + backup/restauracion save states en consola G&W $consola" \
    5 "Actualizacion del directorio del repo local de Retro-Go" \
-   6 "Actualizacion del directorio del parche para el CFW" \
-   H "Herramientas y utilidades"   2>"${INPUT}"
+   6 "Actualizacion del directorio del parche para el CFW"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
   C)clear
