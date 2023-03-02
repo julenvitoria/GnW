@@ -21,6 +21,7 @@ Opcion caratulas: $caratula (0=NO y 1=SI)
 Roms: /home/$usuario/game-and-watch-retro-go/roms/
 
 Selecciona con las flechas la opcion deseada:" 0 0 0 \
+   H "Herramientas y utilidades" \
    1 "CFW \"slim\" con los parametros para 16MB" \
    2 "Compilar Retro-Go para CFW \"slim\" y parametros 16MB" \
    3 "Flashear Retro-Go para CFW \"slim\" y parametros 16MB" \
@@ -30,6 +31,10 @@ Selecciona con las flechas la opcion deseada:" 0 0 0 \
    7 "Descarga y restauracion de saves-states con parametros 16MB"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
+  H)clear
+    ./scene/2.2.H-opcion-herramientas.sh
+    ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh
+    clear;;
   1)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
     --title "Instalar CFW slim en G&W $consola con 16MB" \

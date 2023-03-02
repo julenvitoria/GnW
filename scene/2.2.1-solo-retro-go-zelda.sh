@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="zelda"
-proc="6"
+proc="4"
 caratula="0"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-solo-retro-go-zelda.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
@@ -21,6 +21,7 @@ Opcion caratulas: $caratula (0=NO y 1=SI)
 Roms: /home/$usuario/game-and-watch-retro-go/roms/
 
 Selecciona con las flechas la opcion deseada:" 0 0 0 \
+   H "Herramientas y utilidades" \
    1 "4MB: Compilar solo Retro-Go sin CFW para consola $consola original sin CFW" \
    2 "4MB: Flashear solo Retro-Go sin CFW en consola $consola original sin CFW" \
    3 "16MB: Compilar solo Retro-Go sin CFW para consola $consola sin CFW" \
@@ -30,6 +31,10 @@ Selecciona con las flechas la opcion deseada:" 0 0 0 \
    7 "Descarga y restauracion de saves-states con parametros \"solo retro-go\""   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
+  H)clear
+    ./scene/2.2.H-opcion-herramientas.sh
+    ./scene/2.2.1-solo-retro-go-$consola.sh
+    clear;;
   1)clear
     cd /home/$usuario/gameandwatch/game-and-watch-retro-go
     make clean

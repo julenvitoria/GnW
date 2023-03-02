@@ -7,7 +7,7 @@ usuario="kde"
 clear
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.H-opcion-herramientas.sh Usuario = $usuario ------------------" \
        --title "INFO: Usuario=$usuario --- Menu herramientas y utilidades" \
-       --infobox "G&W herramientas y utilidades" 0 0 ; sleep 3
+       --infobox "G&W herramientas y utilidades" 0 0 ; sleep 1
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.H-opcion-herramientas.sh Usuario = $usuario ------------------" \
        --title "INFO: Usuario=$usuario --- Menu herramientas y utilidades" \
        --ok-label Apply \
