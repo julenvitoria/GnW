@@ -14,15 +14,27 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --title "G&W $consola CFW + Retro-Go /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
 --ok-label Apply \
 --cancel-label Exit \
---menu "Selecciona con las flechas la opcion deseada:" 14 140 15 \
-   1 "Compilar Retro-Go para consola original sin CFW con 1MB" \
-   2 "Subir solo Retro-Go sin CFW en consola original con 1MB" \
-   3 "Compilar Retro-Go para consola sin CFW con chip de 16MB" \
-   4 "Subir solo Retro-Go sin CFW en consola con chip de 16MB" \
-   5 "Compilar Retro-Go para consola sin CFW con chip de 64MB" \
-   6 "Subir solo Retro-Go sin CFW en consola con chip de 64MB"   2>"${INPUT}"
+--menu "
+Usuario actual: $usuario
+Consola seleccionada: $consola
+Opcion caratulas: $caratula (0=NO y 1=SI)
+Roms: /home/$usuario/game-and-watch-retro-go/roms/
+
+Selecciona con las flechas la opcion deseada:" 0 0 0 \
+   H "Herramientas y utilidades" \
+   1 "1MB: Compilar solo Retro-Go sin CFW para consola $consola original sin CFW" \
+   2 "1MB: Flashear solo Retro-Go sin CFW en consola $consola original sin CFW" \
+   3 "16MB: Compilar solo Retro-Go sin CFW para consola $consola sin CFW" \
+   4 "16MB: Flashear solo Retro-Go sin CFW en consola $consola sin CFW" \
+   5 "64MB: Compilar solo Retro-Go sin CFW para consola $consola sin CFW" \
+   6 "64MB: Flashear solo Retro-Go sin CFW en consola $consola sin CFW" \
+   7 "Descarga y restauracion de saves-states con parametros \"solo retro-go\""   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
+  H)clear
+    ./scene/2.2.H-opcion-herramientas.sh
+    ./scene/2.2.1-solo-retro-go-$consola.sh
+    clear;;
   1)clear
     cd /home/$usuario/gameandwatch/game-and-watch-retro-go
     make clean
@@ -71,8 +83,6 @@ case $menuitem in
     ./scene/2.2.1-solo-retro-go-$consola.sh
     clear;;
   4)clear
-    #./scene/2.2.1-retro-go-16mb-$consola.sh
-    clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-solo-retro-go-mario.sh Usuario = $usuario ------------------" \
     --title "Instalar solo Retro-Go en consola G&W $consola 16MB sin CFW" \
     --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Se flasheara solamente el emulador Retro-Go por lo que no tendremos el menu original. Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola." 0 0
@@ -112,8 +122,6 @@ case $menuitem in
     ./scene/2.2.1-solo-retro-go-$consola.sh
     clear;;
   6)clear
-    #./scene/2.2.1-retro-go-64mb-$consola.sh
-    clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-solo-retro-go-mario.sh Usuario = $usuario ------------------" \
     --title "Instalar solo Retro-Go en consola G&W $consola 64MB sin CFW" \
     --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Se flasheara solamente el emulador Retro-Go por lo que no tendremos el menu original. Las roms que existan en /home/$usuario/game-and-watch-retro-go/roms/ tambien se subiran a la consola." 0 0
@@ -142,6 +150,10 @@ case $menuitem in
         --msgbox "Proceso cancelado." 0 0
     fi
     cd -
+    ./scene/2.2.1-solo-retro-go-$consola.sh
+    clear;;
+  7)clear
+    ./scene/2.2.1-save-state-$consola.sh
     ./scene/2.2.1-solo-retro-go-$consola.sh
     clear;;
 esac

@@ -4,19 +4,31 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="zelda"
-proc="2"
+proc="4"
 caratula="0"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.2-cfw-retro-go-4mb-zelda.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 --title "G&W CFW + Retro-Go 4MB /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
 --ok-label Apply \
 --cancel-label Exit \
---menu "Selecciona con las flechas la opcion deseada:" 12 140 15 \
+--menu "
+Usuario actual: $usuario
+Consola seleccionada: $consola
+Opcion caratulas: $caratula (0=NO y 1=SI)
+Roms: /home/$usuario/game-and-watch-retro-go/roms/
+
+Selecciona con las flechas la opcion deseada:" 0 0 0 \
+   H "Herramientas y utilidades" \
    1 "CFW con los parametros para 4MB" \
    2 "Compilar Retro-Go con los parametros para 4MB" \
-   3 "Flashear Retro-Go con los parametros para 4MB" 2>"${INPUT}"
+   3 "Flashear Retro-Go con los parametros para 4MB" \
+   4 "Descarga y restauracion de saves-states con parametros 4MB"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
+  H)clear
+    ./scene/2.2.H-opcion-herramientas.sh
+    ./scene/2.2.2-cfw-retro-go-4mb-$consola.sh
+    clear;;
   1)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
     --title "Instalar Retro-Go en consola G&W $consola con 4MB" \
@@ -81,7 +93,7 @@ case $menuitem in
         clear
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         make clean
-        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE=1802240 EXTFLASH_OFFSET=851968 GNW_TARGET=zelda EXTENDED=1 COVERFLOW=$caratula
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE=1802240 EXTFLASH_OFFSET=851968 GNW_TARGET=$consola EXTENDED=1 COVERFLOW=$caratula
         cd -
         echo " "
         echo " "
@@ -115,7 +127,7 @@ case $menuitem in
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         #make clean
-        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE=1802240 EXTFLASH_OFFSET=851968 GNW_TARGET=zelda EXTENDED=1 COVERFLOW=$caratula flash
+        make -j$proc COMPRESS=lzma INTFLASH_BANK=2 EXTFLASH_SIZE=1802240 EXTFLASH_OFFSET=851968 GNW_TARGET=$consola EXTENDED=1 COVERFLOW=$caratula flash
         cd -
         read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
         dialog --backtitle "G&W $consola - Utilidades de flasheo" \
@@ -128,5 +140,9 @@ case $menuitem in
     fi
     ./scene/2.2.2-cfw-retro-go-4mb-$consola.sh
     clear;;
+    4)clear
+    ./scene/2.2.2-save-state-$consola.sh
+    ./scene/2.2.2-cfw-retro-go-4mb-$consola.sh
+	clear;;
 esac
 clear

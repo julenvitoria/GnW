@@ -18,7 +18,7 @@ clear
 #fi
 sudo apt update -y
 sudo apt upgrade -y
-sudo apt install -y binutils-arm-none-eabi python3 libhidapi-hidraw0 libftdi1 libftdi1-2 git python3-pip
+sudo apt install -y unzip binutils-arm-none-eabi python3 libhidapi-hidraw0 libftdi1 libftdi1-2 git python3-pip
 clear
 #cd /home/$usuario
 #if [ -d /home/$usuario/gameandwatch ]; then

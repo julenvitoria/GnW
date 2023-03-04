@@ -12,7 +12,10 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo" \
 --title "G&W menu backup/restauracion/liberacion" \
 --ok-label Apply \
 --cancel-label Exit \
---menu "Selecciona con las flechas la opcion deseada:" 14 150 15 \
+--menu "
+Consola seleccionada: $consola
+
+Selecciona con las flechas la opcion deseada:" 0 0 0 \
    1 "Sanity check: comprobacion de dependencias y elementos necesarios." \
    2 "Backup flash externa: realiza un backup de la flash SPI. No modifica el contenido." \
    3 "Backup de la flash interna: ATENCION: se modifica el contenido de la flash SPI del punto anterior. Puede tardar hasta 5 min" \

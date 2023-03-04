@@ -11,12 +11,24 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --title "G&W CFW + Retro-Go 64MB /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
 --ok-label Apply \
 --cancel-label Exit \
---menu "Selecciona con las flechas la opcion deseada:" 12 140 15 \
+--menu "
+Usuario actual: $usuario
+Consola seleccionada: $consola
+Opcion caratulas: $caratula (0=NO y 1=SI)
+Roms: /home/$usuario/game-and-watch-retro-go/roms/
+
+Selecciona con las flechas la opcion deseada:" 0 0 0 \
+   H "Herramientas y utilidades" \
    1 "CFW con los parametros para 64MB" \
    2 "Compilar Retro-Go con los parametros para 64MB" \
-   3 "Flashear Retro-Go con los parametros para 64MB" 2>"${INPUT}"
+   3 "Flashear Retro-Go con los parametros para 64MB" \
+   4 "Descarga y restauracion de saves-states con parametros 64MB"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
+  H)clear
+    ./scene/2.2.H-opcion-herramientas.sh
+    ./scene/2.2.4-cfw-retro-go-64mb-$consola.sh
+    clear;;
   1)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
     --title "Instalar Retro-Go en consola G&W $consola con 64MB" \
@@ -128,5 +140,9 @@ case $menuitem in
     fi
     ./scene/2.2.4-cfw-retro-go-64mb-$consola.sh
     clear;;
+  4)clear
+    ./scene/2.2.4-save-state-$consola.sh
+    ./scene/2.2.4-cfw-retro-go-64mb-$consola.sh
+	clear;;
 esac
 clear

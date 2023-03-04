@@ -14,12 +14,24 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo" \
 --title "G&W CFW + Retro-Go 16MB /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
 --ok-label Apply \
 --cancel-label Exit \
---menu "Selecciona con las flechas la opcion deseada:" 15 140 15 \
+--menu "
+Usuario actual: $usuario
+Consola seleccionada: $consola
+Opcion caratulas: $caratula (0=NO y 1=SI)
+Roms: /home/$usuario/game-and-watch-retro-go/roms/
+
+Selecciona con las flechas la opcion deseada:" 0 0 0 \
+   H "Herramientas y utilidades" \
    1 "CFW con los parametros para 16MB" \
    2 "Compilar Retro-Go para CFW y parametros 16MB" \
-   3 "Flashear Retro-Go para CFW y parametros 16MB" 2>"${INPUT}"
+   3 "Flashear Retro-Go para CFW y parametros 16MB" \
+   4 "Descarga y restauracion de saves-states con parametros 16MB"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
+  H)clear
+    ./scene/2.2.H-opcion-herramientas.sh
+    ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh
+    clear;;
   1)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
     --title "Instalar CFW slim en G&W $consola con 16MB" \
@@ -85,7 +97,7 @@ case $menuitem in
         clear
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         make clean
-        make -j$proc EXTFLASH_SIZE_MB=12 EXTFLASH_OFFSET=4194304 INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula
+        make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=12 EXTFLASH_OFFSET=4194304 INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula
         cd -
         echo " "
         echo " "
@@ -119,7 +131,7 @@ case $menuitem in
         read -n 1 -s -r -p ""
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         #make clean
-        make -j$proc EXTFLASH_SIZE_MB=12 EXTFLASH_OFFSET=4194304 INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula flash
+        make -j$proc COMPRESS=lzma EXTFLASH_SIZE_MB=12 EXTFLASH_OFFSET=4194304 INTFLASH_BANK=2 GNW_TARGET=$consola COVERFLOW=$caratula flash
         cd -
         echo " "
         echo " "
@@ -134,5 +146,9 @@ case $menuitem in
     fi
     ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh
     clear;;
+  4)clear
+    ./scene/2.2.3-save-state-$consola.sh
+    ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh
+	clear;;
 esac
 clear

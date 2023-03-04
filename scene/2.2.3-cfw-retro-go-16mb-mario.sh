@@ -14,15 +14,27 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo" \
 --title "G&W CFW + Retro-Go 16MB /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \
 --ok-label Apply \
 --cancel-label Exit \
---menu "Selecciona con las flechas la opcion deseada:" 15 140 15 \
+--menu "
+Usuario actual: $usuario
+Consola seleccionada: $consola
+Opcion caratulas: $caratula (0=NO y 1=SI)
+Roms: /home/$usuario/game-and-watch-retro-go/roms/
+
+Selecciona con las flechas la opcion deseada:" 0 0 0 \
+   H "Herramientas y utilidades" \
    1 "CFW \"slim\" con los parametros para 16MB" \
    2 "Compilar Retro-Go para CFW \"slim\" y parametros 16MB" \
    3 "Flashear Retro-Go para CFW \"slim\" y parametros 16MB" \
    4 "CFW \"full\" con los parametros para 16MB" \
    5 "Compilar Retro-Go para CFW \"full\" y parametros 16MB" \
-   6 "Flashear Retro-Go para CFW \"full\" y parametros 16MB" 2>"${INPUT}"
+   6 "Flashear Retro-Go para CFW \"full\" y parametros 16MB" \
+   7 "Descarga y restauracion de saves-states con parametros 16MB"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
+  H)clear
+    ./scene/2.2.H-opcion-herramientas.sh
+    ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh
+    clear;;
   1)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
     --title "Instalar CFW slim en G&W $consola con 16MB" \
@@ -75,7 +87,7 @@ case $menuitem in
             --title "Instalar firmware original + Retro-Go  en consola con 16MB" \
             --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh/media/kde/WD-4tb/git/GnW/
+    ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh
     clear;;
   2)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
@@ -249,5 +261,9 @@ case $menuitem in
     fi
     ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh
     clear;;
+  7)clear
+    ./scene/2.2.3-save-state-$consola.sh
+    ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh
+	clear;;
 esac
 clear
