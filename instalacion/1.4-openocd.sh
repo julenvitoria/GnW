@@ -21,3 +21,19 @@ fi
 
 export OPENOCD="/opt/openocd-git/bin/openocd"
 sleep 3
+
+dialog --backtitle "G&W ------------------------- INFO: 1.4-openocd.sh -------------------------- Usuario = $usuario ------------------------" \
+       --title "INFO: Usuario=$usuario ---------- Instalacion openocd" \
+       --yesno "¡¡¡ATENCION!!! Se recomienda realizar un reinicio despues de instalar OPENOCD para asegurar que todo funcione correctamente. Si no lo realizas ahora recuerda hacerlo mas tarde. ¿Deseas reiniciar el sistema?" 0 0
+    ans=$?
+if [ $ans -eq 0 ]; then
+    clear
+    dialog --backtitle "G&W ------------------------- INFO: 1.4-openocd.sh -------------------------- Usuario = $usuario ------------------------" \
+           --title "INFO: Usuario=$usuario ---------- Instalacion openocd" \
+           --infobox "Reiniciando el sistema..." 0 0 ; sleep 2
+    sudo reboot
+else
+    dialog --backtitle "G&W ------------------------- INFO: 1.4-openocd.sh -------------------------- Usuario = $usuario ------------------------" \
+           --title "INFO: Usuario=$usuario ---------- Instalacion openocd" \
+           --infobox "Recuerda realizar el reinicio mas tarde :)" 0 0 ; sleep 2
+fi
