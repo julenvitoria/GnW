@@ -15,6 +15,7 @@ if grep "install ok installed" ./libncurses5.txt ; then
 else
         echo "No encontrado paquete dialog necesario, instalando..."
         echo " "
+        sudo apt update
         sudo apt install -y libncurses5
         echo " "
         echo "Instalado!!"
