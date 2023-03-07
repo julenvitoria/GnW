@@ -46,7 +46,8 @@ if [ "$confirm" = "s" ]; then
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.3-save-state-zelda.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.4-save-state-mario.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.4-save-state-zelda.sh
-    #sleep 3
+    echo "¡¡Aplicado!!"
+    sleep 2
 else
     if [ "$confirm" = "S" ]
     then
@@ -85,7 +86,8 @@ else
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.3-save-state-zelda.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.4-save-state-mario.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.4-save-state-zelda.sh
-        #sleep 3
+        echo "¡¡Aplicado!!"
+        sleep 2
     fi
 fi
 
