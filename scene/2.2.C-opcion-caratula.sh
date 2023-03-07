@@ -4,7 +4,6 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="mario"
-proc="4"
 caratula="0"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.C-opcion-caratula.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
@@ -66,7 +65,7 @@ case $menuitem in
     sed -i 's/^caratula=.*$/'caratula=\""0"\"'/g' ./scene/2.2.C-opcion-caratula.sh
     dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.C-opcion-caratula.sh Usuario = $usuario ------------------" \
     --title "G&W $consola menu caratulas" \
-    --msgbox "Opcion caratulas DESACTIVADA. NOTA:Para flashear caratulas de roms en el menú hará falta colocar en el mismo directorio de la rom un archivo jpg, bmp o png con el mismo nombre de la rom y el propio programa se encargara de comprimirla y subirla a la G&W." 0 0
+    --msgbox "Opcion caratulas DESACTIVADA." 0 0
     #sleep 5;;
 	clear;;
 esac
