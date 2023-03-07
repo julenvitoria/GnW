@@ -38,6 +38,14 @@ if [ "$confirm" = "s" ]; then
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.C-opcion-caratula.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.H-opcion-herramientas.sh
     sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./menu.sh
+    sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.1-save-state-mario.sh
+    sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.1-save-state-zelda.sh
+    sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.2-save-state-mario.sh
+    sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.2-save-state-zelda.sh
+    sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.3-save-state-mario.sh
+    sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.3-save-state-zelda.sh
+    sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.4-save-state-mario.sh
+    sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.4-save-state-zelda.sh
     #sleep 3
 else
     if [ "$confirm" = "S" ]
@@ -69,6 +77,14 @@ else
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.C-opcion-caratula.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.H-opcion-herramientas.sh
         sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./menu.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.1-save-state-mario.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.1-save-state-zelda.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.2-save-state-mario.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.2-save-state-zelda.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.3-save-state-mario.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.3-save-state-zelda.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.4-save-state-mario.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.4-save-state-zelda.sh
         #sleep 3
     fi
 fi
