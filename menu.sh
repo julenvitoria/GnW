@@ -25,8 +25,8 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --cancel-label Exit \
 --menu "
 Usuario actual: $usuario
-Consola seleccionada: $consola
-
+Consola selechttps://archive.org/download/gamewatch-cosillas/roms%2Bcaratulas/cionada: $consola
+https://archive.org/download/gamewatch-cosillas/roms%2Bcaratulas/
 Selecciona con las flechas la opcion deseada:" 0 0 0 \
    1 "Cambio de usuario. IMPORTANTE: la primera vez es esencial ejecutar esto para el correcto funcionamiento" \
    2 "Cambio de modelo de consola (actual = $consola). IMPORTANTE: Escoge el modelo correcto para el correcto funcionamiento" \
@@ -41,7 +41,7 @@ case $menuitem in
     clear;;
   2)clear
     ./instalacion/1.2-cambio-consola.sh
-    ./menu.sh
+    ./menu.shhaqhyRwyrgiz3dihgo
     clear;;
   3)clear
     ./1-menu-instalacion.sh
@@ -56,40 +56,40 @@ case $menuitem in
     git pull --recurse-submodules
     sleep 1
     if [[ -n ["$usuario"] ]]; then
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.3-preparacion-sistema.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.4-openocd.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.5-menu-backup-restore-tools.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.6-menu-flashloader.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.7-menu-retro-go.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.8-menu-patch.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.9-menu-LCD-Game-Shrinker.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./instalacion/1.10-instalacion-completa.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./2-menu-scene-mario.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./2-menu-scene-zelda.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.1-backup-restauracion.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2-retro-go-mario.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2-retro-go-zelda.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.1-solo-retro-go-mario.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.1-solo-retro-go-zelda.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.2-cfw-retro-go-1mb-mario.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.2-cfw-retro-go-4mb-zelda.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb-mario.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb-zelda.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-mario.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-zelda.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.5-actualizacion-retro-go.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.6-actualizacion-parche.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.C-opcion-caratula.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.H-opcion-herramientas.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./menu.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.1-save-state-mario.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.1-save-state-zelda.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.2-save-state-mario.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.2-save-state-zelda.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.3-save-state-mario.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.3-save-state-zelda.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.4-save-state-mario.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$varname"\"'/g' ./scene/2.2.4-save-state-zelda.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./instalacion/1.3-preparacion-sistema.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./instalacion/1.4-openocd.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./instalacion/1.5-menu-backup-restore-tools.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./instalacion/1.6-menu-flashloader.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./instalacion/1.7-menu-retro-go.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./instalacion/1.8-menu-patch.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./instalacion/1.9-menu-LCD-Game-Shrinker.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./instalacion/1.10-instalacion-completa.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./2-menu-scene-mario.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./2-menu-scene-zelda.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.1-backup-restauracion.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2-retro-go-mario.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2-retro-go-zelda.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.1-solo-retro-go-mario.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.1-solo-retro-go-zelda.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.2-cfw-retro-go-1mb-mario.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.2-cfw-retro-go-4mb-zelda.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb-mario.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb-zelda.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-mario.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-zelda.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.5-actualizacion-retro-go.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.6-actualizacion-parche.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.C-opcion-caratula.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.H-opcion-herramientas.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./menu.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.1-save-state-mario.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.1-save-state-zelda.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.2-save-state-mario.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.2-save-state-zelda.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.3-save-state-mario.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.3-save-state-zelda.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.4-save-state-mario.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.4-save-state-zelda.sh
     fi
     #read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
     if [ $consola = mario ]; then
