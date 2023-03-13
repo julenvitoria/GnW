@@ -26,7 +26,7 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 --menu "
 Usuario actual: $usuario
 Consola selechttps://archive.org/download/gamewatch-cosillas/roms%2Bcaratulas/cionada: $consola
-https://archive.org/download/gamewatch-cosillas/roms%2Bcaratulas/
+
 Selecciona con las flechas la opcion deseada:" 0 0 0 \
    1 "Cambio de usuario. IMPORTANTE: la primera vez es esencial ejecutar esto para el correcto funcionamiento" \
    2 "Cambio de modelo de consola (actual = $consola). IMPORTANTE: Escoge el modelo correcto para el correcto funcionamiento" \
