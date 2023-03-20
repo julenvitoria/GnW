@@ -35,9 +35,9 @@ Opcion caratulas: $caratula (0=NO y 1=SI)
 Save states: /home/$usuario/game-and-watch-retro-go/save_states/
 
 Selecciona con las flechas la opcion deseada:" 0 0 0 \
-          1 "Hacer backup de los save states existentes que hay en la G&W con chip de 64MB" \
-          2 "Restaurar los save states desde el pc a la G&W con chip de 64MB" \
-          3 "Borrar los saves states existentes en la G&W con chip de 64MB para dejarla limpia"   2>"${INPUT}"
+          1 "Hacer backup de los save states existentes que hay en la G&W con chip de 64MB, 128MB o 256MB" \
+          2 "Restaurar los save states desde el pc a la G&W con chip de 64MB, 128MB o 256MB" \
+          3 "Borrar los saves states existentes en la G&W con chip de 64MB, 128MB o 256MB para dejarla limpia"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
