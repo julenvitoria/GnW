@@ -29,6 +29,8 @@ case $menuitem in
     sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.2-cfw-retro-go-1mb-$consola.sh
     sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb-$consola.sh
     sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-$consola.sh
+    sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.5-cfw-retro-go-128mb-$consola.sh
+    sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.6-cfw-retro-go-256mb-$consola.sh
     sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.1-save-state-$consola.sh
     sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.2-save-state-$consola.sh
     sed -i 's/^proc=.*$/'proc=\""$(nproc)"\"'/g' ./scene/2.2.3-save-state-$consola.sh

@@ -37,6 +37,10 @@ case $menuitem in
     sed -i 's/^caratula=.*$/'caratula=\""1"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-zelda.sh
 	sed -i 's/^caratula=.*$/'caratula=\""1"\"'/g' ./scene/2.2.4-save-state-mario.sh
     sed -i 's/^caratula=.*$/'caratula=\""1"\"'/g' ./scene/2.2.4-save-state-zelda.sh
+    sed -i 's/^caratula=.*$/'caratula=\""1"\"'/g' ./scene/2.2.5-cfw-retro-go-128mb-mario.sh
+    sed -i 's/^caratula=.*$/'caratula=\""1"\"'/g' ./scene/2.2.5-cfw-retro-go-128mb-zelda.sh
+    sed -i 's/^caratula=.*$/'caratula=\""1"\"'/g' ./scene/2.2.6-cfw-retro-go-256mb-mario.sh
+    sed -i 's/^caratula=.*$/'caratula=\""1"\"'/g' ./scene/2.2.6-cfw-retro-go-256mb-zelda.sh
     sed -i 's/^caratula=.*$/'caratula=\""1"\"'/g' ./scene/2.2.C-opcion-caratula.sh
     dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.C-opcion-caratula.sh Usuario = $usuario ------------------" \
     --title "G&W $consola menu caratulas" \
@@ -62,6 +66,10 @@ case $menuitem in
     sed -i 's/^caratula=.*$/'caratula=\""0"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-zelda.sh
 	sed -i 's/^caratula=.*$/'caratula=\""0"\"'/g' ./scene/2.2.4-save-state-mario.sh
     sed -i 's/^caratula=.*$/'caratula=\""0"\"'/g' ./scene/2.2.4-save-state-zelda.sh
+    sed -i 's/^caratula=.*$/'caratula=\""0"\"'/g' ./scene/2.2.5-cfw-retro-go-128mb-mario.sh
+    sed -i 's/^caratula=.*$/'caratula=\""0"\"'/g' ./scene/2.2.5-cfw-retro-go-128mb-zelda.sh
+    sed -i 's/^caratula=.*$/'caratula=\""0"\"'/g' ./scene/2.2.6-cfw-retro-go-256mb-mario.sh
+    sed -i 's/^caratula=.*$/'caratula=\""0"\"'/g' ./scene/2.2.6-cfw-retro-go-256mb-zelda.sh
     sed -i 's/^caratula=.*$/'caratula=\""0"\"'/g' ./scene/2.2.C-opcion-caratula.sh
     dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.C-opcion-caratula.sh Usuario = $usuario ------------------" \
     --title "G&W $consola menu caratulas" \

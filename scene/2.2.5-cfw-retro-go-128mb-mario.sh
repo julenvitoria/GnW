@@ -32,7 +32,7 @@ case $menuitem in
   1)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
     --title "Instalar Retro-Go en consola G&W $consola con 128MB" \
-    --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Este proceso es solamente para una consola con el chip de 64MB instalado.\n\n¡¡¡ATENCION!!!\nSI SE TIENE DIFERENTE CANTIDAD DE MEMORIA CANCELAR EL PROCESO y una vez vuelto al menu seleccionar el correcto.\n\nSe flasheara un custom firmware que consta del menu original de la consola ademas del acceso al emulador Retro-Go. El emulador aparecera al realizar el combo de botones \"LEFT\" + \"GAME\". ¿Deseas continuar?" 0 0
+    --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Este proceso es solamente para una consola con el chip de 128MB instalado.\n\n¡¡¡ATENCION!!!\nSI SE TIENE DIFERENTE CANTIDAD DE MEMORIA CANCELAR EL PROCESO y una vez vuelto al menu seleccionar el correcto.\n\nSe flasheara un custom firmware que consta del menu original de la consola ademas del acceso al emulador Retro-Go. El emulador aparecera al realizar el combo de botones \"LEFT\" + \"GAME\". ¿Deseas continuar?" 0 0
     ans=$?
     if [ $ans -eq 0 ]; then
         clear
