@@ -41,7 +41,7 @@ case $menuitem in
     clear;;
   2)clear
     ./instalacion/1.2-cambio-consola.sh
-    ./menu.shhaqhyRwyrgiz3dihgo
+    ./menu.sh
     clear;;
   3)clear
     ./1-menu-instalacion.sh
