@@ -77,8 +77,11 @@ case $menuitem in
         sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb-zelda.sh
         sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-mario.sh
         sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-zelda.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.5-actualizacion-retro-go.sh
-        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.6-actualizacion-parche.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.5-cfw-retro-go-128mb-mario.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.5-cfw-retro-go-128mb-zelda.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.6-cfw-retro-go-256mb-mario.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.6-cfw-retro-go-256mb-zelda.sh
+        sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.R-actualizacion-retro-go.sh
         sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.C-opcion-caratula.sh
         sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./scene/2.2.H-opcion-herramientas.sh
         sed -i 's/^usuario=.*$/'usuario=\""$usuario"\"'/g' ./menu.sh
@@ -101,6 +104,8 @@ case $menuitem in
         sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.2-cfw-retro-go-1mb-mario.sh
         sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb-mario.sh
         sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-mario.sh
+        sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.5-cfw-retro-go-128mb-mario.sh
+        sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.6-cfw-retro-go-256mb-mario.sh
         sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.H-opcion-herramientas.sh
         sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.C-opcion-caratula.sh
         sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./menu.sh
@@ -114,6 +119,8 @@ case $menuitem in
         sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.2-cfw-retro-go-4mb-zelda.sh
         sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.3-cfw-retro-go-16mb-zelda.sh
         sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.4-cfw-retro-go-64mb-zelda.sh
+        sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.5-cfw-retro-go-128mb-zelda.sh
+        sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.6-cfw-retro-go-256mb-zelda.sh
         sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./scene/2.2.H-opcion-herramientas.sh
         sed -i 's/^consola=.*$/'consola=\""mario"\"'/g' ./scene/2.2.C-opcion-caratula.sh
         sed -i 's/^consola=.*$/'consola=\""zelda"\"'/g' ./menu.sh
