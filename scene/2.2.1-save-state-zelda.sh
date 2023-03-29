@@ -22,7 +22,7 @@ else
         sleep 0.5
 fi
 
-dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-save-state-zelda.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
+dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-save-state-zelda.sh Usuario = $usuario    ////   Consola seleccionada = $consola ------------------" \
        --msgbox "G&W Utilidad para backup, resturacion y borrado de save states. Una vez descargados los save states estan ubicados en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" 0 0
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.1-save-state-zelda.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
        --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
@@ -43,7 +43,9 @@ Selecciona con las flechas la opcion deseada:" 0 0 0 \
           6 "16MB $consola solo Retro-Go: Borrar los saves states existentes en la G&W" \
           7 "64MB $consola solo Retro-Go: Hacer backup de los save states existentes que hay en la G&W" \
           8 "64MB $consola solo Retro-Go: Restaurar los save states desde el pc a la G&W" \
-          9 "64MB $consola solo Retro-Go: Borrar los saves states existentes en la G&W"   2>"${INPUT}"
+          9 "64MB $consola solo Retro-Go: Borrar los saves states existentes en la G&W" \
+          10 "Exportar el guardado de la pila (srm) desde los save states" \
+          11 "Importar el guardado de la pila (srm) a los save states"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
@@ -278,6 +280,14 @@ case $menuitem in
                --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
                --msgbox "Proceso cancelado." 0 0
     fi
+    ./scene/2.2.1-save-state-$consola.sh
+    clear;;
+  10)clear
+    ./scene/exportar_srm.sh
+    ./scene/2.2.1-save-state-$consola.sh
+    clear;;
+  11)clear
+    ./scene/importar_srm.sh
     ./scene/2.2.1-save-state-$consola.sh
     clear;;
 esac

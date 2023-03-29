@@ -43,7 +43,9 @@ Selecciona con las flechas la opcion deseada:" 0 0 0 \
           6 "16MB $consola solo Retro-Go: Borrar los saves states existentes en la G&W" \
           7 "64MB $consola solo Retro-Go: Hacer backup de los save states existentes que hay en la G&W" \
           8 "64MB $consola solo Retro-Go: Restaurar los save states desde el pc a la G&W" \
-          9 "64MB $consola solo Retro-Go: Borrar los saves states existentes en la G&W"   2>"${INPUT}"
+          9 "64MB $consola solo Retro-Go: Borrar los saves states existentes en la G&W" \
+          10 "Exportar el guardado de la pila (srm) desde los save states" \
+          11 "Importar el guardado de la pila (srm) a los save states"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
@@ -278,6 +280,16 @@ case $menuitem in
                --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
                --msgbox "Proceso cancelado." 0 0
     fi
+    ./scene/2.2.1-save-state-$consola.sh
+    clear;;
+  10)clear
+    ./scene/exportar_srm.sh
+    dd if=juegoejemplo.save skip=53248 bs=1 of=juegoejemplo.srm
+    ./scene/2.2.1-save-state-$consola.sh
+    clear;;
+  11)clear
+    ./scene/importar_srm.sh
+    dd if=juegoejemplo.srm seek=53248 bs=1 of=juegoejemplo.save
     ./scene/2.2.1-save-state-$consola.sh
     clear;;
 esac
