@@ -7,8 +7,8 @@ Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
 Architecture: amd64
 Multi-Arch: same
 Source: ncurses
-Version: 6.3-2
-Depends: libtinfo5 (= 6.3-2), libc6 (>= 2.34)
+Version: 6.3+20220423-2
+Depends: libtinfo5 (= 6.3+20220423-2), libc6 (>= 2.34)
 Recommends: libgpm2
 Description: shared libraries for terminal handling (legacy version)
  The ncurses library routines are a terminal-independent method of

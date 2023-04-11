@@ -49,8 +49,10 @@ case $menuitem in
     clear;;
   3)clear
     dialog --backtitle "G&W $consola - Herramientas y Utilidades ------------------ INFO: 2.2.H-opcion-herramientas.sh Usuario = $usuario ------------------" \
+       --msgbox "¡¡¡ATENCION!!! El programa de test de la flash externa se carga en la memoria interna para poder realizarse. Esto quiere decir que si tenemos dual boot con CFW+Retro-Go ademas de retrogo también habrá que reflashear el CFW porque éste será reemplazado por el programa de test de la flash. Si tenemos consola con solo Retro-Go tendremos que reflashear Retro-Go completo." 0 0
+    dialog --backtitle "G&W $consola - Herramientas y Utilidades ------------------ INFO: 2.2.H-opcion-herramientas.sh Usuario = $usuario ------------------" \
            --title "Herramientas y utilidades G&W" \
-           --yesno "¡¡¡ATENCION!!! El programa de test de la flash externa se carga en la memoria interna para poder realizarse. Esto quiere decir que si tenemos dual boot con CFW+Retro-Go habra que habrá que reflashear el CFW porque éste será reemplazado por el programa de test de la flash. Si tenemos consola con solo Retro-Go tendremos que reflashear Retro-Go completo. Para realizar el proceso de test de la flash es necesario haber compilado Retro-Go para tu tipo de memoria de manera satisfactoria. Si no lo realizaste vuelve atras y compila Retro-Go con al menos una rom. Si ya lo hiciste prosigue con el proceso. ¿Deseas continuar?" 0 0
+           --yesno "¡¡¡IMPORTANTE!!! Para realizar el proceso de test de la flash es necesario haber compilado Retro-Go para tu tipo de memoria con al menos una rom de manera satisfactoria. Si no lo realizaste vuelve atras y compila Retro-Go con al menos una rom. Si no lo compilaste y prosigues dara error y la consola se quedara con la pantalla en negro. Si ya lo hiciste prosigue con el proceso. ¿Deseas continuar?" 0 0
     ans=$?
     if [ $ans -eq 0 ]; then
         clear
