@@ -37,7 +37,9 @@ Save states: /home/$usuario/game-and-watch-retro-go/save_states/
 Selecciona con las flechas la opcion deseada:" 0 0 0 \
           1 "Hacer backup de los save states existentes que hay en la G&W con chip original de 4MB" \
           2 "Restaurar los save states desde el pc a la G&W con chip original de 4MB" \
-          3 "Borrar los saves states existentes en la G&W con chip de original 4MB para dejarla limpia"   2>"${INPUT}"
+          3 "Borrar los saves states existentes en la G&W con chip de original 4MB para dejarla limpia" \
+          4 "Exportar el guardado de la pila (srm) desde los save states" \
+          5 "Importar el guardado de la pila (srm) a los save states"   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
@@ -116,6 +118,14 @@ case $menuitem in
                --title "INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Save states en:/home/$usuario/gameandwatch/game-and-watch-retro-go/save_states/" \
                --msgbox "Proceso cancelado." 0 0
     fi
+    ./scene/2.2.2-save-state-$consola.sh
+    clear;;
+  4)clear
+    ./scene/exportar_srm.sh
+    ./scene/2.2.2-save-state-$consola.sh
+    clear;;
+  5)clear
+    ./scene/importar_srm.sh
     ./scene/2.2.2-save-state-$consola.sh
     clear;;
 esac

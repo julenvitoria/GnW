@@ -118,5 +118,13 @@ case $menuitem in
     fi
     ./scene/2.2.3-save-state-$consola.sh
     clear;;
+  4)clear
+    ./scene/exportar_srm.sh
+    ./scene/2.2.3-save-state-$consola.sh
+    clear;;
+  5)clear
+    ./scene/importar_srm.sh
+    ./scene/2.2.3-save-state-$consola.sh
+    clear;;
 esac
 clear
