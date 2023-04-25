@@ -79,6 +79,7 @@ Materiales necesarios: (si no funcionará el link buscar por el nombre a través
 ![EAE5FA90-E5FD-4A41-8AE6-6170AB160C26](https://user-images.githubusercontent.com/36037023/168864970-43b40a37-1a20-45d3-9065-5e06a3754d1c.jpeg)
 
 [Chip de 64MB MX25U51245GZ4I00] (https://a.aliexpress.com/_vEvapZ)
+(https://a.aliexpress.com/_EwP5SL9)
 ![13DFCC5B-DB22-4210-8C69-BE9A819BE259](https://user-images.githubusercontent.com/36037023/168864375-0fe08d17-7bf0-4f68-b122-3f673a20441c.jpeg)
 
 *****************************
