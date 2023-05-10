@@ -7,6 +7,7 @@ consola="mario"
 caratula="0"
 
 clear
+source py/bin/activate
 which dialog > dialog.txt
 if grep "/dialog" ./dialog.txt ; then
         echo "Encontrado paquete dialog, se prosigue..."
@@ -182,4 +183,5 @@ case $menuitem in
     ./menu.sh
     clear;;
 esac
+deactivate
 clear

@@ -22,7 +22,8 @@ case $menuitem in
     #sleep 5
     git clone https://github.com/BrianPugh/game-and-watch-patch
     cd game-and-watch-patch
-    pip3 install -r requirements.txt
+    #antiguo metodo usado para instalar los paquetes requeridos. A partir de ubuntu 23.04 no se puede usar este metodo
+    #pip3 install -r requirements.txt
     make download_sdk
     clear;;
   2)clear

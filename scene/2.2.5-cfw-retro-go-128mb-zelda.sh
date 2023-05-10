@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="zelda"
-proc="4"
+proc="2"
 caratula="0"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.5-cfw-retro-go-128mb-zelda.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
