@@ -21,9 +21,10 @@ sudo apt upgrade -y
 sudo apt install -y unzip binutils-arm-none-eabi python3 libhidapi-hidraw0 libftdi1 libftdi1-2 git python3-pip virtualenv
 
 # install, create a virtual environment in your target folder and install python modules
-#mkdir py
-#python3 -m virtualenv py
-#pip3 install pillow colorama keystone-engine numpy pycryptodome pyelftools
+mkdir py
+python3 -m virtualenv py
+source py/bin/activate
+pip3 install pillow colorama keystone-engine numpy pycryptodome pyelftools
 
 clear
 #cd /home/$usuario
