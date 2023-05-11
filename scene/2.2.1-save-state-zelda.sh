@@ -4,8 +4,8 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="zelda"
-proc="2"
-caratula="0"
+proc="4"
+caratula="1"
 
 clear
 dpkg -s libncurses5 > libncurses5.txt
