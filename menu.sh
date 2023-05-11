@@ -3,11 +3,10 @@
 
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
-consola="mario"
+consola="zelda"
 caratula="0"
 
 clear
-source py/bin/activate
 which dialog > dialog.txt
 if grep "/dialog" ./dialog.txt ; then
         echo "Encontrado paquete dialog, se prosigue..."
@@ -46,11 +45,15 @@ case $menuitem in
     ./menu.sh
     clear;;
   3)clear
+    #source py/bin/activate
     ./1-menu-instalacion.sh
     ./menu.sh
+    #deactivate
     clear;;
   4)clear
+    source py/bin/activate
     ./2-menu-scene-$consola.sh
+    deactivate
     ./menu.sh
     clear;;
   5)clear

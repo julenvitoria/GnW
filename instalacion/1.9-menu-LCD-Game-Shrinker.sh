@@ -26,7 +26,8 @@ case $menuitem in
     sudo snap install core
     sudo snap install inkscape
     cd /home/$usuario/gameandwatch/LCD-Game-Shrinker
-    pip3 install -r requirements.txt
+    #antiguo metodo usado para instalar los paquetes requeridos. A partir de ubuntu 23.04 no se puede usar este metodo
+    #pip3 install -r requirements.txt
     clear;;
   2)clear
     if [ -d /home/$usuario/gameandwatch/LCD-Game-Shrinker ]; then

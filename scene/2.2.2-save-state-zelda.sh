@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="zelda"
-proc="2"
+proc="4"
 caratula="0"
 
 clear
