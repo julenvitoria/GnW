@@ -3,8 +3,8 @@
 
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
-consola="zelda"
-caratula="1"
+consola="mario"
+caratula="0"
 
 clear
 source py/bin/activate

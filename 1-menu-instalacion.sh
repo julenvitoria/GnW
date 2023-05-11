@@ -2,7 +2,7 @@
 #By julenvitoria
 
 INPUT=/tmp/$MENU.sh.$$
-consola="zelda"
+consola="mario"
 
 clear
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 1-menu-instalacion.sh Consola seleccionada = $consola ------------------" \

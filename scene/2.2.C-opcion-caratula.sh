@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="mario"
-caratula="1"
+caratula="0"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.C-opcion-caratula.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 --title "G&W $consola menu caratulas" \
