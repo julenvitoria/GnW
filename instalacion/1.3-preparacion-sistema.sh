@@ -20,7 +20,7 @@ sudo apt update -y
 sudo apt upgrade -y
 sudo apt install -y unzip binutils-arm-none-eabi python3 libhidapi-hidraw0 libftdi1 libftdi1-2 git python3-pip virtualenv
 
-# instalar virtualenv, crear un directorio, crear un entorno virtual de python en dicho directorio e instalar los modulos de python requeridos
+# instalar virtualenv, crear el directorio "py" y si existe borrarlo y volverlo a crear, crear un entorno virtual de python en dicho directorio e instalar los modulos de python requeridos
 echo ""
 echo ""
 echo -e "\e[1;34mSe crea directorio \"py\", se crea el entorno virtual de python, se activa y se instalan los modulos requeridos para los diferentes repos.\e[0m"

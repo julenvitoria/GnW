@@ -51,7 +51,42 @@ case $menuitem in
     #deactivate
     clear;;
   4)clear
-    source py/bin/activate
+    # si no existe el directorio py se instala virtualenv, se crear el directorio, se crea un entorno virtual de python en dicho directorio y se instalan los modulos de python requeridos
+    if [ ! -d py ]; then
+        sudo apt update -y
+        sudo apt install -y unzip binutils-arm-none-eabi python3 libhidapi-hidraw0 libftdi1 libftdi1-2 git python3-pip virtualenv
+        echo ""
+        echo ""
+        echo -e "\e[1;34mSe crea directorio \"py\", se crea el entorno virtual de python, se activa y se instalan los modulos requeridos para los diferentes repos.\e[0m"
+        echo ""
+        sleep 2
+        mkdir py
+        python3 -m virtualenv py
+        source py/bin/activate
+        echo ""
+        echo -e "\e[1;34mModulos requeridos para el patch -> ver requirements.txt del repo del patch\e[0m"
+        echo ""
+        sleep 1
+        wget https://raw.githubusercontent.com/BrianPugh/game-and-watch-patch/main/requirements.txt
+        pip3 install -r requirements.txt
+        rm requirements.txt
+        echo ""
+        echo -e "\e[1;34mModulos requeridos para retrogo -> ver requirements.txt del repo de retrogo\e[0m"
+        echo ""
+        sleep 1
+        wget https://raw.githubusercontent.com/sylverb/game-and-watch-retro-go/msx_wsv_genesis/requirements.txt
+        pip3 install -r requirements.txt
+        rm requirements.txt
+        echo ""
+        echo -e "\e[1;34mModulos requeridos para LCD-Shrinker -> ver requirements.txt del repo del LCD-Shrinker\e[0m"
+        echo ""
+        sleep 1
+        wget https://raw.githubusercontent.com/bzhxx/LCD-Game-Shrinker/main/requirements.txt
+        pip3 install -r requirements.txt
+        rm requirements.txt
+    else
+        source py/bin/activate
+    fi
     ./2-menu-scene-$consola.sh
     deactivate
     ./menu.sh
