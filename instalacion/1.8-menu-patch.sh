@@ -15,6 +15,7 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
+    source py/bin/activate
     cd /home/$usuario/gameandwatch
     if [ -d /home/$usuario/gameandwatch/game-and-watch-patch ]; then
         sudo rm -R /home/$usuario/gameandwatch/game-and-watch-patch
@@ -22,8 +23,10 @@ case $menuitem in
     #sleep 5
     git clone https://github.com/BrianPugh/game-and-watch-patch
     cd game-and-watch-patch
-    pip3 install -r requirements.txt
+    #antiguo metodo usado para instalar los paquetes requeridos. A partir de ubuntu 23.04 no se puede usar este metodo
+    #pip3 install -r requirements.txt
     make download_sdk
+    deactivate
     clear;;
   2)clear
     if [ -d /home/$usuario/gameandwatch/game-and-watch-patch ]; then
