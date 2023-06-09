@@ -16,11 +16,14 @@ clear
 #        echo "Instalado!!"
 #  sleep 1
 #fi
-sudo add-apt-repository -y ppa:inkscape.dev/stable
-sudo apt update -y
-sudo apt upgrade -y
-sudo apt install -y unzip binutils-arm-none-eabi python3 libhidapi-hidraw0 libftdi1 libftdi1-2 git python3-pip virtualenv software-properties-common inkscape
 
+sudo apt update
+sudo apt upgrade -y
+sudo apt install -y unzip binutils-arm-none-eabi python3 libhidapi-hidraw0 libftdi1 libftdi1-2 git python3-pip virtualenv software-properties-common
+sudo apt install -y add-apt-repository
+sudo add-apt-repository -y ppa:inkscape.dev/stable
+sudo apt update
+sudo apt install -y inkscape
 
 # instalar virtualenv, crear el directorio "py" y si existe borrarlo y volverlo a crear, crear un entorno virtual de python en dicho directorio e instalar los modulos de python requeridos
 echo ""
