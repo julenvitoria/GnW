@@ -22,9 +22,9 @@ case $menuitem in
     #sleep 5
     git clone https://github.com/bzhxx/LCD-Game-Shrinker
     sudo apt update
-    sudo apt install -y snapd libopenjp2-7 libtiff5 libxslt-dev libatlas-base-dev
+    sudo apt install -y snapd libopenjp2-7 libtiff5 libxslt-dev libatlas-base-dev inkscape
     sudo snap install core
-    sudo snap install inkscape
+    #sudo snap install inkscape
     cd /home/$usuario/gameandwatch/LCD-Game-Shrinker
     #antiguo metodo usado para instalar los paquetes requeridos. A partir de ubuntu 23.04 no se puede usar este metodo
     #pip3 install -r requirements.txt
