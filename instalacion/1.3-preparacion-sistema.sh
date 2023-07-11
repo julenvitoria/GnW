@@ -54,6 +54,8 @@ wget https://raw.githubusercontent.com/bzhxx/LCD-Game-Shrinker/main/requirements
 pip3 install -r requirements.txt
 rm requirements.txt
 
+echo "Requerimientos por paquetes deprecados"
+pip3 install Pillow==9.5.0
 clear
 #cd /home/$usuario
 #if [ -d /home/$usuario/gameandwatch ]; then
