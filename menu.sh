@@ -84,6 +84,8 @@ case $menuitem in
         wget https://raw.githubusercontent.com/bzhxx/LCD-Game-Shrinker/main/requirements.txt
         pip3 install -r requirements.txt
         rm requirements.txt
+	echo -e "\e[1;34mRequerimientos por paquetes deprecados"
+        pip3 install Pillow==9.5.0
     else
         source py/bin/activate
     fi
