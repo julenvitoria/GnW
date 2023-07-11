@@ -86,6 +86,7 @@ case $menuitem in
         rm requirements.txt
 	echo -e "\e[1;34mRequerimientos por paquetes deprecados"
         pip3 install Pillow==9.5.0
+	clear
     else
         source py/bin/activate
     fi
