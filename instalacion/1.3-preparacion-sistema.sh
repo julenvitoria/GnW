@@ -106,9 +106,11 @@ if [ "$confirm" = "s" ]; then
     echo -e "\e[1;35m "
     tar xvf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
     rm gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+    clear
     echo -e "\e[1;32m "
     export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/
     if grep -q "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/" /home/$usuario/.bashrc ; then
+        echo -e "\e[1;34m "
         echo "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ esta ya en el bashrc"
         sleep 2
     else
