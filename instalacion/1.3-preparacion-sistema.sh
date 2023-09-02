@@ -58,6 +58,7 @@ pip3 install -r requirements.txt
 rm requirements.txt
 
 echo -e "\e[1;34mRequerimientos por paquetes deprecados"
+echo -e "\e[1;34m \e[0m"
 pip3 install Pillow==9.5.0
 clear
 #cd /home/$usuario
