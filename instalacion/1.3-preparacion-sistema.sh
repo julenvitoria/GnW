@@ -73,7 +73,7 @@ clear
 #export GCC_PATH=/home/$usuario/opt/gcc-arm-none-eabi-10-2020-q4-major/bin/
 #echo export GCC_PATH=/home/$usuario/opt/gcc-arm-none-eabi-10-2020-q4-major/bin/ >>~/.bashrc
 
-clear
+echo -e "\e[1;34m \e[0m"
 echo "ATENCION: el cambio de usuario es MUY IMPORTANTE para el correcto funcionamiento de los scripts."
 echo "¡¡¡Si no se ha realizado correctamente los scripts no funcionaran correctamente!!!"
 echo " "
