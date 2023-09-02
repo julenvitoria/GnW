@@ -1,6 +1,3 @@
-#!/bin/bash
-#By julenvitoria
-
-git clone https://github.com/julenvitoria/GnW
+#git clone https://disk.yandex.ru/d/DrCouTwfmlfpjw/GnW
 cd GnW
 ./menu.sh
