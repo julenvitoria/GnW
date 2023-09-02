@@ -146,6 +146,7 @@ else
         tar xvf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
         rm gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
         echo -e "\e[1;32m "
+        clear
         export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/
         if grep -q "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/" /home/$usuario/.bashrc ; then
                 echo "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ esta ya en el bashrc"
