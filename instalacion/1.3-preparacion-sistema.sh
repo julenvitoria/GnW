@@ -140,6 +140,7 @@ else
         cd /home/$usuario/gameandwatch
         echo -e "\e[1;36m "
         wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+        echo -e "\e[1;35m "
         tar xvf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
         rm gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
         clear
