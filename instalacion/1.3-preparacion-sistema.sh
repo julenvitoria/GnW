@@ -57,8 +57,7 @@ wget https://raw.githubusercontent.com/bzhxx/LCD-Game-Shrinker/main/requirements
 pip3 install -r requirements.txt
 rm requirements.txt
 
-echo -e "\e[1;34mRequerimientos por paquetes deprecados"
-echo -e "\e[1;34m \e[0m"
+echo -e "\e[1;34mRequerimientos por paquetes deprecados\e[0m"
 pip3 install Pillow==9.5.0
 clear
 #cd /home/$usuario
@@ -74,7 +73,6 @@ clear
 #export GCC_PATH=/home/$usuario/opt/gcc-arm-none-eabi-10-2020-q4-major/bin/
 #echo export GCC_PATH=/home/$usuario/opt/gcc-arm-none-eabi-10-2020-q4-major/bin/ >>~/.bashrc
 
-echo -e "\e[1;34m \e[0m"
 echo "ATENCION: el cambio de usuario es MUY IMPORTANTE para el correcto funcionamiento de los scripts."
 echo "¡¡¡Si no se ha realizado correctamente los scripts no funcionaran correctamente!!!"
 echo " "
@@ -90,29 +88,34 @@ if [ "$confirm" = "s" ]; then
     sleep 2
     cd /home/$usuario
     if [ -d /home/$usuario/gameandwatch ]; then
-        echo "Ya existe el directorio gameandwatch/gcc-arm-none-eabi-10-2020-q4-major"
+        echo -e "\e[1;33mYa existe el directorio gameandwatch/gcc-arm-none-eabi-10-2020-q4-major\e[0m"
         sleep 2
     else
-        echo "Creando directorio gameandwatch/gcc-arm-none-eabi-10-2020-q4-major"
+        echo -e "\e[1;32mCreando directorio gameandwatch/gcc-arm-none-eabi-10-2020-q4-major\e[0m"
         sleep 2
         mkdir /home/$usuario/gameandwatch
     fi
     if [ -d /home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major ]; then
-        echo "Borrando directorio existente y volviendo a descargar..."
+        echo -e "\e[1;34mBorrando directorio existente y volviendo a descargar...\e[0m"
         sudo rm -R /home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major
     fi
     cd /home/$usuario/gameandwatch
+    echo -e "\e[1;36m "
     wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+    echo -e "\e[1;35m "
     tar xvf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
     rm gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+    echo -e "\e[1;32m "
     export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/
     if grep -q "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/" /home/$usuario/.bashrc ; then
         echo "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ esta ya en el bashrc"
     else
+        echo -e "\e[1;34m "
         echo "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ no esta aun en el bashrc, añadiendo..."
         sleep 2
         echo export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ >>/home/$usuario/.bashrc
     fi
+    echo -e "\e[1;34m \e[0m"
 else
     if [ "$confirm" = "S" ]; then
         confirm="S"
@@ -121,30 +124,34 @@ else
         sleep 2
         cd /home/$usuario
         if [ -d /home/$usuario/gameandwatch ]; then
-            echo "Ya existe el directorio gameandwatch"
+            echo -e "\e[1;33mYa existe el directorio gameandwatch/gcc-arm-none-eabi-10-2020-q4-major\e[0m"
             sleep 2
         else
-            echo "Creando directorio gameandwatch"
+            echo -e "\e[1;32mCreando directorio gameandwatch/gcc-arm-none-eabi-10-2020-q4-major\e[0m"
             sleep 2
             mkdir /home/$usuario/gameandwatch
         fi
         if [ -d /home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major ]; then
-            echo "Borrando directorio existente y volviendo a descargar..."
+            echo -e "\e[1;34mBorrando directorio existente y volviendo a descargar...\e[0m"
             sudo rm -R /home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major
         fi
         cd /home/$usuario/gameandwatch
+        echo -e "\e[1;36m "
         wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
         tar xvf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
         rm gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+        echo -e "\e[1;32m "
         export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/
         if grep -q "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/" /home/$usuario/.bashrc ; then
                 echo "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ esta ya en el bashrc"
         else
+                echo -e "\e[1;34m "
                 echo "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ no esta aun en el bashrc, añadiendo..."
                 sleep 2
                 echo export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ >>/home/$usuario/.bashrc
         fi
     fi
+    echo -e "\e[1;34m \e[0m"
 fi
 
 if [ "$confirm" != "S" ]; then
