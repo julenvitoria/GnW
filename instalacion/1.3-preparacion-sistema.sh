@@ -88,15 +88,16 @@ if [ "$confirm" = "s" ]; then
     sleep 2
     cd /home/$usuario
     if [ -d /home/$usuario/gameandwatch ]; then
-        echo -e "\e[1;33mYa existe el directorio gameandwatch/gcc-arm-none-eabi-10-2020-q4-major\e[0m"
-        sleep 2
+        echo -e "\e[1;33mYa existe el directorio gameandwatch\e[0m"
+        sleep 1
     else
-        echo -e "\e[1;32mCreando directorio gameandwatch/gcc-arm-none-eabi-10-2020-q4-major\e[0m"
-        sleep 2
+        echo -e "\e[1;32mCreando directorio gameandwatch\e[0m"
+        sleep 1
         mkdir /home/$usuario/gameandwatch
     fi
     if [ -d /home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major ]; then
         echo -e "\e[1;34mBorrando directorio existente y volviendo a descargar...\e[0m"
+        sleep 1
         sudo rm -R /home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major
     fi
     cd /home/$usuario/gameandwatch
@@ -109,6 +110,7 @@ if [ "$confirm" = "s" ]; then
     export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/
     if grep -q "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/" /home/$usuario/.bashrc ; then
         echo "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ esta ya en el bashrc"
+        sleep 2
     else
         echo -e "\e[1;34m "
         echo "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ no esta aun en el bashrc, añadiendo..."
@@ -124,15 +126,16 @@ else
         sleep 2
         cd /home/$usuario
         if [ -d /home/$usuario/gameandwatch ]; then
-            echo -e "\e[1;33mYa existe el directorio gameandwatch/gcc-arm-none-eabi-10-2020-q4-major\e[0m"
-            sleep 2
+            echo -e "\e[1;33mYa existe el directorio gameandwatch\e[0m"
+            sleep 1
         else
-            echo -e "\e[1;32mCreando directorio gameandwatch/gcc-arm-none-eabi-10-2020-q4-major\e[0m"
-            sleep 2
+            echo -e "\e[1;32mCreando directorio gameandwatch\e[0m"
+            sleep 1
             mkdir /home/$usuario/gameandwatch
         fi
         if [ -d /home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major ]; then
             echo -e "\e[1;34mBorrando directorio existente y volviendo a descargar...\e[0m"
+            sleep 1
             sudo rm -R /home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major
         fi
         cd /home/$usuario/gameandwatch
@@ -144,6 +147,7 @@ else
         export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/
         if grep -q "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/" /home/$usuario/.bashrc ; then
                 echo "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ esta ya en el bashrc"
+                sleep 2
         else
                 echo -e "\e[1;34m "
                 echo "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ no esta aun en el bashrc, añadiendo..."
