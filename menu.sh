@@ -14,6 +14,7 @@ if grep "/dialog" ./dialog.txt ; then
 else
         echo "No encontrado paquete dialog necesario, instalando..."
         echo " "
+        sudo apt-add-repository universe -y
         sudo apt install -y dialog
         echo " "
         echo "Instalado!!"
