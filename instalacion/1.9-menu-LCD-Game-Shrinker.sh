@@ -21,6 +21,7 @@ case $menuitem in
     fi
     #sleep 5
     git clone https://github.com/bzhxx/LCD-Game-Shrinker
+    sleep 2
     sudo apt update
     sudo apt install -y snapd libopenjp2-7 libtiff5 libxslt-dev libatlas-base-dev inkscape
     sudo snap install core

@@ -21,6 +21,7 @@ case $menuitem in
     fi
     #sleep 5
     git clone https://github.com/ghidraninja/game-and-watch-flashloader.git
+    sleep 2
     clear;;
   2)clear
     if [ -d /home/$usuario/gameandwatch/game-and-watch-flashloader ]; then

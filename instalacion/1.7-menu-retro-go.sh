@@ -21,7 +21,8 @@ case $menuitem in
     fi
     #sleep 5
     git clone --recurse-submodules https://github.com/sylverb/game-and-watch-retro-go
-    cd game-and-watch-retro-go
+    sleep 2
+    #cd game-and-watch-retro-go
     #antiguo metodo usado para instalar los paquetes requeridos. A partir de ubuntu 23.04 no se puede usar este metodo
     #pip3 install -r requirements.txt
     clear;;
