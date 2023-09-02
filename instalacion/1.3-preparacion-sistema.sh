@@ -107,15 +107,12 @@ if [ "$confirm" = "s" ]; then
     tar xvf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
     rm gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
     clear
-    echo -e "\e[1;32m "
     export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/
     if grep -q "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/" /home/$usuario/.bashrc ; then
-        echo -e "\e[1;34m "
-        echo "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ esta ya en el bashrc"
+        echo -e "\e[1;34mexport GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ esta ya en el bashrc\e[0m"
         sleep 2
     else
-        echo -e "\e[1;34m "
-        echo "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ no esta aun en el bashrc, añadiendo..."
+        echo -e "\e[1;34mexport GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ no esta aun en el bashrc, añadiendo...\e[0m"
         sleep 2
         echo export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ >>/home/$usuario/.bashrc
     fi
@@ -145,15 +142,13 @@ else
         wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
         tar xvf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
         rm gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
-        echo -e "\e[1;32m "
         clear
         export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/
         if grep -q "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/" /home/$usuario/.bashrc ; then
-                echo "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ esta ya en el bashrc"
+                echo -e "\e[1;34mexport GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ esta ya en el bashrc\e[0m"
                 sleep 2
         else
-                echo -e "\e[1;34m "
-                echo "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ no esta aun en el bashrc, añadiendo..."
+                echo -e "\e[1;34mexport GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ no esta aun en el bashrc, añadiendo...\e[0m"
                 sleep 2
                 echo export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ >>/home/$usuario/.bashrc
         fi
