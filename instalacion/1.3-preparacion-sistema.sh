@@ -20,7 +20,6 @@ clear
 sudo apt update
 sudo apt upgrade -y
 sudo apt install -y unzip binutils-arm-none-eabi python3 libhidapi-hidraw0 libftdi1 libftdi1-2 git python3-pip virtualenv software-properties-common
-sudo apt install -y add-apt-repository
 sudo apt-add-repository -y ppa:inkscape.dev/stable
 sudo apt update
 
@@ -74,6 +73,7 @@ clear
 #export GCC_PATH=/home/$usuario/opt/gcc-arm-none-eabi-10-2020-q4-major/bin/
 #echo export GCC_PATH=/home/$usuario/opt/gcc-arm-none-eabi-10-2020-q4-major/bin/ >>~/.bashrc
 
+clear
 echo "ATENCION: el cambio de usuario es MUY IMPORTANTE para el correcto funcionamiento de los scripts."
 echo "¡¡¡Si no se ha realizado correctamente los scripts no funcionaran correctamente!!!"
 echo " "
