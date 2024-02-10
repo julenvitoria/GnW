@@ -50,6 +50,11 @@ wget https://raw.githubusercontent.com/sylverb/game-and-watch-retro-go/msx_wsv_g
 pip3 install -r requirements.txt
 rm requirements.txt
 echo ""
+sleep 1
+wget https://github.com/marian-m12l/zelda3/blob/5b556cba71f326452a08088ea99cda7b85b29909/requirements.txt
+pip3 install -r requirements.txt
+rm requirements.txt
+echo ""
 echo -e "\e[1;34mModulos requeridos para LCD-Shrinker -> ver requirements.txt del repo del LCD-Shrinker\e[0m"
 echo ""
 sleep 1
