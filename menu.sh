@@ -75,9 +75,11 @@ case $menuitem in
         echo -e "\e[1;34mModulos requeridos para retrogo -> ver requirements.txt del repo de retrogo\e[0m"
         echo ""
         sleep 1
-        wget https://raw.githubusercontent.com/sylverb/game-and-watch-retro-go/msx_wsv_genesis/requirements.txt
-        pip3 install -r requirements.txt
-        rm requirements.txt
+	wget https://raw.githubusercontent.com/sylverb/game-and-watch-retro-go/msx_wsv_genesis/requirements.txt
+	git clone https://github.com/marian-m12l/zelda3.git
+	pip3 install -r requirements.txt
+	rm requirements.txt
+	sudo rm -r zelda3
         echo ""
         echo -e "\e[1;34mModulos requeridos para LCD-Shrinker -> ver requirements.txt del repo del LCD-Shrinker\e[0m"
         echo ""
