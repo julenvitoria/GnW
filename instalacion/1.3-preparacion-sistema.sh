@@ -47,7 +47,7 @@ echo -e "\e[1;34mModulos requeridos para retrogo -> ver requirements.txt del rep
 echo ""
 sleep 1
 wget https://raw.githubusercontent.com/sylverb/game-and-watch-retro-go/msx_wsv_genesis/requirements.txt
-https://github.com/marian-m12l/zelda3.git
+git clone https://github.com/marian-m12l/zelda3.git
 pip3 install -r requirements.txt
 rm requirements.txt
 sudo rm -r zelda3
