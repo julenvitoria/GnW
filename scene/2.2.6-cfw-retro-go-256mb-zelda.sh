@@ -4,8 +4,8 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="zelda"
-proc="4"
-caratula="0"
+proc="6"
+caratula="1"
 
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.6-cfw-retro-go-256mb-zelda.sh Usuario = $usuario   ////   Consola seleccionada = $consola ------------------" \
 --title "G&W CFW + Retro-Go 256MB /// INFO: Usuario=$usuario --- Consola seleccionada=$consola --- Roms en /home/$usuario/game-and-watch-retro-go/roms/" \

@@ -62,18 +62,6 @@ rm requirements.txt
 echo -e "\e[1;34mRequerimientos por paquetes deprecados\e[0m"
 pip3 install Pillow==9.5.0
 clear
-#cd /home/$usuario
-#if [ -d /home/$usuario/gameandwatch ]; then
-#sudo rm -R /home/$usuario/gameandwatch
-#        mkdir /home/$usuario/gameandwatch
-#else
-#        mkdir /home/$usuario/gameandwatch
-#fi
-#wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
-#tar xvf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
-#rm gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
-#export GCC_PATH=/home/$usuario/opt/gcc-arm-none-eabi-10-2020-q4-major/bin/
-#echo export GCC_PATH=/home/$usuario/opt/gcc-arm-none-eabi-10-2020-q4-major/bin/ >>~/.bashrc
 
 echo -e "\e[1;31mATENCION: el cambio de usuario es MUY IMPORTANTE para el correcto funcionamiento de los scripts.\e[0m"
 echo -e "\e[1;31m¡¡¡Si no se ha realizado correctamente los scripts no funcionaran correctamente!!!\e[0m"
@@ -97,28 +85,46 @@ if [ "$confirm" = "s" ]; then
         sleep 1
         mkdir /home/$usuario/gameandwatch
     fi
-    if [ -d /home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major ]; then
+    if [ -d /home/$usuario/gameandwatch/gcc-arm-none-eabi ]; then
         echo -e "\e[1;34mBorrando directorio existente y volviendo a descargar...\e[0m"
         sleep 1
-        sudo rm -R /home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major
+        sudo rm -R /home/$usuario/gameandwatch/gcc-arm-none-eabi
     fi
     cd /home/$usuario/gameandwatch
     echo -e "\e[1;36m "
-    wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+    wget https://developer.arm.com/-/media/Files/downloads/gnu/12.2.mpacbti-rel1/binrel/arm-gnu-toolchain-12.2.mpacbti-rel1-x86_64-arm-none-eabi.tar.xz
     echo -e "\e[1;35m "
-    tar xvf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
-    rm gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+    tar xvf arm-gnu-toolchain-12.2.mpacbti-rel1-x86_64-arm-none-eabi.tar.xz
+    mv arm-gnu-toolchain-12.2.mpacbti-rel1-x86_64-arm-none-eabi gcc-arm-none-eabi
+    rm arm-gnu-toolchain-12.2.mpacbti-rel1-x86_64-arm-none-eabi.tar.xz
     clear
-    export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/
-    if grep -q "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/" /home/$usuario/.bashrc ; then
-        echo -e "\e[1;34mexport GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ esta ya en el bashrc\e[0m"
+    export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi/bin
+    if grep -q "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi/bin" /home/$usuario/.bashrc ; then
+        echo -e "\e[1;34mexport GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi/bin esta ya en el bashrc\e[0m"
         sleep 2
     else
-        echo -e "\e[1;34mexport GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ no esta aun en el bashrc, añadiendo...\e[0m"
+        echo -e "\e[1;34mexport GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi/bin no esta aun en el bashrc, añadiendo...\e[0m"
         sleep 2
-        echo export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ >>/home/$usuario/.bashrc
+        echo export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi/bin >>/home/$usuario/.bashrc
     fi
     echo -e "\e[1;34m \e[0m"
+    dialog --backtitle "G&W ------------------------- INFO: 1.3-preparacion-sistema.sh -------------------------- Usuario = $usuario ------------------------" \
+        --title "INFO: Usuario=$usuario ---------- Preparacion del sistema" \
+        --yesno "¡¡¡ATENCION!!! Se recomienda realizar un reinicio despues de preparar el sistema para asegurar que todo funcione correctamente. Si no lo realizas ahora recuerda hacerlo mas tarde. ¿Deseas reiniciar el sistema?" 0 0
+        ans=$?
+    if [ $ans -eq 0 ]; then
+        clear
+        dialog --backtitle "G&W ------------------------- INFO: 1.3-preparacion-sistema.sh -------------------------- Usuario = $usuario ------------------------" \
+            --title "INFO: Usuario=$usuario ---------- Preparacion del sistema" \
+            --infobox "Reiniciando el sistema..." 0 0 ; sleep 2
+        clear
+        sudo reboot
+    else
+        dialog --backtitle "G&W ------------------------- INFO: 1.3-preparacion-sistema.sh -------------------------- Usuario = $usuario ------------------------" \
+            --title "INFO: Usuario=$usuario ---------- Preparacion del sistema" \
+            --infobox "Recuerda realizar el reinicio mas tarde :)" 0 0 ; sleep 2
+        clear
+    fi
 else
     if [ "$confirm" = "S" ]; then
         confirm="S"
@@ -134,29 +140,47 @@ else
             sleep 1
             mkdir /home/$usuario/gameandwatch
         fi
-        if [ -d /home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major ]; then
+        if [ -d /home/$usuario/gameandwatch/gcc-arm-none-eabi ]; then
             echo -e "\e[1;34mBorrando directorio existente y volviendo a descargar...\e[0m"
             sleep 1
-            sudo rm -R /home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major
+            sudo rm -R /home/$usuario/gameandwatch/gcc-arm-none-eabi
         fi
         cd /home/$usuario/gameandwatch
         echo -e "\e[1;36m "
-        wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+        wget https://developer.arm.com/-/media/Files/downloads/gnu/12.2.mpacbti-rel1/binrel/arm-gnu-toolchain-12.2.mpacbti-rel1-x86_64-arm-none-eabi.tar.xz
         echo -e "\e[1;35m "
-        tar xvf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
-        rm gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+        tar xvf arm-gnu-toolchain-12.2.mpacbti-rel1-x86_64-arm-none-eabi.tar.xz
+        mv arm-gnu-toolchain-12.2.mpacbti-rel1-x86_64-arm-none-eabi gcc-arm-none-eabi
+        rm arm-gnu-toolchain-12.2.mpacbti-rel1-x86_64-arm-none-eabi.tar.xz
         clear
-        export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/
-        if grep -q "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/" /home/$usuario/.bashrc ; then
-                echo -e "\e[1;34mexport GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ esta ya en el bashrc\e[0m"
+        export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi/bin
+        if grep -q "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi/bin" /home/$usuario/.bashrc ; then
+                echo -e "\e[1;34mexport GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi/bin esta ya en el bashrc\e[0m"
                 sleep 2
         else
-                echo -e "\e[1;34mexport GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ no esta aun en el bashrc, añadiendo...\e[0m"
+                echo -e "\e[1;34mexport GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi/bin no esta aun en el bashrc, añadiendo...\e[0m"
                 sleep 2
-                echo export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi-10-2020-q4-major/bin/ >>/home/$usuario/.bashrc
+                echo export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi/bin >>/home/$usuario/.bashrc
+        fi
+        echo -e "\e[1;34m \e[0m"
+        dialog --backtitle "G&W ------------------------- INFO: 1.3-preparacion-sistema.sh -------------------------- Usuario = $usuario ------------------------" \
+                --title "INFO: Usuario=$usuario ---------- Preparacion del sistema" \
+                --yesno "¡¡¡ATENCION!!! Se recomienda realizar un reinicio despues de preparar el sistema para asegurar que todo funcione correctamente. Si no lo realizas ahora recuerda hacerlo mas tarde. ¿Deseas reiniciar el sistema?" 0 0
+            ans=$?
+        if [ $ans -eq 0 ]; then
+            clear
+            dialog --backtitle "G&W ------------------------- INFO: 1.3-preparacion-sistema.sh -------------------------- Usuario = $usuario ------------------------" \
+                --title "INFO: Usuario=$usuario ---------- Preparacion del sistema" \
+                --infobox "Reiniciando el sistema..." 0 0 ; sleep 2
+            clear
+            sudo reboot
+        else
+            dialog --backtitle "G&W ------------------------- INFO: 1.3-preparacion-sistema.sh -------------------------- Usuario = $usuario ------------------------" \
+                --title "INFO: Usuario=$usuario ---------- Preparacion del sistema" \
+                --infobox "Recuerda realizar el reinicio mas tarde :)" 0 0 ; sleep 2
+            clear
         fi
     fi
-    echo -e "\e[1;34m \e[0m"
 fi
 
 if [ "$confirm" != "S" ]; then

@@ -4,7 +4,7 @@
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="zelda"
-caratula="0"
+caratula="1"
 
 clear
 which dialog > dialog.txt

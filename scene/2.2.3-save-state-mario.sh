@@ -5,7 +5,7 @@ INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
 consola="mario"
 proc="4"
-caratula="0"
+caratula="1"
 
 clear
 dpkg -s libncurses5 > libncurses5.txt
