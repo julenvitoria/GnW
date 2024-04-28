@@ -15,7 +15,8 @@ dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO
 menuitem=$(<"${INPUT}")
 case $menuitem in
   1)clear
-    source py/bin/activate
+    deactivate
+    source pypatch/bin/activate
     cd /home/$usuario/gameandwatch
     if [ -d /home/$usuario/gameandwatch/game-and-watch-patch ]; then
         sudo rm -R /home/$usuario/gameandwatch/game-and-watch-patch
