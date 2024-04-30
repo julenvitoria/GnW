@@ -56,7 +56,7 @@ case $menuitem in
                 echo -e "\e[1;34mopcion y, al llegar a este punto, desconecta la bateria y vuelve a conectarla antes de realizar lo siguiente.\e[0m"
                 echo " "
                 echo " "
-                echo -e "\e[1;31mPulsa y manten pulsado el boton de encendido y justo despues pulsa cualquier tecla para continuar...\e[0m"
+                echo -e "\e[1;31mEnciende la consola y dejala en el menu. Despues pulsa cualquier tecla para continuar...\e[0m"
                 read -n 1 -s -r -p ""
                 clear
                 cd /home/$usuario/gameandwatch/game-and-watch-patch
