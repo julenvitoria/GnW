@@ -3,7 +3,7 @@
 
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
-consola="zelda"
+consola="mario"
 caratula="1"
 
 clear

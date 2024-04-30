@@ -34,6 +34,8 @@ case $menuitem in
     --title "Instalar Retro-Go en consola G&W $consola con 64MB" \
     --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Este proceso es solamente para una consola con el chip de 64MB instalado.\n\n¡¡¡ATENCION!!!\nSI SE TIENE DIFERENTE CANTIDAD DE MEMORIA CANCELAR EL PROCESO y una vez vuelto al menu seleccionar el correcto.\n\nSe flasheara un custom firmware que consta del menu original de la consola ademas del acceso al emulador Retro-Go. El emulador aparecera al realizar el combo de botones \"LEFT\" + \"GAME\". ¿Deseas continuar?" 0 0
     ans=$?
+    deactivate
+    source pypatch/bin/activate
     if [ $ans -eq 0 ]; then
         clear
         if [ -f /home/$usuario/gameandwatch/game-and-watch-backup/backups/flash_backup_$consola.bin ]; then
@@ -83,6 +85,8 @@ case $menuitem in
             --title "Instalar firmware original + Retro-Go  en consola con 64MB" \
             --msgbox "Proceso cancelado." 0 0
     fi
+    deactivate
+    source py/bin/activate
     ./scene/2.2.4-cfw-retro-go-64mb-$consola.sh
     clear;;
   2)clear
