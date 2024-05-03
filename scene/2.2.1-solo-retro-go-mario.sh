@@ -30,8 +30,8 @@ Selecciona con las flechas la opcion deseada:" 0 0 0 \
    6 "64MB: Flashear solo Retro-Go sin CFW en consola $consola sin CFW" \
    7 "128MB: Compilar solo Retro-Go sin CFW para consola $consola sin CFW" \
    8 "128MB: Flashear solo Retro-Go sin CFW en consola $consola sin CFW" \
-   9 "128MB: Compilar solo Retro-Go sin CFW para consola $consola sin CFW" \
-   10 "128MB: Flashear solo Retro-Go sin CFW en consola $consola sin CFW" \
+   9 "256MB: Compilar solo Retro-Go sin CFW para consola $consola sin CFW" \
+   10 "256MB: Flashear solo Retro-Go sin CFW en consola $consola sin CFW" \
    11 "Descarga y restauracion de saves-states con parametros \"solo retro-go\""   2>"${INPUT}"
 menuitem=$(<"${INPUT}")
 case $menuitem in
