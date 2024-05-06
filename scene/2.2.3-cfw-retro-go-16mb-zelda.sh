@@ -56,7 +56,7 @@ case $menuitem in
                 echo "Proceso 1/2 concluido."
                 echo " "
                 echo -e "\e[1;34mSi ejecutas esta opcion y te devuelve un error con el texto \"Unexpected response from debug probe. Unable to parse read_uint32 response\"\e[0m"
-                echo -e "\e[1;34desconecta el stlink, vuelve a conectarlo y ejecuta de nuevo esta opcion.\e[0m"
+                echo -e "\e[1;34mdesconecta el stlink, vuelve a conectarlo y ejecuta de nuevo esta opcion.\e[0m"
                 echo " "
                 echo " "
                 echo -e "\e[1;31mEnciende la consola y dejala en la pantalla del reloj. Despues pulsa cualquier tecla para continuar...\e[0m"
