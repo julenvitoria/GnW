@@ -31,6 +31,7 @@ echo ""
 echo -e "\e[1;34mSe crea directorio \"py\", se crea el entorno virtual de python, se activa y se instalan los modulos requeridos para los diferentes repos.\e[0m"
 echo ""
 sleep 2
+cd /home/$usuario/GnW
 if [ -d py ]; then
     rm -R py
 fi
