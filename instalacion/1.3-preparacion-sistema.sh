@@ -147,11 +147,11 @@ else
         fi
         cd /home/$usuario/gameandwatch
         echo -e "\e[1;36m "
-        wget https://developer.arm.com/-/media/Files/downloads/gnu/12.2.mpacbti-rel1/binrel/arm-gnu-toolchain-12.2.mpacbti-rel1-x86_64-arm-none-eabi.tar.xz
+        wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
         echo -e "\e[1;35m "
-        tar xvf arm-gnu-toolchain-12.2.mpacbti-rel1-x86_64-arm-none-eabi.tar.xz
-        mv arm-gnu-toolchain-12.2.mpacbti-rel1-x86_64-arm-none-eabi gcc-arm-none-eabi
-        rm arm-gnu-toolchain-12.2.mpacbti-rel1-x86_64-arm-none-eabi.tar.xz
+        tar xvf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+        mv gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux gcc-arm-none-eabi
+        rm gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
         clear
         export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi/bin
         if grep -q "export GCC_PATH=/home/$usuario/gameandwatch/gcc-arm-none-eabi/bin" /home/$usuario/.bashrc ; then
