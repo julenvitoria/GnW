@@ -19,7 +19,9 @@ clear
 
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y unzip binutils-arm-none-eabi python3 libhidapi-hidraw0 libftdi1 libftdi1-2 git python3-pip virtualenv software-properties-common
+sudo apt install -y unzip binutils-arm-none-eabi python3 libhidapi-hidraw0 libftdi1 libftdi1-2 git python3-pip virtualenv software-properties-common pipx
+pipx ensurepath
+sudo pipx ensurepath --global
 sudo apt-add-repository -y ppa:inkscape.dev/stable
 sudo apt update
 
@@ -32,9 +34,14 @@ sleep 2
 if [ -d py ]; then
     rm -R py
 fi
+if [ -d pypatch ]; then
+    rm -R pypatch
+fi
 mkdir py
+mkdir pypatch
 python3 -m virtualenv py
-source py/bin/activate
+python3 -m virtualenv pypatch
+source pypatch/bin/activate
 echo ""
 echo -e "\e[1;34mModulos requeridos para el patch -> ver requirements.txt del repo del patch\e[0m"
 echo ""
@@ -42,7 +49,10 @@ sleep 1
 wget https://raw.githubusercontent.com/BrianPugh/game-and-watch-patch/main/requirements.txt
 pip3 install -r requirements.txt
 rm requirements.txt
+pipx install gnwmanager
 echo ""
+deactivate
+source py/bin/activate
 echo -e "\e[1;34mModulos requeridos para retrogo -> ver requirements.txt del repo de retrogo\e[0m"
 echo ""
 sleep 1

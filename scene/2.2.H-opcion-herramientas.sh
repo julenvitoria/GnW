@@ -3,7 +3,7 @@
 
 INPUT=/tmp/$MENU.sh.$$
 usuario="kde"
-consola="zelda"
+consola="mario"
 
 clear
 dialog --backtitle "G&W $consola - Utilidades de flasheo ------------------ INFO: 2.2.H-opcion-herramientas.sh Usuario = $usuario ------------------" \

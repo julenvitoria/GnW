@@ -22,6 +22,11 @@ case $menuitem in
     #sleep 5
     git clone --recurse-submodules https://github.com/sylverb/game-and-watch-retro-go
     sleep 2
+    #Se comprueba si el directorio tama existe, si no existe se crea. Esto se hizo porque
+	#cuando se incluyo el emulador tamagotchi no se creaba este directorio y habia error de compilacion
+	#if [ ! -d /home/$usuario/gameandwatch/game-and-watch-retro-go/roms/tama ]; then
+    #    mkdir /home/$usuario/gameandwatch/game-and-watch-retro-go/roms/tama
+    #fi
     #cd game-and-watch-retro-go
     #antiguo metodo usado para instalar los paquetes requeridos. A partir de ubuntu 23.04 no se puede usar este metodo
     #pip3 install -r requirements.txt
@@ -30,6 +35,11 @@ case $menuitem in
     if [ -d /home/$usuario/gameandwatch/game-and-watch-retro-go ]; then
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         git pull --recurse-submodules
+        #Se comprueba si el directorio tama existe, si no existe se crea. Esto se hizo porque
+		#cuando se incluyo el emulador tamagotchi no se creaba este directorio y habia error de compilacion
+		#if [ ! -d /home/$usuario/gameandwatch/game-and-watch-retro-go/roms/tama ]; then
+        #    mkdir /home/$usuario/gameandwatch/game-and-watch-retro-go/roms/tama
+        #fi
         read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
     else
         echo "El directorio del repo no se ha detectado, no se puede proseguir."
@@ -40,6 +50,11 @@ case $menuitem in
         cd /home/$usuario/gameandwatch/game-and-watch-retro-go
         git reset --hard
         git pull --recurse-submodules
+        #Se comprueba si el directorio tama existe, si no existe se crea. Esto se hizo porque
+		#cuando se incluyo el emulador tamagotchi no se creaba este directorio y habia error de compilacion
+		#if [ ! -d /home/$usuario/gameandwatch/game-and-watch-retro-go/roms/tama ]; then
+        #    mkdir /home/$usuario/gameandwatch/game-and-watch-retro-go/roms/tama
+        #fi
         read -n 1 -s -r -p "Presiona cualquier tecla para continuar"
     fi
     clear;;

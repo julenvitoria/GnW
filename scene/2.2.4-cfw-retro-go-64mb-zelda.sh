@@ -34,7 +34,9 @@ case $menuitem in
     --title "Instalar Retro-Go en consola G&W $consola con 64MB" \
     --yesno "Se recomienda realizar el proceso con la batería cargada al 100% para evitar problemas. Este proceso es solamente para una consola con el chip de 64MB.\n\n¡¡¡ATENCION!!!\nSI SE TIENE DIFERENTE CANTIDAD DE MEMORIA CANCELAR EL PROCESO y una vez vuelto al menu seleccionar el correcto.\n\nSe flasheara un custom firmware que consta del menu original de la consola ademas del acceso al emulador Retro-Go. El emulador aparecera al realizar el combo de botones \"LEFT\" + \"GAME\". ¿Deseas continuar?" 0 0
     ans=$?
-    if [ $ans -eq 0 ]; then
+    deactivate
+    source pypatch/bin/activate
+	if [ $ans -eq 0 ]; then
         clear
         if [ -f /home/$usuario/gameandwatch/game-and-watch-backup/backups/flash_backup_$consola.bin ]; then
             echo "flash_backup_$consola.bin encontrado"
@@ -50,11 +52,11 @@ case $menuitem in
                 echo " "
                 echo "Proceso 1/2 concluido."
                 echo " "
-                echo -e "\e[1;34mSi ya has ejecutado esta opcion anteriormente y algo ha salido mal desmonta la consola y vuelve a ejecutar esta\e[0m"
-                echo -e "\e[1;34mopcion y, al llegar a este punto, desconecta la bateria y vuelve a conectarla antes de realizar lo siguiente.\e[0m"
+                echo -e "\e[1;34mSi ejecutas esta opcion y te devuelve un error con el texto \"Unexpected response from debug probe. Unable to parse read_uint32 response\"\e[0m"
+                echo -e "\e[1;34mdesconecta el stlink, vuelve a conectarlo y ejecuta de nuevo esta opcion.\e[0m"
                 echo " "
                 echo " "
-                echo -e "\e[1;31mPulsa y manten pulsado el boton de encendido y justo despues pulsa cualquier tecla para continuar...\e[0m"
+                echo -e "\e[1;31mEnciende la consola y dejala en la pantalla del reloj. Despues pulsa cualquier tecla para continuar...\e[0m"
                 read -n 1 -s -r -p ""
                 clear
                 cd /home/$usuario/gameandwatch/game-and-watch-patch
@@ -81,7 +83,9 @@ case $menuitem in
             --title "Instalar firmware original + Retro-Go  en consola con 64MB" \
             --msgbox "Proceso cancelado." 0 0
     fi
-    ./scene/2.2.4-cfw-retro-go-64mb-$consola.sh
+    deactivate
+    source py/bin/activate
+	./scene/2.2.4-cfw-retro-go-64mb-$consola.sh
     clear;;
   2)clear
     dialog --backtitle "G&W $consola - Utilidades de flasheo" \
