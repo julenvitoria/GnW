@@ -5,11 +5,14 @@ usuario="kde"
 
 clear
 #Descarga del sitio original y descomprime el .deb
-wget https://nightly.link/kbeckmann/ubuntu-openocd-git-builder/workflows/docker/master/openocd-git.deb.zip
+#wget https://nightly.link/kbeckmann/ubuntu-openocd-git-builder/workflows/docker/master/openocd-git.deb.zip
+#Descomprimimos el .deb que tenemos descargado de nuestro propio github y lo instalamos
+cd /home/$usuario/GnW/recursos
 unzip openocd-git.deb.zip
 sudo dpkg -i openocd-git_*_amd64.deb
 sudo apt-get -y -f install
 rm openocd*
+cd -
 #echo export OPENOCD=/opt/openocd-git/bin/openocd >>~/.bashrc
 if grep -q "export OPENOCD=\"/opt/openocd-git/bin/openocd\"" /home/$usuario/.bashrc ; then
         echo "export OPENOCD=\"/opt/openocd-git/bin/openocd\" esta ya en el bashrc"
