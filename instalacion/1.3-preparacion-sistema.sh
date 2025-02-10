@@ -49,7 +49,7 @@ sleep 1
 wget https://raw.githubusercontent.com/BrianPugh/game-and-watch-patch/main/requirements.txt
 pip3 install -r requirements.txt
 rm requirements.txt
-pipx install gnwmanager
+pipx install gnwmanager --force
 echo ""
 deactivate
 source py/bin/activate
