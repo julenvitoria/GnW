@@ -86,6 +86,11 @@ Ejemplo de chip mal soldado: esto sale al ir a flashear retrogo, al intentar ent
 Ejemplo de chip abombado causado por haber venido mal o por haberle dado mucho calor con el soldador durante tiempo excesivo. Cuando  ocurre eso también suele salir la imagen de chip mal soldado.
 ![9ABD9809-48DB-4AF2-8708-69B69FB41B7F](https://user-images.githubusercontent.com/36037023/168869468-7d28cb5f-89c4-41b4-844c-4b18e9b6e523.jpeg)
 
+Problemas generados con los stlink:
+1-problemas con el firmware: es conveniente actualizar el firm siempre para evitarnos posibles errores.
+2-problemas con las soldaduras: en ocasiones creemos que el problema es de las soldaduras del chip de memoria porque no logramos conectar pero el problema también puede venir por el propio stlink y sus soldaduras chinescas. Las soldaduras que habría que repasar son las de siguiente foto y las mismas pero del otro lado
+![image](https://github.com/user-attachments/assets/45657b91-c149-4db7-aa4c-06303f9c3a06)
+
 *****************************
 
 Materiales necesarios: (si no funcionará el link buscar por el nombre a través de la descripción o por foto
