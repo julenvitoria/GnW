@@ -114,7 +114,7 @@ Principales fuentes para backup, desbloqueo, patch (CFW) y emulador (Retro-Go):
 
 [Canal Discord en ingles](https://discord.gg/vVcwrrHTNJ)
 
-[Canal Discord en español](https://discord.gg/Ewn8CdYJ)
+[Canal Discord en español](https://discord.com/invite/rvRHEeVEKR)
 
 [Guia para novatos en ingles (mensaje fijado de Discord)](https://docs.google.com/document/d/1-x6tibLxtOPf6ZbQL0ZM48XGe1-LLEfl8HpBg8gBu_M/edit)
     
