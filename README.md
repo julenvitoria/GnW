@@ -39,7 +39,7 @@ Necesitaras introducir los siguientes comandos en una ventana de terminal:
     git clone https://github.com/julenvitoria/GnW
 
 
-Una vez realizado sono tendras que acceder al directorio con:
+Una vez realizado solo tendras que acceder al directorio con:
 
 
     cd GnW
