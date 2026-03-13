@@ -117,6 +117,8 @@ Principales fuentes para backup, desbloqueo, patch (CFW) y emulador (Retro-Go):
     
 [Repo de Brian Pugh: Parche para tener custom firmware](https://github.com/BrianPugh/game-and-watch-patch)
 
+[Repo de bzhxx para la generacion de roms .gw](https://github.com/bzhxx/LCD-Game-Shrinker)
+
 [Canal Discord en ingles](https://discord.gg/vVcwrrHTNJ)
 
 [Canal Discord en español](https://discord.com/invite/rvRHEeVEKR)
